@@ -91,11 +91,12 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
 .pit .shortg:hover .short{opacity:1}
 .pit:not(.ai) .short,.pit:not(.ai) .shortlbl{opacity:.55}
 .pit.ai .short{stroke-width:3.5}
-.pitnote,.bvnote{background:var(--inset);border-radius:12px;padding:12px 14px;font-size:13px;color:var(--muted);min-height:64px;margin:12px 0 0;border-left:4px solid transparent}
-.pitnote.live,.bvnote.live{background:var(--bg);color:var(--ink);font-size:16px;line-height:1.4;border-left-color:var(--c);box-shadow:0 4px 18px rgba(0,0,0,.08);animation:pop .25s ease}
-.pitnote.live b,.bvnote.live b{display:block;color:var(--c);font-size:13px;font-weight:600;margin:0 0 2px}
-@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.pitnote.live,.bvnote.live{animation:none}}
+.pitnote,.bvnote{font-size:13px;color:var(--muted);margin:12px 0 0}
+.pop{position:absolute;z-index:5;width:max-content;max-width:260px;background:var(--bg);color:var(--ink);border-radius:12px;border-left:4px solid var(--c);box-shadow:0 10px 30px rgba(0,0,0,.16),0 0 0 1px var(--hair);padding:10px 14px;font-size:15px;line-height:1.4;pointer-events:none}
+.pop b{display:block;color:var(--c);font-size:12px;font-weight:600;margin:0 0 2px}
+.pop.in{animation:pop .2s ease}
+@keyframes pop{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pop.in{animation:none}}
 .cite{font-size:12px;color:var(--muted);margin:10px 0 0}
 
 /* 3 context questions */
@@ -114,7 +115,8 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
 .bv .hitr{fill:transparent}
 .bv.has-sel .opt{opacity:.25}
 .bv.has-sel .opt.on{opacity:1}
-.bvnote{max-width:560px;margin:12px auto 0}
+.bvnote{text-align:center}
+.beyond{position:relative}
 .bv text{font-family:-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif}
 .facts4{display:grid;gap:24px 32px;margin:56px 0 0}
 @media(min-width:720px){.facts4{grid-template-columns:repeat(2,1fr)}}
@@ -262,52 +264,62 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 </footer>
 
 <script>
+function mkPop(host){
+  const p=document.createElement('div');p.className='pop';p.setAttribute('role','status');p.hidden=true;host.appendChild(p);
+  let last=null;
+  const place=()=>{if(!last||p.hidden)return;const [a,side]=last;const r=a.getBoundingClientRect(),h=host.getBoundingClientRect(),w=p.offsetWidth,ht=p.offsetHeight;let x,y;
+    if(side==='left'&&r.left-h.left-w-14>0){x=r.left-h.left-w-14;y=r.top-h.top+r.height/2-ht/2}
+    else{x=r.left+r.width/2-h.left-w/2;y=side==='below'?r.bottom-h.top+12:r.top-h.top-ht-12;if(y<0)y=r.bottom-h.top+12}
+    x=Math.max(0,Math.min(x,h.width-w));p.style.left=x+'px';p.style.top=y+'px'};
+  addEventListener('resize',place);
+  return {show(a,side,c,html){p.style.setProperty('--c',c);p.innerHTML=html;p.hidden=false;p.classList.remove('in');void p.offsetWidth;p.classList.add('in');last=[a,side];place()},hide(){p.hidden=true;last=null}};
+}
 (function(){
   const NS='http://www.w3.org/2000/svg';
-  const pit=document.getElementById('pit'), note=document.getElementById('pitnote');
+  const pit=document.getElementById('pit'), note=document.getElementById('pitnote'), pop=mkPop(pit.parentElement);
   const S=[
-    {t:.0, n:'New idea', d:'Sees a concept or problem for the first time.', dx:0, dy:-14, a:'start'},
-    {t:.27, n:'Confusion', d:'Identifies what they do not understand yet.', dx:-14, dy:4, a:'end'},
-    {t:.5, n:'Trial', d:'Tries an approach, checks the result, and adjusts.', dx:0, dy:24, a:'middle'},
-    {t:.73, n:'Reasoning', d:'Explains why an approach works or does not.', dx:14, dy:4, a:'start'},
-    {t:1, n:'Understanding', d:'Applies the idea to a new problem.', dx:0, dy:-14, a:'end'}];
-  const curve=pit.querySelector('.curve'), L=curve.getTotalLength(), g=document.getElementById('stops');
+    {t:.0, n:'New idea', d:'Sees a concept or problem for the first time.', dx:0, dy:-14, a:'start', s:'below'},
+    {t:.27, n:'Confusion', d:'Identifies what they do not understand yet.', dx:-14, dy:4, a:'end', s:'above'},
+    {t:.5, n:'Trial', d:'Tries an approach, checks the result, and adjusts.', dx:0, dy:24, a:'middle', s:'above'},
+    {t:.73, n:'Reasoning', d:'Explains why an approach works or does not.', dx:14, dy:4, a:'start', s:'above'},
+    {t:1, n:'Understanding', d:'Applies the idea to a new problem.', dx:0, dy:-14, a:'end', s:'below'}];
+  const curve=pit.querySelector('.curve'), L=curve.getTotalLength(), g=document.getElementById('stops'), sg=document.getElementById('shortg');
+  let cur=null;
   const stops=S.map((s,i)=>{
     const p=curve.getPointAtLength(s.t*L);
     const e=document.createElementNS(NS,'g');e.setAttribute('class','stop');e.setAttribute('tabindex','0');e.setAttribute('role','button');e.setAttribute('aria-label',s.n);
     const c=document.createElementNS(NS,'circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',7);
     const x=document.createElementNS(NS,'text');x.setAttribute('x',p.x+s.dx);x.setAttribute('y',p.y+s.dy);x.setAttribute('text-anchor',s.a);x.setAttribute('font-size',13);x.setAttribute('font-weight',600);x.setAttribute('fill','var(--ink)');x.textContent=s.n;
     e.append(c,x);g.appendChild(e);
-    const pick=()=>{mode('pit');sel(i)};
+    const pick=()=>set(cur===i?null:i);
     e.addEventListener('click',pick);e.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pick()}});
     return e;});
-  const MSG={pit:'Select a point or the Frictionless AI line.',
-    ai:'<b>Frictionless AI</b>The tool gives the answer before the learner works through these steps. Early research on cognitive de-skilling suggests this can reduce learning.'};
-  let cur=null;
-  const live=(c,h)=>{note.className='pitnote live';note.style.setProperty('--c',c);note.innerHTML=h};
-  function sel(i){cur=i;stops.forEach((s,j)=>s.classList.toggle('on',j===i));live('var(--clay)',`<b>${S[i].n}</b>${S[i].d}`)}
-  const sg=document.getElementById('shortg');
-  function mode(m){pit.classList.toggle('ai',m==='ai');sg.setAttribute('aria-pressed',String(m==='ai'));if(m==='ai'){stops.forEach(s=>s.classList.remove('on'));cur=null;live('var(--sand)',MSG.ai)}else if(cur===null){note.className='pitnote';note.innerHTML=MSG.pit}}
-  const flip=()=>{const on=pit.classList.contains('ai');cur=null;stops.forEach(s=>s.classList.remove('on'));mode(on?'pit':'ai')};
+  const AI='The tool gives the answer before the learner works through these steps. Early research on cognitive de-skilling suggests this can reduce learning.';
+  note.textContent='Select a point or the Frictionless AI line.';
+  function set(k){cur=k;pit.classList.toggle('ai',k==='ai');sg.setAttribute('aria-pressed',String(k==='ai'));
+    stops.forEach((s,j)=>s.classList.toggle('on',j===k));
+    if(k===null)pop.hide();
+    else if(k==='ai')pop.show(sg.querySelector('.shortlbl'),'below','var(--sand)',`<b>Frictionless AI</b>${AI}`);
+    else pop.show(stops[k].querySelector('circle'),S[k].s,'var(--clay)',`<b>${S[k].n}</b>${S[k].d}`);}
+  const flip=()=>set(cur==='ai'?null:'ai');
   sg.addEventListener('click',flip);sg.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}});
-  mode('pit');
-
+  addEventListener('keydown',e=>{if(e.key==='Escape')set(null)});
 })();
-</script>
-<script>
 (function(){
   const D=[
-    ['Elicit','Asks the learner to try first.','var(--accent)'],
-    ['Restrict','Gives a hint, not the full solution.','var(--accent)'],
-    ['Object','AI in a physical thing the learner holds or uses.','var(--navy)'],
-    ['Ritual','AI in a repeated practice, such as a daily review.','var(--clay)'],
-    ['Companion','AI that learns alongside the learner.','var(--sage)'],
-    ['Place','AI built into a learning space.','var(--sand)'],
-    ['Other forms','Forms that participants define.','var(--ink)']];
-  const bv=document.getElementById('bv'), note=document.getElementById('bvnote'), opts=[...bv.querySelectorAll('.opt')];
-  const DEF=note.innerHTML; let cur=null;
-  function sel(k){cur=(cur===k)?null:k;bv.classList.toggle('has-sel',cur!==null);opts.forEach(o=>{const on=+o.dataset.k===cur;o.classList.toggle('on',on);o.setAttribute('aria-pressed',String(on))});if(cur===null){note.className='bvnote';note.innerHTML=DEF}else{note.className='bvnote live';note.style.setProperty('--c',D[cur][2]);note.innerHTML=`<b>${D[cur][0]}</b>${D[cur][1]}`}}
+    ['Elicit','Asks the learner to try first.','var(--accent)','below'],
+    ['Restrict','Gives a hint, not the full solution.','var(--accent)','below'],
+    ['Object','AI in a physical thing the learner holds or uses.','var(--navy)','left'],
+    ['Ritual','AI in a repeated practice, such as a daily review.','var(--clay)','left'],
+    ['Companion','AI that learns alongside the learner.','var(--sage)','left'],
+    ['Place','AI built into a learning space.','var(--sand)','left'],
+    ['Other forms','Forms that participants define.','var(--ink)','left']];
+  const bv=document.getElementById('bv'), opts=[...bv.querySelectorAll('.opt')], pop=mkPop(bv.parentElement);
+  let cur=null;
+  function sel(k){cur=(cur===k)?null:k;bv.classList.toggle('has-sel',cur!==null);opts.forEach(o=>{const on=+o.dataset.k===cur;o.classList.toggle('on',on);o.setAttribute('aria-pressed',String(on))});
+    if(cur===null)pop.hide();else{const o=opts[cur];const a=D[cur][3]==='left'?(o.querySelector('circle,path,rect:not(.hitr)')):o.querySelector('circle');pop.show(a,D[cur][3],D[cur][2],`<b>${D[cur][0]}</b>${D[cur][1]}`)}}
   opts.forEach(o=>{o.addEventListener('click',()=>sel(+o.dataset.k));o.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();sel(+o.dataset.k)}})});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&cur!==null)sel(cur)});
 })();
 </script>
 </body>
