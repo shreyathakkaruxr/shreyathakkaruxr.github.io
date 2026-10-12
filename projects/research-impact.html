@@ -137,7 +137,16 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
 .hzd > p{color:var(--muted);font-size:17px;margin:0 0 40px;max-width:60ch}
 .hzgrid{display:grid;gap:40px 32px}
 @media(min-width:720px){.hzgrid{grid-template-columns:1fr 1fr}}
-@media(min-width:1000px){.hzgrid{grid-template-columns:repeat(4,1fr)}}
+.hzwrap{display:grid;gap:40px}
+@media(min-width:1000px){.hzwrap{grid-template-columns:340px 1fr;gap:56px;align-items:start}.hzwrap .donut{position:sticky;top:24px}}
+.donut.big{max-width:340px}
+.hzc{cursor:pointer;transition:opacity .2s;border-radius:2px}
+.hzc:focus{outline:none}.hzc:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+.hzgrid.has-sel .hzc{opacity:.3}
+.hzgrid.has-sel .hzc.on{opacity:1}
+.hzc dl dd{transition:background .2s;border-radius:6px;margin-left:-6px;margin-right:-6px;padding:2px 6px}
+.hzc dd.on{background:var(--inset)}
+.hzhint{color:var(--muted);font-size:13px;margin:16px 0 0;text-align:center}
 .hzc{border-top:3px solid var(--c);padding-top:16px}
 .hzc h3{font-size:21px;font-weight:600;letter-spacing:-.015em;margin:0 0 4px}
 .hzc .m{color:var(--muted);font-size:15px;margin:0 0 20px}
@@ -232,47 +241,50 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   <section class="hzd" aria-labelledby="hzd">
     <h2 id="hzd">Impact horizons in detail</h2>
     <p>Each log entry gets one horizon. Use the earliest horizon until there is evidence for the next one.</p>
-    <div class="hzgrid">
-      <article class="hzc" style="--c:var(--sand)">
+    <div class="hzwrap">
+      <div><svg class="donut big" id="donut2" viewBox="0 0 360 360" role="group" aria-label="Impact horizons diagram"></svg><p class="hzhint">Select a segment or a horizon</p></div>
+      <div class="hzgrid" id="hzgrid">
+      <article class="hzc" data-h="0" tabindex="0" role="button" aria-pressed="false" style="--c:var(--sand)">
         <h3>Signal</h3>
         <p class="m">Teams are engaging with the research</p>
         <dl>
-          <div><dt>Evidence</dt><dd><b>Sessions joined.</b> Stakeholders attended sessions, readouts, or field visits</dd><dd><b>Findings quoted.</b> Findings appear in decks, specs, roadmaps, or leadership updates</dd></div>
+          <div><dt>Evidence</dt><dd data-i="0"><b>Sessions joined.</b> Stakeholders attended sessions, readouts, or field visits</dd><dd data-i="1"><b>Findings quoted.</b> Findings appear in decks, specs, roadmaps, or leadership updates</dd></div>
           <div><dt>When it shows up</dt><dd>During the study and in the first weeks after</dd></div>
           <div><dt>Example entry</dt><dd>The PM cited the setup findings in the roadmap review</dd></div>
           <div><dt>Source</dt><dd>Attendance lists, shared decks, and documents</dd></div>
         </dl>
       </article>
-      <article class="hzc" style="--c:var(--sage)">
+      <article class="hzc" data-h="1" tabindex="0" role="button" aria-pressed="false" style="--c:var(--sage)">
         <h3>Decision</h3>
         <p class="m">The research informed a decision</p>
         <dl>
-          <div><dt>Evidence</dt><dd><b>Decision confirmed.</b> A stakeholder confirms the study informed a specific decision</dd><dd><b>Risk avoided.</b> A feature, launch, or investment was changed, paused, or stopped</dd></div>
+          <div><dt>Evidence</dt><dd data-i="0"><b>Decision confirmed.</b> A stakeholder confirms the study informed a specific decision</dd><dd data-i="1"><b>Risk avoided.</b> A feature, launch, or investment was changed, paused, or stopped</dd></div>
           <div><dt>When it shows up</dt><dd>Within weeks to a few months</dd></div>
           <div><dt>Example entry</dt><dd>The team chose the simpler control panel layout after usability testing</dd></div>
           <div><dt>Source</dt><dd>Follow-up answers and stakeholder confirmation</dd></div>
         </dl>
       </article>
-      <article class="hzc" style="--c:var(--clay)">
+      <article class="hzc" data-h="2" tabindex="0" role="button" aria-pressed="false" style="--c:var(--clay)">
         <h3>Change</h3>
         <p class="m">A product or process changed</p>
         <dl>
-          <div><dt>Evidence</dt><dd><b>Product change.</b> A feature, flow, hardware, or content change</dd><dd><b>Ways of working.</b> A team adopted new criteria, rituals, or methods</dd></div>
+          <div><dt>Evidence</dt><dd data-i="0"><b>Product change.</b> A feature, flow, hardware, or content change</dd><dd data-i="1"><b>Ways of working.</b> A team adopted new criteria, rituals, or methods</dd></div>
           <div><dt>When it shows up</dt><dd>Within one to two quarters</dd></div>
           <div><dt>Example entry</dt><dd>The app onboarding flow removed one setup step</dd></div>
           <div><dt>Source</dt><dd>Release notes, design files, and team updates</dd></div>
         </dl>
       </article>
-      <article class="hzc" style="--c:var(--navy)">
+      <article class="hzc" data-h="3" tabindex="0" role="button" aria-pressed="false" style="--c:var(--navy)">
         <h3>Outcome</h3>
         <p class="m">A metric moved against the baseline</p>
         <dl>
-          <div><dt>Evidence</dt><dd><b>Metric moved.</b> The kickoff metric changed, such as satisfaction, task success, returns, or support calls</dd><dd><b>Cost or time saved.</b> Rework, support load, or development time decreased</dd></div>
+          <div><dt>Evidence</dt><dd data-i="0"><b>Metric moved.</b> The kickoff metric changed, such as satisfaction, task success, returns, or support calls</dd><dd data-i="1"><b>Cost or time saved.</b> Rework, support load, or development time decreased</dd></div>
           <div><dt>When it shows up</dt><dd>After launch, often two or more quarters later</dd></div>
           <div><dt>Example entry</dt><dd>Setup support calls decreased against the kickoff baseline</dd></div>
           <div><dt>Source</dt><dd>Dashboards and the team that owns the metric</dd></div>
         </dl>
       </article>
+      </div>
     </div>
   </section>
 </main>
@@ -306,7 +318,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
        {n:'Cost or time saved', d:'Rework, support load, or development time decreased. Estimate with the owning team.'}]}
   ];
   const NS='http://www.w3.org/2000/svg', C=180, R0=66, R1=118, R2=178;
-  const svg=document.getElementById('donut'), legend=document.getElementById('legend'), detail=document.getElementById('detail');
+  const svgs=[document.getElementById('donut'),document.getElementById('donut2')], grid=document.getElementById('hzgrid'), legend=document.getElementById('legend'), detail=document.getElementById('detail');
   const DEFAULT='Select a segment or horizon to see what counts as evidence.';
   const pt=(r,a)=>{const t=(a-90)*Math.PI/180;return [C+r*Math.cos(t),C+r*Math.sin(t)]};
   function arc(r0,r1,a0,a1){
@@ -323,6 +335,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     g.appendChild(t);
   }
   const segs=[];
+  svgs.forEach(svg=>{
   H.forEach((h,hi)=>{
     const g=el('g',{class:'seg',tabindex:0,role:'button','aria-label':`${h.name} horizon`});
     g.appendChild(el('path',{d:arc(R0,R1,h.a,h.a+90),fill:`var(${h.c})`}));
@@ -339,14 +352,18 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   svg.appendChild(el('circle',{cx:C,cy:C,r:R0-6,fill:'var(--inset)'}));
   const c1=el('text',{x:C,y:C+7,'text-anchor':'middle','font-size':20,'font-weight':700,fill:'var(--ink)'});c1.textContent='Impact';
   svg.append(c1);
+  });
 
   legend.innerHTML=H.map((h,i)=>`<li><button type="button" data-h="${i}" aria-pressed="false"><i style="--c:var(${h.c})"></i><span style="color:var(--ink)"><b>${h.name}</b><span>${h.desc}</span></span></button></li>`).join('');
   const btns=[...legend.querySelectorAll('button')];
+  const cards=[...grid.querySelectorAll('.hzc')];
 
   let current=null;
   function render(hi,ii){
     current=hi===null?null:{hi,ii};
-    svg.classList.toggle('has-sel',hi!==null);
+    svgs.forEach(s=>s.classList.toggle('has-sel',hi!==null));
+    grid.classList.toggle('has-sel',hi!==null);
+    cards.forEach((c,i)=>{c.classList.toggle('on',i===hi);c.setAttribute('aria-pressed',String(i===hi));c.querySelectorAll('dd[data-i]').forEach(d=>d.classList.toggle('on',i===hi&&ii!==null&&+d.dataset.i===ii))});
     segs.forEach(s=>s.g.classList.toggle('on',hi!==null && s.hi===hi && (ii===null || s.ii===null || s.ii===ii)));
     btns.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===hi)));
     if(hi===null){ detail.textContent=DEFAULT; return; }
@@ -361,6 +378,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     s.g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(s.hi,s.ii)}});
   });
   btns.forEach((b,i)=>b.addEventListener('click',()=>toggle(i,null)));
+  cards.forEach((c,i)=>{c.addEventListener('click',()=>toggle(i,null));c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(i,null)}})});
   render(null,null);
 })();
 </script>
