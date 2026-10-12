@@ -100,7 +100,7 @@ h2{font-size:21px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin
 .cite{font-size:12px;color:var(--muted);margin:10px 0 0}
 
 /* 3 context questions */
-.qs3{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:14px}
+.qs3{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 .qs3 b{display:block;font-size:14px;font-weight:600}
 .qs3 span{display:block;font-size:14px;line-height:1.4}
 
@@ -137,6 +137,10 @@ h2{font-size:21px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin
 .ongoing{font-size:13px;color:var(--muted);margin:8px 0 0}
 .ongoing a{color:var(--accent);text-decoration:none}
 
+.repeat{margin:22px 0 0;padding:12px 0;border-top:1px solid var(--hair);display:flex;justify-content:center;gap:8px;color:var(--muted);font-size:13px}
+.repeat b{color:var(--ink);font-weight:600}
+.repeat a{color:inherit;text-decoration:none;display:flex;gap:8px}
+.repeat a:hover{color:var(--ink)}
 .hint{display:none}
 @media(max-width:980px){
   .flow{grid-template-columns:240px 360px 260px;overflow-x:auto;margin:0 -16px;padding:0 16px 12px;scroll-snap-type:x proximity}
@@ -199,6 +203,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     <section class="col" aria-labelledby="s3">
       <p class="step"><b>3</b>Setting</p>
       <h2 id="s3">The right setting depends on context</h2>
+      <p class="when">Ask three questions</p>
       <ul class="qs3">
         <li><b>Task</b><span>Finish the task, or learn from doing it?</span></li>
         <li><b>Expertise</b><span>Is the learner ready for the effort, or do they need the steps first?</span></li>
@@ -206,6 +211,8 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
       </ul>
     </section>
   </div>
+
+  <p class="repeat"><a href="#bh"><b>↓</b> What embodied forms might AI take in learning, beyond the chatbot?</a></p>
 
   <section class="beyond" aria-labelledby="bh">
     <h2 id="bh">Think beyond the chatbot</h2>

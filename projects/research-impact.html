@@ -151,6 +151,7 @@ h2{font-size:21px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin
 .hzgrid.has-sel .hzc.on{opacity:1}
 .hzc dl dd{transition:background .2s;border-radius:6px;margin-left:-6px;margin-right:-6px;padding:2px 6px}
 .hzc dd.on{background:var(--inset)}
+.hz2{position:relative}
 .hzhint{color:var(--muted);font-size:13px;margin:16px 0 0;text-align:center}
 .hzc{border-top:3px solid var(--c);padding-top:16px}
 .hzc h3{font-size:17px;font-weight:600;letter-spacing:-.015em;margin:0 0 4px}
@@ -247,7 +248,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     <h2 id="hzd">Impact horizons in detail</h2>
     <p>Each log entry gets one horizon.</p>
     <div class="hzwrap">
-      <div><svg class="donut big" id="donut2" viewBox="0 0 360 360" role="group" aria-label="Impact horizons diagram"></svg><p class="hzhint">Select a segment or a horizon</p></div>
+      <div class="hz2"><svg class="donut big" id="donut2" viewBox="0 0 360 360" role="group" aria-label="Impact horizons diagram"></svg><p class="hzhint">Select a segment or a horizon.</p></div>
       <div class="hzgrid" id="hzgrid">
       <article class="hzc" data-h="0" tabindex="0" role="button" aria-pressed="false" style="--c:var(--sand)">
         <h3>Signal</h3>
@@ -327,7 +328,7 @@ function mkPop(host){
   ];
   const NS='http://www.w3.org/2000/svg', C=180, R0=66, R1=118, R2=178;
   const svgs=[document.getElementById('donut'),document.getElementById('donut2')], grid=document.getElementById('hzgrid'), legend=document.getElementById('legend'), detail=document.getElementById('detail');
-  const DEFAULT='Select a segment or a horizon.', pop=mkPop(document.querySelector('.hz'));
+  const DEFAULT='Select a segment or a horizon.', pop=mkPop(document.querySelector('.hz')), pop2=mkPop(document.querySelector('.hz2'));
   const pt=(r,a)=>{const t=(a-90)*Math.PI/180;return [C+r*Math.cos(t),C+r*Math.sin(t)]};
   function arc(r0,r1,a0,a1){
     const [x0,y0]=pt(r1,a0),[x1,y1]=pt(r1,a1),[x2,y2]=pt(r0,a1),[x3,y3]=pt(r0,a0);
@@ -375,16 +376,17 @@ function mkPop(host){
     segs.forEach(s=>s.g.classList.toggle('on',hi!==null && s.hi===hi && (ii===null || s.ii===null || s.ii===ii)));
     btns.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===hi)));
     detail.textContent=DEFAULT;
-    if(hi===null||!anchor){ pop.hide(); return; }
+    pop.hide(); pop2.hide();
+    if(hi===null||!anchor) return;
     const h=H[hi];
-    pop.show(anchor,side,`var(${h.c})`, ii===null
+    (anchor.closest('#donut2')?pop2:pop).show(anchor,side,`var(${h.c})`, ii===null
       ? `<b>${h.name}</b>`+h.items.map(it=>`${it.n}: ${it.d}`).join('<br>')
       : `<b>${h.items[ii].n}</b>${h.items[ii].d}`);
   }
   let anchor=null, side='above';
   const toggle=(hi,ii,a,sd)=>{ anchor=a||null; side=sd||'above'; if(current && current.hi===hi && current.ii===ii) render(null,null); else render(hi,ii); };
   segs.forEach(s=>{
-    const a=s.g.closest('#donut')?s.g.querySelector('path'):null;
+    const a=s.g.querySelector('path');
     s.g.addEventListener('click',()=>toggle(s.hi,s.ii,a));
     s.g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(s.hi,s.ii,a)}});
   });
