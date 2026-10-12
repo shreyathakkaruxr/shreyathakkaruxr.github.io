@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About · Shreya Thakkar</title>
-<meta name="description" content="Senior UX researcher and strategist. Mixed-methods and human factors research for hardware, software, and AI products.">
+<meta name="description" content="Senior UX researcher and strategist running mixed-methods and human factors research for hardware, software, and AI products.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,10 +14,10 @@
 :root[data-theme="dark"]{--bg:#0f0f10;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.5;font-size:17px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.45;font-size:15px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
 a{color:inherit}
-.wrap{max-width:880px;margin:0 auto;padding:0 16px}
-@media(min-width:720px){.wrap{padding:0 24px}}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
 .display{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-weight:700}
 nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:14px}
 nav a{text-decoration:none;color:var(--muted)}
@@ -25,22 +25,24 @@ nav a:hover{color:var(--ink)}
 nav .links{display:flex;gap:20px}
 nav [aria-current]{color:var(--ink)}
 
-header{text-align:center;padding:56px 0 48px}
-h1{font-size:clamp(40px,7vw,64px);line-height:1.04;letter-spacing:-.04em;margin:0 0 14px}
-.lede{color:var(--muted);font-size:clamp(18px,2.4vw,21px);margin:0 auto;max-width:34ch;line-height:1.4}
+header{display:grid;gap:8px 48px;align-items:end;padding:28px 0 32px;border-bottom:1px solid var(--hair)}
+@media(min-width:860px){header{grid-template-columns:auto 1fr}}
+h1{font-size:clamp(40px,6vw,60px);line-height:1;letter-spacing:-.04em;margin:0}
+.lede{color:var(--muted);font-size:18px;margin:0;max-width:52ch;line-height:1.4}
 
-section{padding:0 0 48px}
-h2{text-align:center;font-size:clamp(28px,4.2vw,40px);line-height:1.08;letter-spacing:-.035em;margin:0 0 20px}
+.grid{display:grid;gap:36px 40px;padding:32px 0 8px}
+@media(min-width:680px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+section h2{font-size:22px;letter-spacing:-.025em;margin:0 0 12px}
 .rows{list-style:none;margin:0;padding:0}
-.rows li{display:grid;gap:2px 24px;padding:14px 0;border-top:1px solid var(--hair)}
+.rows li{padding:9px 0;border-top:1px solid var(--hair)}
 .rows li:last-child{border-bottom:1px solid var(--hair)}
-@media(min-width:680px){.rows li{grid-template-columns:180px 1fr}}
-.rows b{font-weight:600}
-.rows span{color:var(--muted)}
-.rows .org{color:var(--ink)}
+.rows b{display:block;font-weight:600;font-size:14px}
+.rows span{display:block;color:var(--muted);font-size:14px}
+.rows .org{display:inline;color:var(--ink)}
 
-footer{padding:16px 0 48px;color:var(--muted);font-size:13px;text-align:center}
-footer p{margin:0 0 8px}
+footer{padding:32px 0 40px;color:var(--muted);font-size:13px;text-align:center}
+footer p{margin:0 0 6px}
 footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 </style>
 </head>
@@ -56,68 +58,67 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     <p class="lede">Senior UX researcher and strategist running mixed-methods and human factors research for hardware, software, and AI products</p>
   </header>
 
-  <section aria-labelledby="h-domains">
-    <h2 class="display" id="h-domains">Domains</h2>
-    <ul class="rows">
-      <li><b>Homes</b><span><span class="org">Electrolux</span> · How people use connected appliances</span></li>
-      <li><b>Mobility</b><span><span class="org">Polestar</span> · How people move through cities</span></li>
-      <li><b>Workplaces</b><span><span class="org">Steelcase</span> · How people work</span></li>
-      <li><b>Healthcare</b><span><span class="org">UTMB</span> · How patients navigate hospitals</span></li>
-    </ul>
-  </section>
+  <div class="grid">
+    <section aria-labelledby="h-domains">
+      <h2 class="display" id="h-domains">Domains</h2>
+      <ul class="rows">
+        <li><b>Homes</b><span><span class="org">Electrolux</span> · How people use connected appliances</span></li>
+        <li><b>Mobility</b><span><span class="org">Polestar</span> · How people move through cities</span></li>
+        <li><b>Workplaces</b><span><span class="org">Steelcase</span> · How people work</span></li>
+        <li><b>Healthcare</b><span><span class="org">UTMB</span> · How patients navigate hospitals</span></li>
+      </ul>
+    </section>
 
-  <section aria-labelledby="h-methods">
-    <h2 class="display" id="h-methods">Methods</h2>
-    <ul class="rows">
-      <li><b>Qualitative</b><span>Interviews, in-home ethnography, diary studies, usability testing</span></li>
-      <li><b>Quantitative</b><span>Surveys, A/B testing, behavioral analysis</span></li>
-      <li><b>AI</b><span>LLM evaluation, failure testing, human-AI interaction, responsible AI</span></li>
-      <li><b>Strategy</b><span>Futures and foresight, scenario planning</span></li>
-      <li><b>Research operations</b><span>Recruiting, vendor management, quality standards</span></li>
-    </ul>
-  </section>
+    <section aria-labelledby="h-methods">
+      <h2 class="display" id="h-methods">Methods</h2>
+      <ul class="rows">
+        <li><b>Qualitative</b><span>Interviews, in-home ethnography, diary studies, usability testing</span></li>
+        <li><b>Quantitative</b><span>Surveys, A/B testing, behavioral analysis</span></li>
+        <li><b>AI</b><span>LLM evaluation, failure testing, human-AI interaction, responsible AI</span></li>
+        <li><b>Strategy</b><span>Futures and foresight, scenario planning</span></li>
+        <li><b>Research operations</b><span>Recruiting, vendor management, quality standards</span></li>
+      </ul>
+    </section>
 
-  <section aria-labelledby="h-speaking">
-    <h2 class="display" id="h-speaking">Speaking</h2>
-    <ul class="rows">
-      <li><b>2026</b><span>IDSA International Design Conference, Pasadena</span></li>
-      <li><b>2025</b><span>World Usability Congress, Graz · IASDR, Taipei · UXDX · Design Principles & Practices, Singapore · Interdisciplinary Social Sciences, Málaga · UX360 Research Summit · Women in Tech Global · AIGA Weave</span></li>
-      <li><b>2024</b><span>George Washington University, Corcoran School of the Arts & Design</span></li>
-    </ul>
-  </section>
+    <section aria-labelledby="h-speaking">
+      <h2 class="display" id="h-speaking">Speaking</h2>
+      <ul class="rows">
+        <li><b>2026</b><span>IDSA International Design Conference, Pasadena</span></li>
+        <li><b>2025</b><span>World Usability Congress, Graz · IASDR, Taipei · UXDX · Design Principles & Practices, Singapore · Interdisciplinary Social Sciences, Málaga · UX360 Research Summit · Women in Tech Global · AIGA Weave</span></li>
+        <li><b>2024</b><span>George Washington University, Corcoran School of the Arts & Design</span></li>
+      </ul>
+    </section>
 
-  <section aria-labelledby="h-jury">
-    <h2 class="display" id="h-jury">Jury and review</h2>
-    <ul class="rows">
-      <li><b>2025</b><span>Globee Awards, AI category · American Business Awards · IDSA Student Merit Awards · World Design Congress, London · Cumulus, Nantes</span></li>
-    </ul>
-  </section>
+    <section aria-labelledby="h-edu">
+      <h2 class="display" id="h-edu">Education</h2>
+      <ul class="rows">
+        <li><b>MS, Environmental Design</b><span>ArtCenter College of Design</span></li>
+        <li><b>B.Des, Interior Architecture</b><span>Institute of Environmental Design</span></li>
+        <li><b>Design studies</b><span>National Institute of Design</span></li>
+      </ul>
+    </section>
 
-  <section aria-labelledby="h-edu">
-    <h2 class="display" id="h-edu">Education</h2>
-    <ul class="rows">
-      <li><b>MS</b><span><span class="org">ArtCenter College of Design</span> · Environmental Design</span></li>
-      <li><b>B.Des</b><span><span class="org">Institute of Environmental Design</span> · Interior Architecture</span></li>
-      <li><b>Studies</b><span><span class="org">National Institute of Design</span></span></li>
-    </ul>
-  </section>
+    <section aria-labelledby="h-cert">
+      <h2 class="display" id="h-cert">Certificates</h2>
+      <ul class="rows">
+        <li><b>2026</b><span>Human Factors & Usability Engineering, Arizona State University</span></li>
+        <li><b>2025</b><span>AI for User Research, User Interviews</span></li>
+        <li><b>2024</b><span>Strategic Behavioural Design, BehaviourKit</span></li>
+        <li><b>2023</b><span>Service Design · Ethics in Design · Futurist</span></li>
+      </ul>
+    </section>
 
-  <section aria-labelledby="h-cert">
-    <h2 class="display" id="h-cert">Certificates</h2>
-    <ul class="rows">
-      <li><b>2026</b><span>Human Factors & Usability Engineering, Arizona State University</span></li>
-      <li><b>2025</b><span>AI for User Research, User Interviews</span></li>
-      <li><b>2024</b><span>Strategic Behavioural Design, BehaviourKit</span></li>
-      <li><b>2023</b><span>Service Design and Ethics in Design, Service Design College · Futurist, MetaFuture</span></li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="h-press">
-    <h2 class="display" id="h-press">Press</h2>
-    <ul class="rows">
-      <li><b>Features</b><span>Core77 · Rethinking The Future · The Design Collective · Voyage LA · The Global Indian</span></li>
-    </ul>
-  </section>
+    <section aria-labelledby="h-jury">
+      <h2 class="display" id="h-jury">Jury and review</h2>
+      <ul class="rows">
+        <li><b>2025</b><span>Globee Awards, AI category · American Business Awards · IDSA Student Merit Awards · World Design Congress, London · Cumulus, Nantes</span></li>
+      </ul>
+      <h2 class="display" id="h-press" style="margin-top:24px">Press</h2>
+      <ul class="rows">
+        <li><span>Core77 · Rethinking The Future · The Design Collective · Voyage LA · The Global Indian</span></li>
+      </ul>
+    </section>
+  </div>
 </div>
 
 <footer>
