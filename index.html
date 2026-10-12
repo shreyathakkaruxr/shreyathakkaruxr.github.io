@@ -23,7 +23,10 @@ a{color:inherit}
 @media(min-width:720px){.wrap{padding:0 24px}}
 .display{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-weight:700}
 
-header{text-align:center;padding:80px 0 56px}
+nav.top{display:flex;justify-content:flex-end;padding:20px 0 0;font-size:14px}
+nav.top a{text-decoration:none;color:var(--muted)}
+nav.top a:hover{color:var(--ink)}
+header{text-align:center;padding:48px 0 56px}
 .photo{display:block;width:120px;height:120px;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 1px var(--hair);margin:0 auto 20px}
 h1{font-size:clamp(40px,7vw,64px);line-height:1.04;letter-spacing:-.04em;margin:0 0 8px}
 .role{color:var(--muted);font-size:clamp(18px,2.4vw,21px);margin:0}
@@ -58,14 +61,15 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 </head>
 <body>
 <main class="wrap">
+  <nav class="top"><a href="about.html">About</a></nav>
   <header>
     <img class="photo" src="images/image.jpg" width="120" height="120" alt="Shreya Thakkar">
     <h1 class="display">Shreya Thakkar</h1>
     <p class="role">UX Researcher & Strategist</p>
   </header>
 
-  <section aria-labelledby="h-work">
-    <div class="head"><h2 class="big display" id="h-work">Work.</h2></div>
+  <section id="work" aria-labelledby="h-work">
+    <div class="head"><h2 class="big display" id="h-work">Work</h2></div>
     <div class="work">
       <a class="card" href="projects/research-impact.html">
         <div class="thumb" aria-hidden="true">
@@ -94,7 +98,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   </section>
 
   <section id="speaking" aria-labelledby="h-talks">
-    <div class="head"><h2 class="big display" id="h-talks">Talks and papers.</h2></div>
+    <div class="head"><h2 class="big display" id="h-talks">Talks and papers</h2></div>
     <div class="panel">
       <ul class="list">
         <li><b>The Design Researcher's Room</b><span class="meta">IDSA IDC 2026 · Pasadena</span><span class="sub">AI and design judgment. Part of The Authenticity Project.</span></li>
@@ -107,7 +111,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   </section>
 
   <section aria-labelledby="h-comm">
-    <div class="head"><h2 class="big display" id="h-comm">Community.</h2></div>
+    <div class="head"><h2 class="big display" id="h-comm">Community</h2></div>
     <div class="panel">
       <ul class="list">
         <li><b>Climate Designers, LA Chapter</b><span class="meta">Chapter lead</span></li>
@@ -119,7 +123,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 </main>
 
 <footer>
-  <a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio</a> · <a href="https://github.com/shreyathakkaruxr" target="_blank" rel="noopener">GitHub</a>
+  <a href="about.html">About</a> · <a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio</a> · <a href="https://github.com/shreyathakkaruxr" target="_blank" rel="noopener">GitHub</a>
 </footer>
 </body>
 </html>
