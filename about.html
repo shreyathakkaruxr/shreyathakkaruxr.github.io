@@ -25,9 +25,14 @@ nav a:hover{color:var(--ink)}
 nav .links{display:flex;gap:20px}
 nav [aria-current]{color:var(--ink)}
 
-header{display:grid;gap:8px 48px;align-items:end;padding:28px 0 32px;border-bottom:1px solid var(--hair)}
+header{display:grid;gap:8px 48px;align-items:center;padding:28px 0 32px;border-bottom:1px solid var(--hair)}
 @media(min-width:860px){header{grid-template-columns:auto 1fr}}
 h1{font-size:clamp(40px,6vw,60px);line-height:1;letter-spacing:-.04em;margin:0}
+.id{display:flex;align-items:center;gap:20px}
+.photo{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none}
+.proj{display:block;text-decoration:none}
+.proj .go{color:var(--accent);margin-top:4px}
+.proj:hover b{text-decoration:underline}
 .lede{color:var(--muted);font-size:18px;margin:0;max-width:52ch;line-height:1.4}
 
 .grid{display:grid;gap:36px 40px;padding:32px 0 8px}
@@ -54,18 +59,15 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   </nav>
 
   <header>
-    <h1 class="display">About</h1>
+    <div class="id"><img class="photo" src="images/image.jpg" width="96" height="96" alt="Shreya Thakkar"><h1 class="display">About</h1></div>
     <p class="lede">Senior UX researcher and strategist running mixed-methods and human factors research for hardware, software, and AI products</p>
   </header>
 
   <div class="grid">
-    <section aria-labelledby="h-domains">
-      <h2 class="display" id="h-domains">Domains</h2>
+    <section aria-labelledby="h-proj">
+      <h2 class="display" id="h-proj">Projects</h2>
       <ul class="rows">
-        <li><b>Homes</b><span><span class="org">Electrolux</span> · How people use connected appliances</span></li>
-        <li><b>Mobility</b><span><span class="org">Polestar</span> · How people move through cities</span></li>
-        <li><b>Workplaces</b><span><span class="org">Steelcase</span> · How people work</span></li>
-        <li><b>Healthcare</b><span><span class="org">UTMB</span> · How patients navigate hospitals</span></li>
+        <li><a class="proj" href="projects/research-impact.html"><b>Research impact tracking</b><span>A process for recording what teams do with research findings after a study ends</span><span class="go">View project ›</span></a></li>
       </ul>
     </section>
 
@@ -112,10 +114,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
       <h2 class="display" id="h-jury">Jury and review</h2>
       <ul class="rows">
         <li><b>2025</b><span>Globee Awards, AI category · American Business Awards · IDSA Student Merit Awards · World Design Congress, London · Cumulus, Nantes</span></li>
-      </ul>
-      <h2 class="display" id="h-press" style="margin-top:24px">Press</h2>
-      <ul class="rows">
-        <li><span>Core77 · Rethinking The Future · The Design Collective · Voyage LA · The Global Indian</span></li>
       </ul>
     </section>
   </div>
