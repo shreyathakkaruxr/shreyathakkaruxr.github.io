@@ -3,129 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shreya Thakkar · UX Research & Design Strategy</title>
-<meta name="description" content="Senior UX Researcher and Design Strategist at Electrolux Group.">
+<title>Shreya Thakkar · UX Researcher & Strategist</title>
+<meta name="description" content="Shreya Thakkar, UX Researcher and Strategist.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#ffffff;--card:#f5f5f7;--inset:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;--accent:#041e42;
+:root{--bg:#ffffff;--inset:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;--accent:#041e42;
   --sand:#63768f;--sage:#6f7f62;--clay:#a0684a;--navy:#041e42}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f0f10;--card:#1c1c1e;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1;
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1;
   --sand:#7d8fa6;--sage:#7f906f;--clay:#b57756;--navy:#5a7299}}
-:root[data-theme="dark"]{--bg:#0f0f10;--card:#1c1c1e;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1;
+:root[data-theme="dark"]{--bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1;
   --sand:#7d8fa6;--sage:#7f906f;--clay:#b57756;--navy:#5a7299}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.5;font-size:17px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
 a{color:inherit}
-.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
 @media(min-width:720px){.wrap{padding:0 24px}}
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--hair)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:48px;font-size:13px;gap:16px}
-nav .links{display:flex;gap:22px}
-nav a{text-decoration:none;color:var(--muted)}
-nav a:hover{color:var(--ink)}
-nav .me{color:var(--ink);font-weight:600}
 .display{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-weight:700}
 
-.hero{text-align:center;padding:72px 0 64px}
-.photo{display:block;width:128px;height:128px;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 1px var(--hair);margin:0 auto 20px}
-.eyebrow{font-size:15px;font-weight:600;color:var(--accent);margin:0 0 10px;letter-spacing:0}
-h1{font-size:clamp(44px,8vw,80px);line-height:1.02;letter-spacing:-.04em;margin:0 0 8px}
-.lede{font-size:clamp(19px,2.4vw,24px);color:var(--muted);max-width:30ch;margin:0 auto;line-height:1.35}
-.cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;text-decoration:none;font-size:16px;padding:11px 22px;border-radius:99px;background:var(--accent);color:var(--bg);font-weight:500}
-.btn.ghost{background:transparent;color:var(--accent);padding:11px 6px}
-.btn.ghost:hover{text-decoration:underline}
+header{text-align:center;padding:80px 0 56px}
+.photo{display:block;width:120px;height:120px;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 1px var(--hair);margin:0 auto 20px}
+h1{font-size:clamp(40px,7vw,64px);line-height:1.04;letter-spacing:-.04em;margin:0 0 8px}
+.role{color:var(--muted);font-size:clamp(18px,2.4vw,21px);margin:0}
 
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px}
-@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
-.stat{background:var(--card);border-radius:22px;padding:26px 20px;text-align:center}
-.stat b{display:block;font-size:clamp(30px,4vw,40px);letter-spacing:-.035em;line-height:1.1}
-.stat span{display:block;margin-top:6px;font-size:14px;color:var(--muted)}
-
-section{padding:72px 0 8px}
-.head{text-align:center;margin:0 auto 28px;max-width:640px}
-h2{font-size:clamp(30px,4.6vw,46px);line-height:1.08;letter-spacing:-.035em;margin:0}
-.card{padding:0}
-.about p{margin:0 auto 14px;font-size:19px;line-height:1.5;max-width:680px}
-.about p.muted{color:var(--muted);font-size:17px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px auto 0;max-width:680px}
-.tags span{background:var(--inset);border-radius:99px;padding:6px 14px;font-size:14px}
+section{padding:0 0 56px}
+h2{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px}
 
 .work{display:grid;gap:16px}
-@media(min-width:760px){.work{grid-template-columns:1.5fr 1fr}}
-.wcard{display:flex;flex-direction:column;background:var(--card);border-radius:28px;text-decoration:none;overflow:hidden;transition:transform .3s ease}
-.wcard:hover{transform:scale(1.012)}
-.wcard .thumb{aspect-ratio:16/10;display:grid;place-items:center}
-.wcard .body{padding:0 28px 28px}
-.wcard h3{margin:0 0 6px;font-size:22px;letter-spacing:-.025em}
-.wcard p{margin:0;color:var(--muted);font-size:16px}
-.wcard .go{margin-top:12px;font-size:16px;color:var(--accent);font-weight:500}
+@media(min-width:720px){.work{grid-template-columns:1fr 1fr}}
+.card{display:flex;flex-direction:column;background:var(--inset);border-radius:24px;text-decoration:none;overflow:hidden;transition:transform .3s ease}
+.card:hover{transform:scale(1.012)}
+.card .thumb{aspect-ratio:16/10;display:grid;place-items:center}
+.card .body{padding:0 24px 24px}
+.card h3{margin:0 0 4px;font-size:21px;letter-spacing:-.025em}
+.card .go{font-size:15px;color:var(--accent);font-weight:500}
 
 .list{list-style:none;margin:0;padding:0}
-.list li{display:grid;gap:2px;padding:16px 0;border-bottom:1px solid var(--hair)}
-.list li:first-child{padding-top:0}
-.list li:last-child{border-bottom:0;padding-bottom:0}
-@media(min-width:620px){.list li{grid-template-columns:1fr auto;gap:16px}}
-.list b{font-weight:600}
-.list .meta{color:var(--muted);font-size:15px}
-.list .sub{grid-column:1/-1;color:var(--muted);font-size:15px}
+.list li{display:grid;gap:2px;padding:14px 0;border-top:1px solid var(--hair)}
+.list li:last-child{border-bottom:1px solid var(--hair)}
+@media(min-width:620px){.list li{grid-template-columns:1fr auto;gap:16px;align-items:baseline}}
+.list b{font-weight:600;font-size:16px}
+.list span{color:var(--muted);font-size:15px}
 .list a{color:var(--accent)}
-.twocol{display:grid;gap:16px}
-@media(min-width:820px){.twocol{grid-template-columns:1fr 1fr}}
-.twocol h3{margin:0 0 18px;font-size:22px;letter-spacing:-.025em}
-.cert{margin:20px 0 0;color:var(--muted);font-size:14px}
 
-footer{border-top:1px solid var(--hair);margin-top:80px}
-footer .wrap{padding-top:24px;padding-bottom:48px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer{padding:24px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 </style>
 </head>
 <body>
-<nav><div class="wrap">
-  <a class="me" href="./">Shreya Thakkar</a>
-  <div class="links">
-    <a href="#work">Work</a>
-    <a href="#speaking">Speaking</a>
-    <a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio ↗</a>
-  </div>
-</div></nav>
-
-<div class="wrap">
-  <header class="hero">
-    <img class="photo" src="images/shreya.jpg" width="128" height="128" alt="Shreya Thakkar">
-    <p class="eyebrow">Senior UX Researcher & Design Strategist</p>
+<main class="wrap">
+  <header>
+    <img class="photo" src="images/shreya.jpg" width="120" height="120" alt="Shreya Thakkar">
     <h1 class="display">Shreya Thakkar</h1>
-    <div class="cta">
-      <a class="btn" href="#work">View work</a>
-      <a class="btn ghost" href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio ›</a>
-    </div>
+    <p class="role">UX Researcher & Strategist</p>
   </header>
 
-  <div class="stats">
-    <div class="stat"><b class="display">$60M+</b><span>Strategic investment informed by my research</span></div>
-    <div class="stat"><b class="display">4</b><span>Business units using my Responsible AI framework</span></div>
-    <div class="stat"><b class="display">~40%</b><span>Less analysis time with AI-assisted synthesis</span></div>
-    <div class="stat"><b class="display">10+</b><span>Researchers trained in AI-assisted methods</span></div>
-  </div>
-
-  <section id="about">
-    <div class="head"><p class="eyebrow">About</p><h2 class="display">Research for products used every day.</h2></div>
-    <div class="card about">
-      <p>I lead research for the Care product line (washers, dryers, and connected appliances) for Frigidaire, AEG, and Electrolux. I built the North America UX research practice and work with teams in Europe, Asia, and Latin America. I also led research for kitchen appliances and floor care.</p>
-      <p class="muted">Previous roles: Polestar (automotive futures and mobility), PDR Corporation (strategy for Fortune 500 clients), Neumayr Design, and Steelcase. Background in architecture and industrial design.</p>
-      <div class="tags"><span>Ethnography</span><span>Futures research</span><span>Responsible AI</span><span>Cross-cultural research</span><span>Speculative design</span><span>Research operations</span></div>
-    </div>
-  </section>
-
-  <section id="work">
-    <div class="head"><p class="eyebrow">Work</p><h2 class="display">Selected projects.</h2></div>
+  <section aria-labelledby="h-work">
+    <h2 id="h-work">Work</h2>
     <div class="work">
-      <a class="wcard" href="projects/research-impact.html">
+      <a class="card" href="projects/research-impact.html">
         <div class="thumb" aria-hidden="true">
-          <svg width="150" height="150" viewBox="0 0 100 100">
+          <svg width="130" height="130" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="38" fill="none" stroke="var(--sand)" stroke-width="16" stroke-dasharray="58.7 180" transform="rotate(-88 50 50)"/>
             <circle cx="50" cy="50" r="38" fill="none" stroke="var(--sage)" stroke-width="16" stroke-dasharray="58.7 180" transform="rotate(2 50 50)"/>
             <circle cx="50" cy="50" r="38" fill="none" stroke="var(--clay)" stroke-width="16" stroke-dasharray="58.7 180" transform="rotate(92 50 50)"/>
@@ -134,62 +74,35 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
         </div>
         <div class="body">
           <h3>Research impact tracking</h3>
-          <p>A process for recording what teams do with research findings after a study ends.</p>
-          <div class="go">View project ›</div>
+          <span class="go">View project ›</span>
         </div>
       </a>
-      <a class="wcard" href="https://shreyathakkar.com" target="_blank" rel="noopener">
+      <a class="card" href="https://shreyathakkar.com" target="_blank" rel="noopener">
         <div class="thumb" aria-hidden="true">
-          <svg width="96" height="96" viewBox="0 0 60 60" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round"><rect x="6" y="10" width="48" height="40" rx="6"/><path d="M6 20h48M14 30h18M14 37h26M14 44h12"/></svg>
+          <svg width="88" height="88" viewBox="0 0 60 60" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round"><rect x="6" y="10" width="48" height="40" rx="6"/><path d="M6 20h48M14 30h18M14 37h26M14 44h12"/></svg>
         </div>
         <div class="body">
-          <h3>Full portfolio</h3>
-          <p>Case studies: appliance research, mobility futures, and design for aging.</p>
-          <div class="go">shreyathakkar.com ›</div>
+          <h3>Portfolio</h3>
+          <span class="go">shreyathakkar.com ›</span>
         </div>
       </a>
     </div>
   </section>
 
-  <section id="speaking">
-    <div class="head"><p class="eyebrow">Speaking</p><h2 class="display">Talks and papers.</h2></div>
-    <div class="card">
-      <ul class="list">
-        <li><b>The Design Researcher's Room</b><span class="meta">IDSA IDC 2026 · Pasadena</span><span class="sub">AI and design judgment. Part of The Authenticity Project.</span></li>
-        <li><b>Negotiating Culture and Constraint in Generative AI for Design</b><span class="meta">IDSA IDC 2026</span><span class="sub">Paper with Nidhi Singh Rathore</span></li>
-        <li><b>Culturally responsive AI and jugaad innovation</b><span class="meta"><a href="https://doi.org/10.21606/iasdr.2025.537" target="_blank" rel="noopener">IASDR 2025 ↗</a></span><span class="sub">Peer-reviewed paper</span></li>
-        <li><b>Ethical AI integration in research</b><span class="meta">World Usability Congress 2025 · Austria</span></li>
-        <li><b>Ethical AI integration in research</b><span class="meta">UXDX</span></li>
-      </ul>
-    </div>
+  <section aria-labelledby="h-talks">
+    <h2 id="h-talks">Talks and papers</h2>
+    <ul class="list">
+      <li><b>The Design Researcher's Room</b><span>IDSA IDC 2026</span></li>
+      <li><b>Negotiating Culture and Constraint in Generative AI for Design</b><span>IDSA IDC 2026</span></li>
+      <li><b>Culturally responsive AI and jugaad innovation</b><span><a href="https://doi.org/10.21606/iasdr.2025.537" target="_blank" rel="noopener">IASDR 2025 ↗</a></span></li>
+      <li><b>Ethical AI integration in research</b><span>World Usability Congress 2025</span></li>
+      <li><b>Ethical AI integration in research</b><span>UXDX</span></li>
+    </ul>
   </section>
+</main>
 
-  <section>
-    <div class="twocol">
-      <div class="card">
-        <h3>Community</h3>
-        <ul class="list">
-          <li><b>Climate Designers, LA Chapter</b><span class="meta">Chapter lead</span></li>
-          <li><b>IDSA Student Merit Awards</b><span class="meta">Juror, 2025</span></li>
-          <li><b>World Design Organization</b><span class="meta">Juror</span></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Education</h3>
-        <ul class="list">
-          <li><b>MS, Environmental Design</b><span class="meta">ArtCenter College of Design</span><span class="sub">Thesis: The Future of Aging</span></li>
-          <li><b>National Institute of Design</b></li>
-          <li><b>Institute of Environmental Design</b></li>
-        </ul>
-        <p class="cert">Certificates: Human Factors & Usability Engineering (ASU, 2026) · AI in UX Research (2025) · Strategic Behavioural Design (BehaviourKit, 2024) · Service Design and Ethics in Design (Service Design College, 2023) · Futurist (MetaFuture, 2023)</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<footer><div class="wrap">
-  <span>Shreya Thakkar · Sunnyvale, CA</span>
-  <span><a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio</a> · <a href="https://github.com/shreyathakkaruxr" target="_blank" rel="noopener">GitHub</a></span>
-</div></footer>
+<footer>
+  <a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio</a> · <a href="https://github.com/shreyathakkaruxr" target="_blank" rel="noopener">GitHub</a>
+</footer>
 </body>
 </html>
