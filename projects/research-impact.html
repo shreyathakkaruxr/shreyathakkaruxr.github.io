@@ -138,7 +138,7 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
 .hzgrid{display:grid;gap:40px 32px}
 @media(min-width:720px){.hzgrid{grid-template-columns:1fr 1fr}}
 .hzwrap{display:grid;gap:40px}
-@media(min-width:1000px){.hzwrap{grid-template-columns:340px 1fr;gap:56px;align-items:start}.hzwrap .donut{position:sticky;top:24px}}
+@media(min-width:1000px){.hzwrap{grid-template-columns:340px 1fr;gap:56px;align-items:start}.hzwrap > div:first-child{position:sticky;top:24px}}
 .donut.big{max-width:340px}
 .hzc{cursor:pointer;transition:opacity .2s;border-radius:2px}
 .hzc:focus{outline:none}.hzc:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
@@ -250,8 +250,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
         <dl>
           <div><dt>Evidence</dt><dd data-i="0"><b>Sessions joined.</b> Stakeholders attended sessions, readouts, or field visits</dd><dd data-i="1"><b>Findings quoted.</b> Findings appear in decks, specs, roadmaps, or leadership updates</dd></div>
           <div><dt>When it shows up</dt><dd>During the study and in the first weeks after</dd></div>
-          <div><dt>Example entry</dt><dd>The PM cited the setup findings in the roadmap review</dd></div>
-          <div><dt>Source</dt><dd>Attendance lists, shared decks, and documents</dd></div>
         </dl>
       </article>
       <article class="hzc" data-h="1" tabindex="0" role="button" aria-pressed="false" style="--c:var(--sage)">
@@ -260,8 +258,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
         <dl>
           <div><dt>Evidence</dt><dd data-i="0"><b>Decision confirmed.</b> A stakeholder confirms the study informed a specific decision</dd><dd data-i="1"><b>Risk avoided.</b> A feature, launch, or investment was changed, paused, or stopped</dd></div>
           <div><dt>When it shows up</dt><dd>Within weeks to a few months</dd></div>
-          <div><dt>Example entry</dt><dd>The team chose the simpler control panel layout after usability testing</dd></div>
-          <div><dt>Source</dt><dd>Follow-up answers and stakeholder confirmation</dd></div>
         </dl>
       </article>
       <article class="hzc" data-h="2" tabindex="0" role="button" aria-pressed="false" style="--c:var(--clay)">
@@ -270,8 +266,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
         <dl>
           <div><dt>Evidence</dt><dd data-i="0"><b>Product change.</b> A feature, flow, hardware, or content change</dd><dd data-i="1"><b>Ways of working.</b> A team adopted new criteria, rituals, or methods</dd></div>
           <div><dt>When it shows up</dt><dd>Within one to two quarters</dd></div>
-          <div><dt>Example entry</dt><dd>The app onboarding flow removed one setup step</dd></div>
-          <div><dt>Source</dt><dd>Release notes, design files, and team updates</dd></div>
         </dl>
       </article>
       <article class="hzc" data-h="3" tabindex="0" role="button" aria-pressed="false" style="--c:var(--navy)">
@@ -280,8 +274,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
         <dl>
           <div><dt>Evidence</dt><dd data-i="0"><b>Metric moved.</b> The kickoff metric changed, such as satisfaction, task success, returns, or support calls</dd><dd data-i="1"><b>Cost or time saved.</b> Rework, support load, or development time decreased</dd></div>
           <div><dt>When it shows up</dt><dd>After launch, often two or more quarters later</dd></div>
-          <div><dt>Example entry</dt><dd>Setup support calls decreased against the kickoff baseline</dd></div>
-          <div><dt>Source</dt><dd>Dashboards and the team that owns the metric</dd></div>
         </dl>
       </article>
       </div>
