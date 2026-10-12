@@ -34,16 +34,17 @@ h1{font-size:clamp(40px,6vw,60px);line-height:1;letter-spacing:-.04em;margin:0}
 .proj{display:block;text-decoration:none}
 .proj .go{color:var(--accent);margin-top:4px}
 .proj:hover b{text-decoration:underline}
-.lede{color:var(--muted);font-size:18px;margin:0;max-width:52ch;line-height:1.4}
+.lede{color:var(--muted);font-size:clamp(24px,3vw,32px);margin:0;max-width:34ch;line-height:1.25;letter-spacing:-.02em}
+.lede strong{color:var(--accent);font-weight:600}
 
 .grid{display:grid;gap:56px 72px;padding:0 0 24px}
 @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
 .col{display:flex;flex-direction:column;gap:56px;min-width:0}
-section h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 18px}
+section h2{font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--ink);margin:0 0 16px}
 .rows{list-style:none;margin:0;padding:0}
 .rows li{padding:0;margin:0 0 14px}
 .rows li:last-child{margin-bottom:0}
-.rows b{display:block;font-weight:400;font-size:15px}
+.rows b{display:block;font-weight:400;font-size:16px}
 .rows span{display:block;color:var(--muted);font-size:14px}
 .rows li.ln, .rows li.ln > a{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
 .rows li.ln > a{width:100%;text-decoration:none}
@@ -66,7 +67,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 
   <header>
     <div class="id"><img class="photo" src="images/image.jpg" width="96" height="96" alt="Shreya Thakkar"><h1 class="sr">About</h1></div>
-    <p class="lede">Senior UX researcher and strategist running mixed-methods and human factors research for hardware, software, and AI products</p>
+    <p class="lede"><strong>Senior UX researcher and strategist</strong> running mixed-methods and human factors research for hardware, software, and AI products</p>
   </header>
 
   <div class="grid">
@@ -119,7 +120,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     </div>
     <div class="col">
       <section aria-labelledby="h-conf">
-        <h2 class="display" id="h-conf">Conferences</h2>
+        <h2 class="display" id="h-conf">Conference talks</h2>
         <ul class="rows">
           <li class="ln"><b>IDSA International Design Conference</b><span>Pasadena · 2026</span></li>
           <li class="ln"><b>World Usability Congress</b><span>Graz · 2025</span></li>
