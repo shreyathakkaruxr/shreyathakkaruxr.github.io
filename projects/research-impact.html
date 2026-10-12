@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Impact Tracking · Shreya Thakkar</title>
+<meta name="description" content="A process for recording what teams do with research findings after a study ends.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--card:#f5f5f7;--inset:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;
+  --accent:#041e42;
+  --sand:#63768f;--sand-t:#e6eaf0;--sand-ink:#ffffff;
+  --sage:#6f7f62;--sage-t:#e3e8de;--sage-ink:#ffffff;
+  --clay:#a0684a;--clay-t:#efdfd5;--clay-ink:#ffffff;
+  --navy:#041e42;--navy-t:#dce1ea;--navy-ink:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f0f10;--card:#1c1c1e;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
+    --accent:#9fb3d1;
+    --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
+    --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
+    --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
+    --navy:#5a7299;--navy-t:#1b2433;--navy-ink:#ffffff;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f0f10;--card:#1c1c1e;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
+  --accent:#9fb3d1;
+  --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
+  --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
+  --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
+  --navy:#5a7299;--navy-t:#1b2433;--navy-ink:#ffffff;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.5;font-size:17px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 24px}}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--hair)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:48px;font-size:13px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+.hero{text-align:center;padding:96px 0 72px}
+.eyebrow{font-size:15px;font-weight:600;color:var(--accent);margin:0 0 10px;letter-spacing:0}
+h1{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-size:clamp(40px,7.5vw,76px);line-height:1.04;letter-spacing:-.035em;font-weight:700;margin:0 auto 20px;max-width:12ch}
+.lede{font-size:clamp(19px,2.4vw,23px);color:var(--muted);max-width:34ch;margin:0 auto;line-height:1.4}
+
+section{padding:56px 0}
+.head{text-align:center;margin:0 auto 32px;max-width:640px}
+h2{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-size:clamp(28px,4.4vw,44px);line-height:1.1;letter-spacing:-.03em;font-weight:700;margin:0 0 12px}
+.head p{margin:0;color:var(--muted);font-size:19px}
+.head p.eyebrow{color:var(--accent);font-size:15px;margin-bottom:10px}
+.card{padding:8px 0 0}
+
+.pill{display:inline-block;font-size:13px;font-weight:600;padding:6px 14px;border-radius:99px;background:var(--inset);color:var(--ink)}
+
+/* follow-up */
+.follow{display:grid;gap:28px;align-items:center}
+@media(min-width:820px){.follow{grid-template-columns:150px 1fr 150px}}
+.actor{text-align:center}
+.disc{width:88px;height:88px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;background:var(--inset);color:var(--accent)}
+.actor strong{display:block;font-size:17px;font-weight:600}
+.actor span{color:var(--muted);font-size:14px}
+.qs{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:q}
+.qs li{background:var(--inset);border-radius:14px;padding:14px 18px;font-size:17px;counter-increment:q;display:flex;gap:12px;align-items:baseline}
+.qs li::before{content:counter(q);color:var(--muted);font-weight:600;font-size:15px;min-width:1ch}
+
+/* loop */
+.cadence{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:32px;counter-reset:s}
+@media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr);gap:20px}}
+.step{text-align:center;position:relative}
+.step .disc{width:76px;height:76px}
+.step h3{margin:4px 0 0;font-size:19px;font-weight:600;letter-spacing:-.015em}
+.step p{margin:6px auto 0;color:var(--muted);font-size:15px;max-width:22ch}
+@media(min-width:760px){.step:not(:last-child)::after{content:"";position:absolute;top:38px;left:calc(50% + 50px);right:calc(-50% + 50px);height:1px;background:var(--hair)}}
+
+/* horizons */
+.hz{display:grid;gap:32px;align-items:center}
+@media(min-width:900px){.hz{grid-template-columns:minmax(0,420px) 1fr;gap:48px}}
+.donut{width:100%;max-width:420px;margin:0 auto;display:block;touch-action:manipulation}
+.donut .seg{cursor:pointer;transition:opacity .25s}
+.donut .seg path{stroke:var(--bg);stroke-width:3}
+.donut .seg:focus{outline:none}
+.donut .seg:focus-visible path{stroke:var(--ink);stroke-width:2}
+.donut.has-sel .seg{opacity:.28}
+.donut.has-sel .seg.on{opacity:1}
+.donut text{font-family:-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif;pointer-events:none}
+.panel{background:var(--inset);border-radius:20px;padding:28px;min-height:300px}
+.panel .k{font-size:13px;color:var(--muted);margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.panel .k i{width:10px;height:10px;border-radius:50%;background:var(--pc,var(--hair))}
+.panel h3{margin:0 0 8px;font-size:28px;letter-spacing:-.025em;font-weight:700}
+.panel p{margin:0 0 18px;color:var(--muted)}
+.panel ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.panel li{padding:12px 14px;border-radius:12px;background:var(--bg);transition:background .2s}
+.panel li.hl{background:var(--pt)}
+.panel li b{display:block;font-size:16px;font-weight:600}
+.panel li span{font-size:15px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+.chips button{font:inherit;font-size:14px;border:0;background:var(--bg);color:var(--ink);padding:7px 14px;border-radius:99px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.chips button i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.hz-cap{text-align:center;color:var(--muted);font-size:14px;margin:14px 0 0}
+
+/* report */
+.rep{display:grid;gap:36px;align-items:center}
+@media(min-width:820px){.rep{grid-template-columns:280px 1fr;gap:56px}}
+.doc{background:var(--bg);border:1px solid var(--hair);border-radius:18px;padding:22px;max-width:280px;margin:0 auto;width:100%;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.doc .t{font-size:13px;font-weight:600;color:var(--muted);margin:0 0 14px}
+.doc small{display:block;font-weight:600;font-size:12px;margin:14px 0 8px}
+.bar{height:6px;border-radius:3px;background:var(--ink);margin:0 0 6px}
+.bul{display:flex;align-items:center;gap:8px;margin:8px 0}
+.bul::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.bul i{height:4px;border-radius:2px;background:var(--hair);display:block}
+.thin{height:4px;border-radius:2px;background:var(--hair);margin:8px 0}
+.rep h3{font-size:24px;margin:0 0 14px;letter-spacing:-.02em;font-weight:700}
+.rep ol{margin:0 0 18px;padding:0;list-style:none;display:grid;gap:8px}
+.rep ol li{background:var(--inset);border-radius:12px;padding:10px 14px;font-weight:500}
+.rep p{color:var(--muted);margin:0 0 10px}
+
+footer{border-top:1px solid var(--hair);margin-top:40px}
+footer .wrap{padding-top:24px;padding-bottom:48px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="../">‹ Shreya Thakkar</a>
+  <a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio ↗</a>
+</div></nav>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">Research operations</p>
+    <h1>Research impact tracking</h1>
+    <p class="lede">A process for recording what teams do with research findings after a study ends.</p>
+    <!-- Optional: add one sentence on where this process was developed. -->
+  </header>
+
+  <section aria-labelledby="s1">
+    <div class="head">
+      <p class="eyebrow">Follow-up</p>
+      <h2 id="s1">Send a follow-up 4–6 weeks after each study.</h2>
+      <p>Send four questions to the stakeholders who used the study.</p>
+    </div>
+    <div class="card">
+      <div class="follow">
+        <div class="actor">
+          <div class="disc" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 56 56"><circle cx="28" cy="18" r="9" fill="currentColor"/><path d="M10 50c0-11 8-18 18-18s18 7 18 18z" fill="currentColor"/></svg></div>
+          <strong>Researcher</strong><span>Sends the follow-up</span>
+        </div>
+        <ol class="qs">
+          <li>What changed after the study?</li>
+          <li>Which metric are you tracking?</li>
+          <li>Who else should I contact?</li>
+          <li>Can I share your quote?</li>
+        </ol>
+        <div class="actor">
+          <div class="disc" aria-hidden="true"><svg width="54" height="36" viewBox="0 0 88 56"><g fill="currentColor"><circle cx="16" cy="18" r="7"/><path d="M3 48c0-9 6-15 13-15s13 6 13 15z"/><circle cx="44" cy="18" r="7"/><path d="M31 48c0-9 6-15 13-15s13 6 13 15z"/><circle cx="72" cy="18" r="7"/><path d="M59 48c0-9 6-15 13-15s13 6 13 15z"/></g></svg></div>
+          <strong>Stakeholders</strong><span>PM, design, and engineering leads</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="s2">
+    <div class="head">
+      <p class="eyebrow">Weekly log</p>
+      <h2 id="s2">Update the log every Friday.</h2>
+      <p>Spend 10 minutes each week recording new evidence.</p>
+    </div>
+    <div class="card">
+      <div class="cadence"><span class="pill">Every Friday · 10 min</span><span class="pill">Follow up 4–6 weeks after each study</span></div>
+      <ol class="steps">
+        <li class="step">
+          <div class="disc" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="4"><circle cx="26" cy="26" r="22"/><circle cx="26" cy="26" r="12"/><circle cx="26" cy="26" r="4" fill="currentColor" stroke="none"/></svg></div>
+          <h3>Plan</h3><p>Set the decision, metric, and baseline at kickoff.</p>
+        </li>
+        <li class="step">
+          <div class="disc" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 44 44" fill="currentColor"><rect x="4" y="28" width="8" height="14" rx="2"/><rect x="18" y="16" width="8" height="26" rx="2"/><rect x="32" y="2" width="8" height="40" rx="2"/></svg></div>
+          <h3>Signals</h3><p>Record who attended and where findings were cited.</p>
+        </li>
+        <li class="step">
+          <div class="disc" aria-hidden="true"><svg width="32" height="30" viewBox="0 0 48 44" fill="currentColor"><circle cx="5" cy="6" r="4"/><rect x="14" y="3" width="32" height="6" rx="3"/><circle cx="5" cy="22" r="4"/><rect x="14" y="19" width="32" height="6" rx="3"/><circle cx="5" cy="38" r="4"/><rect x="14" y="35" width="20" height="6" rx="3"/></svg></div>
+          <h3>Impact log</h3><p>Record who used the research, what they did, and what changed.</p>
+        </li>
+        <li class="step">
+          <div class="disc" aria-hidden="true"><svg width="36" height="34" viewBox="0 0 56 52"><circle cx="22" cy="14" r="10" fill="currentColor"/><path d="M2 50c0-13 9-20 20-20 6 0 10 2 13 4v16z" fill="currentColor"/><circle cx="42" cy="38" r="11" fill="currentColor" stroke="var(--inset)" stroke-width="3"/><path d="M36.5 38l4 4 7-8" fill="none" stroke="var(--inset)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Confirmation</h3><p>Ask stakeholders to confirm what changed and why.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section aria-labelledby="s3">
+    <div class="head">
+      <p class="eyebrow">Impact horizons</p>
+      <h2 id="s3">Tag each log entry by horizon.</h2>
+      <p>Four horizons, from early signals to measured outcomes. Select a segment to see definitions.</p>
+    </div>
+    <div class="card">
+      <div class="hz">
+        <div>
+          <svg class="donut" id="donut" viewBox="0 0 360 360" role="group" aria-label="Impact horizons diagram"></svg>
+          <p class="hz-cap">Inner ring: horizon. Outer ring: evidence type.</p>
+        </div>
+        <div class="panel" id="panel" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="s4">
+    <div class="head">
+      <p class="eyebrow">Quarterly report</p>
+      <h2 id="s4">Build the quarterly report from the log.</h2>
+      <p>Use confirmed log entries, grouped by horizon.</p>
+    </div>
+    <div class="card">
+      <div class="rep">
+        <div class="doc" aria-hidden="true">
+          <p class="t">Q3 report</p>
+          <small style="margin-top:0">Headline</small>
+          <div class="bar"></div><div class="bar" style="width:70%"></div>
+          <small>Top stories</small>
+          <div class="bul" style="--c:var(--navy)"><i style="width:90%"></i></div>
+          <div class="bul" style="--c:var(--clay)"><i style="width:74%"></i></div>
+          <div class="bul" style="--c:var(--sage)"><i style="width:60%"></i></div>
+          <small>Decisions shaped</small>
+          <div class="thin" style="width:92%"></div><div class="thin" style="width:78%"></div><div class="thin" style="width:64%"></div>
+        </div>
+        <div>
+          <h3>Report contents</h3>
+          <ol>
+            <li>Headline</li>
+            <li>Top stories</li>
+            <li>Decisions shaped</li>
+          </ol>
+          <p>Add a summary of the quarter and recommended focus areas for next quarter.</p>
+          <p>Include stakeholder quotes only with their permission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <span>© Shreya Thakkar</span>
+  <a href="../">Back to profile</a>
+</div></footer>
+
+<script>
+(function(){
+  const H = [
+    {name:'Signal', a:0, c:'--sand', t:'--sand-t', ink:'--sand-ink',
+     desc:'Teams are engaging with the research.',
+     items:[
+       {n:'Sessions joined', d:'Stakeholders attended sessions, readouts, or field visits.'},
+       {n:'Findings quoted', d:'Findings appear in decks, specs, roadmaps, or leadership updates.'}]},
+    {name:'Decision', a:90, c:'--sage', t:'--sage-t', ink:'--sage-ink',
+     desc:'The research informed a decision.',
+     items:[
+       {n:'Decision confirmed', d:'A stakeholder confirms the study informed a specific decision.'},
+       {n:'Risk avoided', d:'A feature, launch, or investment was changed, paused, or stopped based on findings.'}]},
+    {name:'Change', a:180, c:'--clay', t:'--clay-t', ink:'--clay-ink',
+     desc:'A product or process changed based on the research.',
+     items:[
+       {n:'Product change', d:'A feature, flow, hardware, or content change.'},
+       {n:'Ways of working', d:'A team adopted new criteria, rituals, or methods.'}]},
+    {name:'Outcome', a:270, c:'--navy', t:'--navy-t', ink:'--navy-ink',
+     desc:'A metric moved against the kickoff baseline.',
+     items:[
+       {n:'Metric moved', d:'The kickoff metric changed, such as satisfaction, task success, returns, or support calls.'},
+       {n:'Cost or time saved', d:'Rework, support load, or development time decreased. Estimate with the owning team.'}]}
+  ];
+  const NS='http://www.w3.org/2000/svg', C=180, R0=70, R1=122, R2=176;
+  const svg=document.getElementById('donut'), panel=document.getElementById('panel');
+  const pt=(r,a)=>{const t=(a-90)*Math.PI/180;return [C+r*Math.cos(t),C+r*Math.sin(t)]};
+  function arc(r0,r1,a0,a1){
+    const [x0,y0]=pt(r1,a0),[x1,y1]=pt(r1,a1),[x2,y2]=pt(r0,a1),[x3,y3]=pt(r0,a0);
+    return `M${x0} ${y0}A${r1} ${r1} 0 0 1 ${x1} ${y1}L${x2} ${y2}A${r0} ${r0} 0 0 0 ${x3} ${y3}Z`;
+  }
+  function el(tag,attrs){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e}
+  function label(g,text,r,a,size,weight,color){
+    const [x,y]=pt(r,a); const words=text.split(' ');
+    let lines=[text];
+    if(words.length>1 && size<13){const mid=Math.ceil(words.length/2);lines=[words.slice(0,mid).join(' '),words.slice(mid).join(' ')]}
+    const t=el('text',{x,y,'text-anchor':'middle','font-size':size,'font-weight':weight,fill:`var(${color})`});
+    lines.forEach((l,i)=>{const s=el('tspan',{x,dy:i===0?(lines.length>1?-size*0.45:size*0.35):size*1.15});s.textContent=l;t.appendChild(s)});
+    g.appendChild(t);
+  }
+  const segs=[];
+  H.forEach((h,hi)=>{
+    const g=el('g',{class:'seg',tabindex:0,role:'button','aria-label':`${h.name} horizon`});
+    g.appendChild(el('path',{d:arc(R0,R1,h.a,h.a+90),fill:`var(${h.c})`}));
+    label(g,h.name,(R0+R1)/2,h.a+45,14,600,h.ink);
+    svg.appendChild(g); segs.push({g,hi,ii:null});
+    h.items.forEach((it,ii)=>{
+      const a0=h.a+ii*45;
+      const go=el('g',{class:'seg',tabindex:0,role:'button','aria-label':`${it.n}, ${h.name} horizon`});
+      go.appendChild(el('path',{d:arc(R1,R2,a0,a0+45),fill:`var(${h.t})`}));
+      label(go,it.n,(R1+R2)/2+2,a0+22.5,11.5,500,'--ink');
+      svg.appendChild(go); segs.push({g:go,hi,ii});
+    });
+  });
+  svg.appendChild(el('circle',{cx:C,cy:C,r:R0-6,fill:'var(--inset)'}));
+  const c1=el('text',{x:C,y:C+6,'text-anchor':'middle','font-size':17,'font-weight':700,fill:'var(--ink)'});c1.textContent='Impact';
+  svg.append(c1);
+
+  let current=null;
+  function render(hi,ii){
+    current=hi===null?null:{hi,ii};
+    svg.classList.toggle('has-sel',hi!==null);
+    segs.forEach(s=>s.g.classList.toggle('on',hi!==null && s.hi===hi && (ii===null || s.ii===null || s.ii===ii)));
+    if(hi===null){
+      panel.style.removeProperty('--pc');panel.style.removeProperty('--pt');
+      panel.innerHTML=`<p class="k">Overview</p><h3>Impact horizons</h3>
+        <p>Signal and Decision are early and frequent. Change and Outcome are later and measurable. Each horizon has two evidence types.</p>${chips(null)}`;
+    } else {
+      const h=H[hi];
+      panel.style.setProperty('--pc',`var(${h.c})`);panel.style.setProperty('--pt',`var(${h.t})`);
+      panel.innerHTML=`<p class="k"><i></i>Horizon ${hi+1} of 4</p><h3>${h.name}</h3><p>${h.desc}</p>
+        <ul>${h.items.map((it,i)=>`<li class="${ii===i?'hl':''}"><b>${it.n}</b><span>${it.d}</span></li>`).join('')}</ul>${chips(hi)}`;
+    }
+    panel.querySelectorAll('.chips button').forEach(b=>b.addEventListener('click',()=>{
+      const v=b.dataset.h; render(v==='all'?null:+v,null);
+    }));
+  }
+  function chips(sel){
+    return `<div class="chips">${H.map((h,i)=>`<button type="button" data-h="${i}" aria-pressed="${sel===i}"><i style="--c:var(${h.c})"></i>${h.name}</button>`).join('')}<button type="button" data-h="all" aria-pressed="${sel===null}">Overview</button></div>`;
+  }
+  segs.forEach(s=>{
+    const pick=()=>{ if(current && current.hi===s.hi && current.ii===s.ii) render(null,null); else render(s.hi,s.ii); };
+    s.g.addEventListener('click',pick);
+    s.g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}});
+  });
+  render(null,null);
+})();
+</script>
+</body>
+</html>
