@@ -106,6 +106,13 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
 .beyond > p.lead{color:var(--muted);font-size:17px;margin:0 0 32px;max-width:60ch}
 .bv{width:100%;max-width:980px;display:block;margin:0 auto}
 .bv:has(+ .facts4){margin-bottom:0}
+.bv .opt{cursor:pointer;transition:opacity .2s}
+.bv .opt:focus{outline:none}.bv .opt:focus-visible text{text-decoration:underline}
+.bv .hitr{fill:transparent}
+.bv.has-sel .opt{opacity:.25}
+.bv.has-sel .opt.on{opacity:1}
+.bvnote{max-width:640px;margin:8px auto 0;background:var(--inset);border-radius:10px;padding:10px 14px;font-size:14px;color:var(--muted);text-align:center}
+.bvnote b{color:var(--ink);font-weight:600}
 .bv text{font-family:-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif}
 .facts4{display:grid;gap:24px 32px;margin:56px 0 0}
 @media(min-width:720px){.facts4{grid-template-columns:repeat(2,1fr)}}
@@ -164,9 +171,9 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 
     <section class="col" aria-labelledby="s2">
       <p class="step"><b>2</b>The learning pit</p>
-      <h2 id="s2">Understanding takes shape in the pit</h2>
-      <p class="when">Confusion, trial, and reasoning between meeting an idea and owning it</p>
-      <svg class="pit" id="pit" viewBox="0 0 420 210" role="group" aria-label="The learning pit">
+      <h2 id="s2">Learning takes effort</h2>
+      <p class="when">Learners move through confusion, trial, and reasoning before they understand a new idea</p>
+      <svg class="pit" id="pit" viewBox="0 0 420 210" role="group" aria-label="The learning pit: new idea, confusion, trial, reasoning, understanding">
         <path class="fill" d="M30 50 C 110 50, 120 175, 210 175 C 300 175, 310 50, 390 50 Z"/>
         <path class="curve" d="M30 50 C 110 50, 120 175, 210 175 C 300 175, 310 50, 390 50"/>
         <g class="shortg" id="shortg" tabindex="0" role="button" aria-label="Frictionless AI">
@@ -177,7 +184,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
         <g id="stops"></g>
       </svg>
       <p class="pitnote" id="pitnote" aria-live="polite"></p>
-      <p class="cite">Pit metaphor after Nottingham's Learning Pit; "hard fun" after Papert</p>
+      <p class="cite">Based on the Learning Pit by James Nottingham and "hard fun" by Seymour Papert</p>
     </section>
 
     <section class="col" aria-labelledby="s3">
@@ -195,33 +202,33 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   <section class="beyond" aria-labelledby="bh">
     <h2 id="bh">Think beyond the chatbot</h2>
     <p class="lead">Many AI learning tools today change when and how an answer arrives. The workshop asks what embodied forms AI might take in learning.</p>
-      <svg class="bv" viewBox="0 0 960 440" role="img" aria-label="Today, AI tools change when the answer arrives: elicit, the learner tries first; restrict, a hint, not the solution. In 2045, the workshop reshapes what form AI takes: object, ritual, companion, place, or something else.">
+      <svg class="bv" id="bv" viewBox="0 0 960 440" role="group" aria-label="Today, AI tools change when the answer arrives. In 2045, the workshop explores what form AI takes.">
         <rect x="70" y="203" width="330" height="14" rx="7" fill="var(--sand-t)"/>
         <line x1="70" y1="210" x2="640" y2="210" stroke="var(--muted)" stroke-width="1.5"/>
         <circle cx="70" cy="210" r="9" fill="var(--bg)" stroke="var(--ink)" stroke-width="2.5"/>
         <text x="70" y="248" text-anchor="middle" font-size="14" fill="var(--ink)">Question</text>
-        <line x1="235" y1="168" x2="235" y2="202" stroke="var(--accent)" stroke-width="1.5"/>
-        <circle cx="235" cy="210" r="6.5" fill="var(--accent)"/>
-        <text x="235" y="138" text-anchor="middle" font-size="17" font-weight="600" fill="var(--ink)">Elicit</text>
-        <text x="235" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">Learner tries first</text>
         <text x="235" y="248" text-anchor="middle" font-size="14" font-style="italic" fill="var(--accent)">Learner's effort</text>
-        <line x1="400" y1="168" x2="400" y2="202" stroke="var(--accent)" stroke-width="1.5"/>
-        <circle cx="400" cy="210" r="6.5" fill="var(--accent)"/>
-        <text x="400" y="138" text-anchor="middle" font-size="17" font-weight="600" fill="var(--ink)">Restrict</text>
-        <text x="400" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">A hint, not the solution</text>
         <text x="400" y="248" text-anchor="middle" font-size="14" fill="var(--ink)">Answer</text>
+        <g class="opt" data-k="0" tabindex="0" role="button" aria-label="Elicit"><rect class="hitr" x="160" y="115" width="150" height="105"/>
+          <line x1="235" y1="168" x2="235" y2="202" stroke="var(--accent)" stroke-width="1.5"/><circle cx="235" cy="210" r="6.5" fill="var(--accent)"/>
+          <text x="235" y="138" text-anchor="middle" font-size="17" font-weight="600" fill="var(--ink)">Elicit</text>
+          <text x="235" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">Learner tries first</text></g>
+        <g class="opt" data-k="1" tabindex="0" role="button" aria-label="Restrict"><rect class="hitr" x="320" y="115" width="160" height="105"/>
+          <line x1="400" y1="168" x2="400" y2="202" stroke="var(--accent)" stroke-width="1.5"/><circle cx="400" cy="210" r="6.5" fill="var(--accent)"/>
+          <text x="400" y="138" text-anchor="middle" font-size="17" font-weight="600" fill="var(--ink)">Restrict</text>
+          <text x="400" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">A hint, not the solution</text></g>
         <text x="790" y="40" text-anchor="middle" font-size="17" font-weight="600" fill="var(--ink)">Reshape</text>
         <text x="790" y="60" text-anchor="middle" font-size="13" fill="var(--muted)">Forms of AI</text>
-        <circle cx="780" cy="110" r="13" fill="var(--navy)"/>
-        <text x="806" y="115" font-size="14" fill="var(--ink)">object</text>
-        <rect x="731" y="150" width="20" height="20" fill="var(--clay)" transform="rotate(45 741 160)"/>
-        <text x="766" y="165" font-size="14" fill="var(--ink)">ritual</text>
-        <path d="M660 197 q6 -8 14 -3 q8 -6 13 2 q9 1 7 10 q6 8 -2 13 q-1 9 -10 7 q-6 7 -14 2 q-9 2 -10 -7 q-8 -4 -3 -12 q-3 -9 5 -12 z" fill="var(--sage)"/>
-        <text x="704" y="215" font-size="14" fill="var(--ink)">companion</text>
-        <path d="M728 268 a13 13 0 0 1 26 0 h-7 a6 6 0 0 0 -12 0 z" fill="var(--sand)"/>
-        <text x="766" y="265" font-size="14" fill="var(--ink)">place</text>
-        <path d="M768 300 L768 322 L790 322 Z" fill="var(--ink)"/>
-        <text x="806" y="318" font-size="14" fill="var(--ink)">?</text>
+        <g class="opt" data-k="2" tabindex="0" role="button" aria-label="Object"><rect class="hitr" x="760" y="90" width="110" height="40"/>
+          <circle cx="780" cy="110" r="13" fill="var(--navy)"/><text x="806" y="115" font-size="14" fill="var(--ink)">object</text></g>
+        <g class="opt" data-k="3" tabindex="0" role="button" aria-label="Ritual"><rect class="hitr" x="722" y="140" width="110" height="40"/>
+          <rect x="731" y="150" width="20" height="20" fill="var(--clay)" transform="rotate(45 741 160)"/><text x="766" y="165" font-size="14" fill="var(--ink)">ritual</text></g>
+        <g class="opt" data-k="4" tabindex="0" role="button" aria-label="Companion"><rect class="hitr" x="650" y="188" width="140" height="44"/>
+          <path d="M660 197 q6 -8 14 -3 q8 -6 13 2 q9 1 7 10 q6 8 -2 13 q-1 9 -10 7 q-6 7 -14 2 q-9 2 -10 -7 q-8 -4 -3 -12 q-3 -9 5 -12 z" fill="var(--sage)"/><text x="704" y="215" font-size="14" fill="var(--ink)">companion</text></g>
+        <g class="opt" data-k="5" tabindex="0" role="button" aria-label="Place"><rect class="hitr" x="722" y="242" width="100" height="40"/>
+          <path d="M728 268 a13 13 0 0 1 26 0 h-7 a6 6 0 0 0 -12 0 z" fill="var(--sand)"/><text x="766" y="265" font-size="14" fill="var(--ink)">place</text></g>
+        <g class="opt" data-k="6" tabindex="0" role="button" aria-label="Other forms"><rect class="hitr" x="760" y="292" width="70" height="40"/>
+          <path d="M768 300 L768 322 L790 322 Z" fill="var(--ink)"/><text x="806" y="318" font-size="14" fill="var(--ink)">?</text></g>
         <path d="M60 372 v8 h500 v-8" fill="none" stroke="var(--muted)" stroke-width="1"/>
         <text x="310" y="408" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="2.5" fill="var(--ink)">TODAY</text>
         <text x="310" y="430" text-anchor="middle" font-size="13" fill="var(--ink)">Changes when the answer arrives</text>
@@ -229,6 +236,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
         <text x="760" y="408" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="2.5" fill="var(--ink)">2045</text>
         <text x="760" y="430" text-anchor="middle" font-size="13" fill="var(--ink)">Changes what form AI takes</text>
       </svg>
+      <p class="bvnote" id="bvnote" aria-live="polite">Select Elicit, Restrict, or a form of AI.</p>
     <dl class="facts4">
       <div><dt>Method</dt><dd>Speculative design workshop</dd></div>
       <div><dt>Premise</dt><dd>A time machine to a 2045 learning environment, adapted from Julian Bleecker</dd></div>
@@ -249,11 +257,11 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   const NS='http://www.w3.org/2000/svg';
   const pit=document.getElementById('pit'), note=document.getElementById('pitnote');
   const S=[
-    {t:.0, n:'Meet an idea', d:'A new concept or problem arrives.', dx:0, dy:-14, a:'start'},
-    {t:.27, n:'Confusion', d:'Working through what does not make sense yet.', dx:-14, dy:4, a:'end'},
-    {t:.5, n:'Trial', d:'Trying, failing, and trying again.', dx:0, dy:24, a:'middle'},
-    {t:.73, n:'Reasoning', d:'Reasoning toward an answer.', dx:14, dy:4, a:'start'},
-    {t:1, n:'Own it', d:'The idea is understood and can be used.', dx:0, dy:-14, a:'end'}];
+    {t:.0, n:'New idea', d:'The learner sees a concept or problem for the first time.', dx:0, dy:-14, a:'start'},
+    {t:.27, n:'Confusion', d:'The learner identifies what they do not understand yet.', dx:-14, dy:4, a:'end'},
+    {t:.5, n:'Trial', d:'The learner tries an approach, checks the result, and adjusts.', dx:0, dy:24, a:'middle'},
+    {t:.73, n:'Reasoning', d:'The learner explains why an approach works or does not work.', dx:14, dy:4, a:'start'},
+    {t:1, n:'Understanding', d:'The learner can apply the idea to a new problem.', dx:0, dy:-14, a:'end'}];
   const curve=pit.querySelector('.curve'), L=curve.getTotalLength(), g=document.getElementById('stops');
   const stops=S.map((s,i)=>{
     const p=curve.getPointAtLength(s.t*L);
@@ -265,7 +273,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     e.addEventListener('click',pick);e.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pick()}});
     return e;});
   const MSG={pit:'Select a point on the curve, or the Frictionless AI line.',
-    ai:'<b>Frictionless AI:</b> the answer arrives sooner. Early research on cognitive de-skilling suggests skipping the pit may also mean missing some of the learning.'};
+    ai:'<b>Frictionless AI:</b> the tool gives the answer before the learner works through these steps. Early research on cognitive de-skilling suggests this can reduce what the learner retains.'};
   let cur=null;
   function sel(i){cur=i;stops.forEach((s,j)=>s.classList.toggle('on',j===i));note.innerHTML=`<b>${S[i].n}:</b> ${S[i].d}`}
   const sg=document.getElementById('shortg');
@@ -274,6 +282,22 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   sg.addEventListener('click',flip);sg.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}});
   mode('pit');
 
+})();
+</script>
+<script>
+(function(){
+  const D=[
+    ['Elicit','The tool asks the learner to try before it responds.'],
+    ['Restrict','The tool gives a hint and holds back the full solution.'],
+    ['Object','AI built into a physical thing the learner holds or uses.'],
+    ['Ritual','AI as part of a repeated practice, such as a daily review.'],
+    ['Companion','AI as a presence that learns alongside the learner.'],
+    ['Place','AI built into a space where learning happens.'],
+    ['Other forms','Forms that workshop participants define.']];
+  const bv=document.getElementById('bv'), note=document.getElementById('bvnote'), opts=[...bv.querySelectorAll('.opt')];
+  const DEF=note.innerHTML; let cur=null;
+  function sel(k){cur=(cur===k)?null:k;bv.classList.toggle('has-sel',cur!==null);opts.forEach(o=>{const on=+o.dataset.k===cur;o.classList.toggle('on',on);o.setAttribute('aria-pressed',String(on))});note.innerHTML=cur===null?DEF:`<b>${D[cur][0]}:</b> ${D[cur][1]}`}
+  opts.forEach(o=>{o.addEventListener('click',()=>sel(+o.dataset.k));o.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();sel(+o.dataset.k)}})});
 })();
 </script>
 </body>
