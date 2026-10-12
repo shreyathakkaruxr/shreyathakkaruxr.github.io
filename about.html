@@ -37,14 +37,19 @@ h1{font-size:clamp(40px,6vw,60px);line-height:1;letter-spacing:-.04em;margin:0}
 .lede{color:var(--muted);font-size:18px;margin:0;max-width:52ch;line-height:1.4}
 
 .grid{display:grid;gap:36px 40px;padding:32px 0 8px}
-@media(min-width:680px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+.col{display:flex;flex-direction:column;gap:36px;min-width:0}
 section h2{font-size:22px;letter-spacing:-.025em;margin:0 0 12px}
 .rows{list-style:none;margin:0;padding:0}
 .rows li{padding:9px 0;border-top:1px solid var(--hair)}
 .rows li:last-child{border-bottom:1px solid var(--hair)}
 .rows b{display:block;font-weight:600;font-size:14px}
 .rows span{display:block;color:var(--muted);font-size:14px}
+.rows li.ln, .rows li.ln > a{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.rows li.ln > a{width:100%;text-decoration:none}
+.rows li.ln > a:hover b{text-decoration:underline}
+.rows li.ln span{flex:none;text-align:right}
+h2.sub{margin-top:24px}
 .rows .org{display:inline;color:var(--ink)}
 
 footer{padding:32px 0 40px;color:var(--muted);font-size:13px;text-align:center}
@@ -65,58 +70,78 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   </header>
 
   <div class="grid">
-    <section aria-labelledby="h-proj">
-      <h2 class="display" id="h-proj">Projects</h2>
-      <ul class="rows">
-        <li><a class="proj" href="projects/research-impact.html"><b>Research impact tracking</b><span>A process for recording what teams do with research findings after a study ends</span><span class="go">View project ›</span></a></li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="h-methods">
-      <h2 class="display" id="h-methods">Methods</h2>
-      <ul class="rows">
-        <li><b>Qualitative</b><span>Interviews, in-home ethnography, diary studies, usability testing</span></li>
-        <li><b>Quantitative</b><span>Surveys, A/B testing, behavioral analysis</span></li>
-        <li><b>AI</b><span>LLM evaluation, failure testing, human-AI interaction, responsible AI</span></li>
-        <li><b>Strategy</b><span>Futures and foresight, scenario planning</span></li>
-        <li><b>Research operations</b><span>Recruiting, vendor management, quality standards</span></li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="h-speaking">
-      <h2 class="display" id="h-speaking">Speaking</h2>
-      <ul class="rows">
-        <li><b>2026</b><span>IDSA International Design Conference, Pasadena</span></li>
-        <li><b>2025</b><span>World Usability Congress, Graz · IASDR, Taipei · UXDX · Design Principles & Practices, Singapore · Interdisciplinary Social Sciences, Málaga · UX360 Research Summit · Women in Tech Global · AIGA Weave</span></li>
-        <li><b>2024</b><span>George Washington University, Corcoran School of the Arts & Design</span></li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="h-edu">
-      <h2 class="display" id="h-edu">Education</h2>
-      <ul class="rows">
-        <li><b>MS, Environmental Design</b><span>ArtCenter College of Design</span></li>
-        <li><b>B.Des, Interior Architecture</b><span>Institute of Environmental Design</span></li>
-        <li><b>Design studies</b><span>National Institute of Design</span></li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="h-cert">
-      <h2 class="display" id="h-cert">Certificates</h2>
-      <ul class="rows">
-        <li><b>2026</b><span>Human Factors & Usability Engineering, Arizona State University</span></li>
-        <li><b>2025</b><span>AI for User Research, User Interviews</span></li>
-        <li><b>2024</b><span>Strategic Behavioural Design, BehaviourKit</span></li>
-        <li><b>2023</b><span>Service Design · Ethics in Design · Futurist</span></li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="h-jury">
-      <h2 class="display" id="h-jury">Jury and review</h2>
-      <ul class="rows">
-        <li><b>2025</b><span>Globee Awards, AI category · American Business Awards · IDSA Student Merit Awards · World Design Congress, London · Cumulus, Nantes</span></li>
-      </ul>
-    </section>
+    <div class="col">
+      <section aria-labelledby="h-proj">
+        <h2 class="display" id="h-proj">Projects</h2>
+        <ul class="rows">
+          <li><a class="proj" href="projects/research-impact.html"><b>Research impact tracking</b><span>A process for recording what teams do with research findings after a study ends</span><span class="go">View project ›</span></a></li>
+        </ul>
+      </section>
+      <section aria-labelledby="h-edu">
+        <h2 class="display" id="h-edu">Education</h2>
+        <ul class="rows">
+          <li><b>MS, Environmental Design</b><span>ArtCenter College of Design</span></li>
+          <li><b>B.Des, Interior Architecture</b><span>Institute of Environmental Design</span></li>
+          <li><b>Design studies</b><span>National Institute of Design</span></li>
+        </ul>
+        <h2 class="display sub" id="h-cert">Certificates</h2>
+        <ul class="rows">
+          <li class="ln"><b>Human Factors & Usability Engineering</b><span>2026</span></li>
+          <li class="ln"><b>AI for User Research</b><span>2025</span></li>
+          <li class="ln"><b>Strategic Behavioural Design</b><span>2024</span></li>
+          <li class="ln"><b>Service Design</b><span>2023</span></li>
+          <li class="ln"><b>Ethics in Design</b><span>2023</span></li>
+          <li class="ln"><b>Futurist</b><span>2023</span></li>
+        </ul>
+      </section>
+    </div>
+    <div class="col">
+      <section aria-labelledby="h-methods">
+        <h2 class="display" id="h-methods">Methods</h2>
+        <ul class="rows">
+          <li><b>Qualitative</b><span>Interviews, in-home ethnography, diary studies, usability testing</span></li>
+          <li><b>Quantitative</b><span>Surveys, A/B testing, behavioral analysis</span></li>
+          <li><b>AI</b><span>LLM evaluation, failure testing, human-AI interaction, responsible AI</span></li>
+          <li><b>Strategy</b><span>Futures and foresight, scenario planning</span></li>
+          <li><b>Research operations</b><span>Recruiting, vendor management, quality standards</span></li>
+        </ul>
+      </section>
+      <section aria-labelledby="h-jury">
+        <h2 class="display" id="h-jury">Jury and review</h2>
+        <ul class="rows">
+          <li class="ln"><b>Globee Awards, AI category</b><span>2025</span></li>
+          <li class="ln"><b>American Business Awards</b><span>2025</span></li>
+          <li class="ln"><b>IDSA Student Merit Awards</b><span>2025</span></li>
+          <li class="ln"><b>World Design Congress, London</b><span>2025</span></li>
+          <li class="ln"><b>Cumulus, Nantes</b><span>2025</span></li>
+        </ul>
+      </section>
+    </div>
+    <div class="col">
+      <section aria-labelledby="h-conf">
+        <h2 class="display" id="h-conf">Conferences</h2>
+        <ul class="rows">
+          <li class="ln"><b>IDSA International Design Conference</b><span>Pasadena · 2026</span></li>
+          <li class="ln"><b>World Usability Congress</b><span>Graz · 2025</span></li>
+          <li class="ln"><b>IASDR</b><span>Taipei · 2025</span></li>
+          <li class="ln"><b>Design Principles & Practices</b><span>Singapore · 2025</span></li>
+          <li class="ln"><b>Interdisciplinary Social Sciences</b><span>Málaga · 2025</span></li>
+          <li class="ln"><b>UXDX</b><span>2025</span></li>
+          <li class="ln"><b>UX360 Research Summit</b><span>2025</span></li>
+          <li class="ln"><b>Women in Tech Global</b><span>2025</span></li>
+          <li class="ln"><b>AIGA Weave</b><span>2025</span></li>
+          <li class="ln"><b>George Washington University, Corcoran School</b><span>2024</span></li>
+        </ul>
+      </section>
+      <section aria-labelledby="h-contact">
+        <h2 class="display" id="h-contact">Contact</h2>
+        <ul class="rows">
+          <li class="ln"><a href="https://www.linkedin.com/in/shreya-thakkar-756ba6142/" target="_blank" rel="noopener"><b>LinkedIn</b><span>↗</span></a></li>
+          <li class="ln"><a href="https://shreyathakkar.com" target="_blank" rel="noopener"><b>Portfolio</b><span>shreyathakkar.com ↗</span></a></li>
+          <li class="ln"><a href="mailto:shreyavt151094@gmail.com"><b>Email</b><span>shreyavt151094@gmail.com</span></a></li>
+        </ul>
+      </section>
+    </div>
   </div>
 </div>
 
