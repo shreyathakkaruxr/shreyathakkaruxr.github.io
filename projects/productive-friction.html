@@ -55,7 +55,7 @@ h1{font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin
 .lede{color:var(--muted);font-size:17px;margin:0;max-width:52ch}
 
 /* the horizontal flow */
-.flow{display:grid;grid-template-columns:.9fr 1.7fr 1.05fr .95fr;gap:0;align-items:stretch}
+.flow{display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:0;align-items:stretch}
 .col{position:relative;padding:0 22px;border-left:1px solid var(--hair);display:flex;flex-direction:column}
 .col:first-child{border-left:0;padding-left:0}
 .col:last-child{padding-right:0}
@@ -94,29 +94,35 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
 .pitnote b{color:var(--ink);font-weight:600}
 .cite{font-size:12px;color:var(--muted);margin:10px 0 0}
 
-/* 3 set the effort */
-.dials{display:grid;gap:14px;margin:0 0 14px}
-.dial b{display:block;font-size:14px;font-weight:600}
-.dial span{display:block;font-size:13px;color:var(--muted);line-height:1.35;margin:0 0 6px}
-.dial .seg2{margin:0;display:flex}
-.dial .seg2 button{flex:1;text-align:center}
-.out{border-top:3px solid var(--sage);padding-top:10px}
-.out small{display:block;font-size:12px;font-weight:600;color:var(--muted);margin:0 0 2px}
-.out p{margin:0;font-size:15px;font-weight:600;line-height:1.3}
+/* 3 context questions */
+.qs3{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.qs3 b{display:block;font-size:14px;font-weight:600}
+.qs3 span{display:block;font-size:14px;line-height:1.4}
 
-/* 4 workshop */
-.facts{margin:0 0 16px;display:grid;gap:10px}
-.facts dt{font-size:13px;font-weight:600;color:var(--muted)}
-.facts dd{margin:0;font-size:14px;line-height:1.4}
-.forms{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 14px}
-.forms span{background:var(--inset);border-radius:10px;padding:8px 10px;font-size:13px;text-align:center}
-.ongoing{font-size:13px;color:var(--muted);margin:0}
+/* beyond */
+.beyond{padding:96px 0 0}
+.beyond > h2{font-size:24px;font-weight:600;letter-spacing:-.02em;margin:0 0 8px}
+.beyond > p.lead{color:var(--muted);font-size:17px;margin:0 0 32px;max-width:60ch}
+.bv{width:100%;max-width:980px;display:block;margin:0 auto}
+.bv:has(+ .facts4){margin-bottom:0}
+.bv text{font-family:-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif}
+.facts4{display:grid;gap:24px 32px;margin:56px 0 0}
+@media(min-width:720px){.facts4{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.facts4{grid-template-columns:repeat(4,1fr)}}
+.facts4 div{border-top:1px solid var(--hair);padding-top:12px}
+.facts4 dt{font-size:13px;font-weight:600;color:var(--muted);margin:0 0 4px}
+.facts4 dd{margin:0;font-size:14px;line-height:1.45}
+.facts4 a{color:var(--accent);text-decoration:none}
+.facts4 a:hover{text-decoration:underline}
+.watch{margin:40px 0 0;font-size:15px}
+.watch a{color:var(--accent);text-decoration:none;font-weight:600}
+.watch a:hover{text-decoration:underline}
+.ongoing{font-size:13px;color:var(--muted);margin:8px 0 0}
 .ongoing a{color:var(--accent);text-decoration:none}
 
-.repeat{margin:22px 0 0;padding:12px 0;border-top:1px solid var(--hair);display:flex;justify-content:center;gap:8px;color:var(--muted);font-size:13px}
 .hint{display:none}
 @media(max-width:980px){
-  .flow{grid-template-columns:240px 360px 260px 240px;overflow-x:auto;margin:0 -16px;padding:0 16px 12px;scroll-snap-type:x proximity}
+  .flow{grid-template-columns:240px 360px 260px;overflow-x:auto;margin:0 -16px;padding:0 16px 12px;scroll-snap-type:x proximity}
   .col{scroll-snap-align:start;padding:0 16px}
   .col:first-child{padding-left:0}
   h2{font-size:18px}
@@ -140,7 +146,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     <p class="lede">What effort to keep when learning with AI, and what forms AI could take beyond the chatbot.</p>
   </header>
 
-  <p class="hint">Scroll sideways to see all four steps →</p>
+  <p class="hint">Scroll sideways to see all three steps →</p>
 
   <div class="flow">
     <section class="col" aria-labelledby="s1">
@@ -175,35 +181,63 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     </section>
 
     <section class="col" aria-labelledby="s3">
-      <p class="step"><b>3</b>Set the effort</p>
+      <p class="step"><b>3</b>Setting</p>
       <h2 id="s3">The right setting depends on context</h2>
-      <p class="when">Choose an answer for each question</p>
-      <div class="dials" id="dials">
-        <div class="dial"><b>Task</b><span>Is the goal to finish the task, or to learn from doing it?</span>
-          <div class="seg2" data-k="task" role="group" aria-label="Task"><button type="button" data-v="0">Finish</button><button type="button" data-v="1">Learn</button></div></div>
-        <div class="dial"><b>Expertise</b><span>Can this learner meet the effort yet?</span>
-          <div class="seg2" data-k="exp" role="group" aria-label="Expertise"><button type="button" data-v="0">Not yet</button><button type="button" data-v="1">Ready</button></div></div>
-        <div class="dial"><b>Stake</b><span>Does the learner care, and is it worth the effort?</span>
-          <div class="seg2" data-k="stake" role="group" aria-label="Stake"><button type="button" data-v="0">Low</button><button type="button" data-v="1">High</button></div></div>
-      </div>
-      <div class="out"><small>Suggested setting</small><p id="out" aria-live="polite"></p></div>
-    </section>
-
-    <section class="col" aria-labelledby="s4">
-      <p class="step"><b>4</b>Workshop</p>
-      <h2 id="s4">Look past the chatbot</h2>
-      <p class="when">Speculative design workshop</p>
-      <dl class="facts">
-        <div><dt>Premise</dt><dd>A time machine to a 2045 learning environment, adapted from Julian Bleecker</dd></div>
-        <div><dt>Task</dt><dd>Bring back an object, ritual, or practice that shows how AI is, or is not, part of learning</dd></div>
-        <div><dt>Team</dt><dd>Co-designed with Sneha Aravind</dd></div>
-      </dl>
-      <div class="forms" aria-label="Forms AI could take"><span>Objects</span><span>Tools</span><span>Wearables</span><span>Rituals</span></div>
-      <p class="ongoing">This work is ongoing. Results are held back until publication. <a href="mailto:shreyathakkar.uxr@gmail.com">Get in touch</a></p>
+      <p class="when">The task, the learner, and what is at stake</p>
+      <ul class="qs3">
+        <li><b>Task</b><span>Is the goal to finish the task, or to learn from doing it?</span></li>
+        <li><b>Expertise</b><span>Can this learner meet the effort yet, or do they need the steps shown first?</span></li>
+        <li><b>Stake</b><span>Does the learner care about this, and is it worth the extra effort?</span></li>
+      </ul>
     </section>
   </div>
 
-  <p class="repeat">What embodied forms might AI take in learning, beyond the chatbot?</p>
+  <section class="beyond" aria-labelledby="bh">
+    <h2 id="bh">Think beyond the chatbot</h2>
+    <p class="lead">Many AI learning tools today change when and how an answer arrives. The workshop asks what embodied forms AI might take in learning.</p>
+      <svg class="bv" viewBox="0 0 960 440" role="img" aria-label="Today, AI tools change when the answer arrives: elicit, the learner tries first; restrict, a hint, not the solution. In 2045, the workshop reshapes what form AI takes: object, ritual, companion, place, or something else.">
+        <rect x="70" y="203" width="330" height="14" rx="7" fill="var(--sand-t)"/>
+        <line x1="70" y1="210" x2="640" y2="210" stroke="var(--muted)" stroke-width="1.5"/>
+        <circle cx="70" cy="210" r="9" fill="var(--bg)" stroke="var(--ink)" stroke-width="2.5"/>
+        <text x="70" y="248" text-anchor="middle" font-size="14" fill="var(--ink)">Question</text>
+        <line x1="235" y1="168" x2="235" y2="202" stroke="var(--accent)" stroke-width="1.5"/>
+        <circle cx="235" cy="210" r="6.5" fill="var(--accent)"/>
+        <text x="235" y="138" text-anchor="middle" font-size="17" font-weight="600" fill="var(--ink)">Elicit</text>
+        <text x="235" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">Learner tries first</text>
+        <text x="235" y="248" text-anchor="middle" font-size="14" font-style="italic" fill="var(--accent)">Learner's effort</text>
+        <line x1="400" y1="168" x2="400" y2="202" stroke="var(--accent)" stroke-width="1.5"/>
+        <circle cx="400" cy="210" r="6.5" fill="var(--accent)"/>
+        <text x="400" y="138" text-anchor="middle" font-size="17" font-weight="600" fill="var(--ink)">Restrict</text>
+        <text x="400" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">A hint, not the solution</text>
+        <text x="400" y="248" text-anchor="middle" font-size="14" fill="var(--ink)">Answer</text>
+        <text x="790" y="40" text-anchor="middle" font-size="17" font-weight="600" fill="var(--ink)">Reshape</text>
+        <text x="790" y="60" text-anchor="middle" font-size="13" fill="var(--muted)">Forms of AI</text>
+        <circle cx="780" cy="110" r="13" fill="var(--navy)"/>
+        <text x="806" y="115" font-size="14" fill="var(--ink)">object</text>
+        <rect x="731" y="150" width="20" height="20" fill="var(--clay)" transform="rotate(45 741 160)"/>
+        <text x="766" y="165" font-size="14" fill="var(--ink)">ritual</text>
+        <path d="M660 197 q6 -8 14 -3 q8 -6 13 2 q9 1 7 10 q6 8 -2 13 q-1 9 -10 7 q-6 7 -14 2 q-9 2 -10 -7 q-8 -4 -3 -12 q-3 -9 5 -12 z" fill="var(--sage)"/>
+        <text x="704" y="215" font-size="14" fill="var(--ink)">companion</text>
+        <path d="M728 268 a13 13 0 0 1 26 0 h-7 a6 6 0 0 0 -12 0 z" fill="var(--sand)"/>
+        <text x="766" y="265" font-size="14" fill="var(--ink)">place</text>
+        <path d="M768 300 L768 322 L790 322 Z" fill="var(--ink)"/>
+        <text x="806" y="318" font-size="14" fill="var(--ink)">?</text>
+        <path d="M60 372 v8 h500 v-8" fill="none" stroke="var(--muted)" stroke-width="1"/>
+        <text x="310" y="408" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="2.5" fill="var(--ink)">TODAY</text>
+        <text x="310" y="430" text-anchor="middle" font-size="13" fill="var(--ink)">Changes when the answer arrives</text>
+        <path d="M640 372 v8 h240 v-8" fill="none" stroke="var(--muted)" stroke-width="1"/>
+        <text x="760" y="408" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="2.5" fill="var(--ink)">2045</text>
+        <text x="760" y="430" text-anchor="middle" font-size="13" fill="var(--ink)">Changes what form AI takes</text>
+      </svg>
+    <dl class="facts4">
+      <div><dt>Method</dt><dd>Speculative design workshop</dd></div>
+      <div><dt>Premise</dt><dd>A time machine to a 2045 learning environment, adapted from Julian Bleecker</dd></div>
+      <div><dt>Task</dt><dd>Bring back an object, ritual, or practice that shows how AI is, or is not, part of learning</dd></div>
+      <div><dt>Team</dt><dd>Co-designed with Sneha Aravind</dd></div>
+    </dl>
+    <p class="watch"><a href="https://shreyathakkar.com/ai-x-productive-struggle" target="_blank" rel="noopener">Watch the workshop on Vimeo ↗</a></p>
+    <p class="ongoing">This work is ongoing. Results are held back until publication. <a href="mailto:shreyathakkar.uxr@gmail.com">Get in touch</a></p>
+  </section>
 </main>
 
 <footer>
@@ -239,16 +273,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   pb.forEach(b=>b.addEventListener('click',()=>{cur=null;stops.forEach(s=>s.classList.remove('on'));mode(b.dataset.p)}));
   mode('pit');
 
-  const st={task:1,exp:1,stake:1}, out=document.getElementById('out');
-  function upd(){
-    document.querySelectorAll('#dials .seg2').forEach(grp=>grp.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.v===st[grp.dataset.k]))));
-    out.textContent = !st.task ? 'Reduce the effort. Give the answer.'
-      : !st.exp ? 'Show the steps first, then step back.'
-      : !st.stake ? 'Offer hints when the learner asks.'
-      : 'Keep the effort. Let the learner work through it.';
-  }
-  document.querySelectorAll('#dials .seg2').forEach(grp=>grp.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{st[grp.dataset.k]=+b.dataset.v;upd()})));
-  upd();
 })();
 </script>
 </body>
