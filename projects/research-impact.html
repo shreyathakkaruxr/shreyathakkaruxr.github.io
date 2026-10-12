@@ -186,7 +186,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 
   <div class="flow">
     <section class="col" aria-labelledby="s1">
-      <p class="step"><b>1</b>Follow-up</p>
+      <p class="step"><b>1</b></p>
       <h2 id="s1">Send a follow-up</h2>
       <p class="when">4–6 weeks after each study, to the PM, design, and engineering leads</p>
             <ol class="qs">
@@ -198,7 +198,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     </section>
 
     <section class="col" aria-labelledby="s2">
-      <p class="step"><b>2</b>Weekly log</p>
+      <p class="step"><b>2</b></p>
       <h2 id="s2">Update the log</h2>
       <p class="when">Every Friday · 10 min</p>
       <ol class="log">
@@ -210,7 +210,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     </section>
 
     <section class="col" aria-labelledby="s3">
-      <p class="step"><b>3</b>Impact horizons</p>
+      <p class="step"><b>3</b></p>
       <h2 id="s3">Tag each entry by horizon</h2>
       <p class="when">From early signals to measured outcomes</p>
       <div class="hz">
@@ -221,7 +221,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     </section>
 
     <section class="col" aria-labelledby="s4">
-      <p class="step"><b>4</b>Quarterly report</p>
+      <p class="step"><b>4</b></p>
       <h2 id="s4">Build the report from the log</h2>
       <p class="when">Confirmed entries, grouped by horizon</p>
       <div class="doc" aria-hidden="true">
@@ -236,8 +236,8 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
         <div class="thin" style="width:92%"></div><div class="thin" style="width:74%"></div>
       </div>
       <ul class="rules">
-        <li>Add a summary of the quarter and focus areas for next quarter.</li>
-        <li>Include stakeholder quotes only with their permission.</li>
+        <li>Add a quarter summary and next-quarter focus areas.</li>
+        <li>Share quotes only with permission.</li>
       </ul>
     </section>
   </div>
@@ -363,7 +363,7 @@ function mkPop(host){
   svg.append(c1);
   });
 
-  legend.innerHTML=H.map((h,i)=>`<li><button type="button" data-h="${i}" aria-pressed="false"><i style="--c:var(${h.c})"></i><span style="color:var(--ink)"><b>${h.name}</b><span>${h.desc}</span></span></button></li>`).join('');
+  legend.innerHTML=H.map((h,i)=>`<li><button type="button" data-h="${i}" aria-pressed="false"><i style="--c:var(${h.c})"></i><span style="color:var(--ink)"><b>${h.name}</b></span></button></li>`).join('');
   const btns=[...legend.querySelectorAll('button')];
   const cards=[...grid.querySelectorAll('.hzc')];
 
