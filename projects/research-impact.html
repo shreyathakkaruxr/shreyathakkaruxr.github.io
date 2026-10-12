@@ -47,7 +47,7 @@ nav > a:first-child{color:var(--ink)}
 nav a:hover{color:var(--ink)}
 nav .links{display:flex;gap:20px}
 nav [aria-current]{color:var(--ink)}
-.display{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-weight:700}
+.display{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-weight:600}
 
 header.top{padding:56px 0 64px}
 .eyebrow{font-size:14px;font-weight:600;color:var(--accent);margin:0 0 8px}
@@ -62,7 +62,7 @@ h1{font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin
 .col:not(:first-child)::before{content:"›";position:absolute;left:-9px;top:2px;width:18px;height:18px;border-radius:50%;background:var(--bg);color:var(--muted);font-size:16px;line-height:16px;text-align:center}
 .step{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--muted);margin:0 0 12px}
 .step b{width:20px;height:20px;border-radius:50%;background:var(--accent);color:var(--bg);display:grid;place-items:center;font-size:11px}
-h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
+h2{font-size:21px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin:0 0 4px}
 .when{color:var(--muted);margin:0 0 16px;font-size:14px}
 
 /* 1 follow-up */
@@ -98,8 +98,13 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
 .legend i{width:10px;height:10px;border-radius:50%;background:var(--c);transform:translateY(1px)}
 .legend b{font-size:14px;font-weight:600}
 .legend span{display:block;font-size:13px;color:var(--muted);line-height:1.35}
-.detail{grid-column:1/-1;background:var(--inset);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--muted);min-height:58px}
-.detail b{color:var(--ink);font-weight:600}
+.detail{grid-column:1/-1;font-size:13px;color:var(--muted);margin:4px 0 0}
+.hz{position:relative}
+.pop{position:absolute;z-index:5;width:max-content;max-width:260px;background:var(--bg);color:var(--ink);border-radius:12px;border-left:4px solid var(--c);box-shadow:0 10px 30px rgba(0,0,0,.16),0 0 0 1px var(--hair);padding:10px 14px;font-size:15px;line-height:1.4;pointer-events:none}
+.pop b{display:block;color:var(--c);font-size:12px;font-weight:600;margin:0 0 2px}
+.pop.in{animation:pop .2s ease}
+@keyframes pop{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pop.in{animation:none}}
 
 /* 4 report */
 .doc{background:var(--bg);border:1px solid var(--hair);border-radius:12px;padding:14px;margin:0 0 14px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
@@ -148,7 +153,7 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
 .hzc dd.on{background:var(--inset)}
 .hzhint{color:var(--muted);font-size:13px;margin:16px 0 0;text-align:center}
 .hzc{border-top:3px solid var(--c);padding-top:16px}
-.hzc h3{font-size:21px;font-weight:600;letter-spacing:-.015em;margin:0 0 4px}
+.hzc h3{font-size:17px;font-weight:600;letter-spacing:-.015em;margin:0 0 4px}
 .hzc .m{color:var(--muted);font-size:15px;margin:0 0 20px}
 .hzc dl{margin:0;display:grid;gap:16px}
 .hzc dt{font-size:13px;font-weight:600;color:var(--muted);margin:0 0 4px}
@@ -176,7 +181,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     <!-- Optional: add one sentence on where this process was developed. -->
   </header>
 
-  <p class="hint">Scroll sideways to see all four steps →</p>
+  <p class="hint">Scroll for more →</p>
 
   <div class="flow">
     <section class="col" aria-labelledby="s1">
@@ -282,10 +287,21 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 </main>
 
 <footer>
-  <p><a href="../">Home</a> · <a href="../about.html">About</a> · <a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio</a></p>
+  <p><a href="../">Home</a> · <a href="../about.html">About</a> · <a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio</a> · <a href="https://github.com/shreyathakkaruxr" target="_blank" rel="noopener">GitHub</a></p>
+  <p>Written by Shreya Thakkar, with editing help from Claude and ChatGPT</p>
 </footer>
 
 <script>
+function mkPop(host){
+  const p=document.createElement('div');p.className='pop';p.setAttribute('role','status');p.hidden=true;host.appendChild(p);
+  let last=null;
+  const place=()=>{if(!last||p.hidden)return;const [a,side]=last;const r=a.getBoundingClientRect(),h=host.getBoundingClientRect(),w=p.offsetWidth,ht=p.offsetHeight;let x,y;
+    if(side==='left'&&r.left-h.left-w-14>0){x=r.left-h.left-w-14;y=r.top-h.top+r.height/2-ht/2}
+    else{x=r.left+r.width/2-h.left-w/2;y=side==='below'?r.bottom-h.top+12:r.top-h.top-ht-12;if(y<0)y=r.bottom-h.top+12}
+    x=Math.max(0,Math.min(x,h.width-w));p.style.left=x+'px';p.style.top=y+'px'};
+  addEventListener('resize',place);
+  return {show(a,side,c,html){p.style.setProperty('--c',c);p.innerHTML=html;p.hidden=false;p.classList.remove('in');void p.offsetWidth;p.classList.add('in');last=[a,side];place()},hide(){p.hidden=true;last=null}};
+}
 (function(){
   const H = [
     {name:'Signal', a:0, c:'--sand', t:'--sand-t', ink:'--sand-ink',
@@ -311,7 +327,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   ];
   const NS='http://www.w3.org/2000/svg', C=180, R0=66, R1=118, R2=178;
   const svgs=[document.getElementById('donut'),document.getElementById('donut2')], grid=document.getElementById('hzgrid'), legend=document.getElementById('legend'), detail=document.getElementById('detail');
-  const DEFAULT='Select a segment or horizon to see what counts as evidence.';
+  const DEFAULT='Select a segment or a horizon.', pop=mkPop(document.querySelector('.hz'));
   const pt=(r,a)=>{const t=(a-90)*Math.PI/180;return [C+r*Math.cos(t),C+r*Math.sin(t)]};
   function arc(r0,r1,a0,a1){
     const [x0,y0]=pt(r1,a0),[x1,y1]=pt(r1,a1),[x2,y2]=pt(r0,a1),[x3,y3]=pt(r0,a0);
@@ -358,18 +374,22 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     cards.forEach((c,i)=>{c.classList.toggle('on',i===hi);c.setAttribute('aria-pressed',String(i===hi));c.querySelectorAll('dd[data-i]').forEach(d=>d.classList.toggle('on',i===hi&&ii!==null&&+d.dataset.i===ii))});
     segs.forEach(s=>s.g.classList.toggle('on',hi!==null && s.hi===hi && (ii===null || s.ii===null || s.ii===ii)));
     btns.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===hi)));
-    if(hi===null){ detail.textContent=DEFAULT; return; }
+    detail.textContent=DEFAULT;
+    if(hi===null||!anchor){ pop.hide(); return; }
     const h=H[hi];
-    detail.innerHTML = ii===null
-      ? h.items.map(it=>`<b>${it.n}:</b> ${it.d}`).join('<br>')
-      : `<b>${h.items[ii].n}:</b> ${h.items[ii].d}`;
+    pop.show(anchor,side,`var(${h.c})`, ii===null
+      ? `<b>${h.name}</b>`+h.items.map(it=>`${it.n}: ${it.d}`).join('<br>')
+      : `<b>${h.items[ii].n}</b>${h.items[ii].d}`);
   }
-  const toggle=(hi,ii)=>{ if(current && current.hi===hi && current.ii===ii) render(null,null); else render(hi,ii); };
+  let anchor=null, side='above';
+  const toggle=(hi,ii,a,sd)=>{ anchor=a||null; side=sd||'above'; if(current && current.hi===hi && current.ii===ii) render(null,null); else render(hi,ii); };
   segs.forEach(s=>{
-    s.g.addEventListener('click',()=>toggle(s.hi,s.ii));
-    s.g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(s.hi,s.ii)}});
+    const a=s.g.closest('#donut')?s.g.querySelector('path'):null;
+    s.g.addEventListener('click',()=>toggle(s.hi,s.ii,a));
+    s.g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(s.hi,s.ii,a)}});
   });
-  btns.forEach((b,i)=>b.addEventListener('click',()=>toggle(i,null)));
+  btns.forEach((b,i)=>b.addEventListener('click',()=>toggle(i,null,b,'below')));
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&current)render(null,null)});
   cards.forEach((c,i)=>{c.addEventListener('click',()=>toggle(i,null));c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(i,null)}})});
   render(null,null);
 })();
