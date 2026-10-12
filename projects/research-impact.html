@@ -45,6 +45,8 @@ nav{border-bottom:1px solid var(--hair)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:44px;font-size:13px}
 nav a{text-decoration:none;color:var(--muted)}
 nav a:hover{color:var(--ink)}
+nav .links{display:flex;gap:20px}
+nav [aria-current]{color:var(--ink)}
 .display{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-weight:700}
 
 header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 32px;padding:32px 0 24px}
@@ -136,8 +138,8 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 </head>
 <body>
 <nav><div class="wrap">
-  <a href="../">‹ Shreya Thakkar</a>
-  <a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio ↗</a>
+  <a href="../">Shreya Thakkar</a>
+  <span class="links"><a href="../#work" aria-current="page">Work</a><a href="../about.html">About</a></span>
 </div></nav>
 
 <main class="wrap">
