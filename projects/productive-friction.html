@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI x Productive Friction · Shreya Thakkar</title>
+<meta name="description" content="What effort to keep when learning with AI, and what forms AI could take beyond the chatbot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--inset:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;
+  --accent:#041e42;
+  --sand:#63768f;--sand-t:#e6eaf0;--sand-ink:#ffffff;
+  --sage:#6f7f62;--sage-t:#e3e8de;--sage-ink:#ffffff;
+  --clay:#a0684a;--clay-t:#efdfd5;--clay-ink:#ffffff;
+  --navy:#041e42;--navy-t:#dce1ea;--navy-ink:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
+    --accent:#9fb3d1;
+    --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
+    --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
+    --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
+    --navy:#5a7299;--navy-t:#1b2433;--navy-ink:#ffffff;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
+  --accent:#9fb3d1;
+  --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
+  --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
+  --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
+  --navy:#5a7299;--navy-t:#1b2433;--navy-ink:#ffffff;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.45;font-size:15px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:14px}
+nav a{text-decoration:none;color:var(--muted)}
+nav > a:first-child{color:var(--ink)}
+nav a:hover{color:var(--ink)}
+nav .links{display:flex;gap:20px}
+nav [aria-current]{color:var(--ink)}
+.display{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-weight:700}
+
+header.top{padding:56px 0 64px}
+.eyebrow{font-size:14px;font-weight:600;color:var(--accent);margin:0 0 8px}
+h1{font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin:0 0 8px}
+.lede{color:var(--muted);font-size:17px;margin:0;max-width:52ch}
+
+/* the horizontal flow */
+.flow{display:grid;grid-template-columns:.9fr 1.7fr 1.05fr .95fr;gap:0;align-items:stretch}
+.col{position:relative;padding:0 22px;border-left:1px solid var(--hair);display:flex;flex-direction:column}
+.col:first-child{border-left:0;padding-left:0}
+.col:last-child{padding-right:0}
+.col:not(:first-child)::before{content:"›";position:absolute;left:-9px;top:2px;width:18px;height:18px;border-radius:50%;background:var(--bg);color:var(--muted);font-size:16px;line-height:16px;text-align:center}
+.step{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--muted);margin:0 0 12px}
+.step b{width:20px;height:20px;border-radius:50%;background:var(--accent);color:var(--bg);display:grid;place-items:center;font-size:11px}
+h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
+.when{color:var(--muted);margin:0 0 16px;font-size:14px}
+
+/* 1 context */
+.ux{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ux li{display:grid;grid-template-columns:36px 1fr;gap:10px;align-items:center}
+.ux .disc{width:36px;height:36px;border-radius:50%;background:var(--inset);display:grid;place-items:center;color:var(--accent);font-size:15px;font-weight:600}
+.ux b{display:block;font-size:14px;font-weight:600}
+.ux span{display:block;font-size:13px;color:var(--muted);line-height:1.35}
+.but{margin:18px 0 0;font-size:14px;line-height:1.45}
+.but b{font-weight:600}
+
+/* 2 learning pit */
+.seg2{display:inline-flex;align-self:flex-start;background:var(--inset);border-radius:999px;padding:3px;margin:0 0 12px}
+.seg2 button{all:unset;cursor:pointer;font-size:13px;padding:5px 12px;border-radius:999px;color:var(--muted)}
+.seg2 button[aria-pressed="true"]{background:var(--bg);color:var(--ink);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.seg2 button:focus-visible{outline:2px solid var(--accent)}
+.pit{width:100%;display:block;overflow:visible}
+.pit text{font-family:-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif}
+.pit .curve{fill:none;stroke:var(--clay);stroke-width:4;stroke-linecap:round;transition:opacity .25s}
+.pit .fill{fill:var(--clay-t);transition:opacity .25s}
+.pit .short{fill:none;stroke:var(--sand);stroke-width:2.5;stroke-dasharray:6 6;transition:opacity .25s}
+.pit .stop{cursor:pointer}
+.pit .stop circle{fill:var(--bg);stroke:var(--clay);stroke-width:3;transition:r .15s}
+.pit .stop.on circle{fill:var(--clay)}
+.pit .stop:focus{outline:none}.pit .stop:focus-visible circle{stroke:var(--ink)}
+.pit.ai .curve,.pit.ai .fill,.pit.ai .stop{opacity:.25}
+.pit:not(.ai) .short,.pit:not(.ai) .shortlbl{opacity:.35}
+.pitnote{background:var(--inset);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--muted);min-height:58px;margin:10px 0 0}
+.pitnote b{color:var(--ink);font-weight:600}
+.cite{font-size:12px;color:var(--muted);margin:10px 0 0}
+
+/* 3 set the effort */
+.dials{display:grid;gap:14px;margin:0 0 14px}
+.dial b{display:block;font-size:14px;font-weight:600}
+.dial span{display:block;font-size:13px;color:var(--muted);line-height:1.35;margin:0 0 6px}
+.dial .seg2{margin:0;display:flex}
+.dial .seg2 button{flex:1;text-align:center}
+.out{border-top:3px solid var(--sage);padding-top:10px}
+.out small{display:block;font-size:12px;font-weight:600;color:var(--muted);margin:0 0 2px}
+.out p{margin:0;font-size:15px;font-weight:600;line-height:1.3}
+
+/* 4 workshop */
+.facts{margin:0 0 16px;display:grid;gap:10px}
+.facts dt{font-size:13px;font-weight:600;color:var(--muted)}
+.facts dd{margin:0;font-size:14px;line-height:1.4}
+.forms{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 14px}
+.forms span{background:var(--inset);border-radius:10px;padding:8px 10px;font-size:13px;text-align:center}
+.ongoing{font-size:13px;color:var(--muted);margin:0}
+.ongoing a{color:var(--accent);text-decoration:none}
+
+.repeat{margin:22px 0 0;padding:12px 0;border-top:1px solid var(--hair);display:flex;justify-content:center;gap:8px;color:var(--muted);font-size:13px}
+.hint{display:none}
+@media(max-width:980px){
+  .flow{grid-template-columns:240px 360px 260px 240px;overflow-x:auto;margin:0 -16px;padding:0 16px 12px;scroll-snap-type:x proximity}
+  .col{scroll-snap-align:start;padding:0 16px}
+  .col:first-child{padding-left:0}
+  h2{font-size:18px}
+  .hint{display:block;color:var(--muted);font-size:13px;margin:0 0 10px}
+}
+footer{padding:72px 0 48px;color:var(--muted);font-size:13px;text-align:center}
+footer p{margin:0 0 6px}
+footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <nav>
+    <a href="../">Shreya Thakkar</a>
+    <span class="links"><a href="../#work" aria-current="page">Work</a><a href="../about.html">About</a></span>
+  </nav>
+
+  <header class="top">
+    <p class="eyebrow">Learning and education · Responsible AI · Futures research</p>
+    <h1>AI x Productive Friction</h1>
+    <p class="lede">What effort to keep when learning with AI, and what forms AI could take beyond the chatbot.</p>
+  </header>
+
+  <p class="hint">Scroll sideways to see all four steps →</p>
+
+  <div class="flow">
+    <section class="col" aria-labelledby="s1">
+      <p class="step"><b>1</b>Context</p>
+      <h2 id="s1">AI makes tasks easier</h2>
+      <p class="when">Most AI tools follow familiar UX principles</p>
+      <ul class="ux">
+        <li><span class="disc" aria-hidden="true">1</span><div><b>Reduce memory load</b><span>Hold information so people do not have to</span></div></li>
+        <li><span class="disc" aria-hidden="true">2</span><div><b>Cut steps</b><span>Get to the result faster</span></div></li>
+        <li><span class="disc" aria-hidden="true">3</span><div><b>Recognize, not recall</b><span>Show the answer instead of asking for it</span></div></li>
+      </ul>
+      <p class="but">Learning science suggests <b>some effort is part of how understanding forms.</b></p>
+    </section>
+
+    <section class="col" aria-labelledby="s2">
+      <p class="step"><b>2</b>The learning pit</p>
+      <h2 id="s2">Understanding takes shape in the pit</h2>
+      <p class="when">Confusion, trial, and reasoning between meeting an idea and owning it</p>
+      <div class="seg2" role="group" aria-label="Path">
+        <button type="button" data-p="pit" aria-pressed="true">Through the pit</button>
+        <button type="button" data-p="ai" aria-pressed="false">AI shortcut</button>
+      </div>
+      <svg class="pit" id="pit" viewBox="0 0 420 210" role="group" aria-label="The learning pit">
+        <path class="fill" d="M30 50 C 110 50, 120 175, 210 175 C 300 175, 310 50, 390 50 Z"/>
+        <path class="curve" d="M30 50 C 110 50, 120 175, 210 175 C 300 175, 310 50, 390 50"/>
+        <path class="short" d="M30 50 L 390 50"/>
+        <text class="shortlbl" x="210" y="40" text-anchor="middle" font-size="12" font-weight="600" fill="var(--sand)">AI shortcut</text>
+        <g id="stops"></g>
+      </svg>
+      <p class="pitnote" id="pitnote" aria-live="polite"></p>
+      <p class="cite">Pit metaphor after Nottingham's Learning Pit; "hard fun" after Papert</p>
+    </section>
+
+    <section class="col" aria-labelledby="s3">
+      <p class="step"><b>3</b>Set the effort</p>
+      <h2 id="s3">The right setting depends on context</h2>
+      <p class="when">Choose an answer for each question</p>
+      <div class="dials" id="dials">
+        <div class="dial"><b>Task</b><span>Is the goal to finish the task, or to learn from doing it?</span>
+          <div class="seg2" data-k="task" role="group" aria-label="Task"><button type="button" data-v="0">Finish</button><button type="button" data-v="1">Learn</button></div></div>
+        <div class="dial"><b>Expertise</b><span>Can this learner meet the effort yet?</span>
+          <div class="seg2" data-k="exp" role="group" aria-label="Expertise"><button type="button" data-v="0">Not yet</button><button type="button" data-v="1">Ready</button></div></div>
+        <div class="dial"><b>Stake</b><span>Does the learner care, and is it worth the effort?</span>
+          <div class="seg2" data-k="stake" role="group" aria-label="Stake"><button type="button" data-v="0">Low</button><button type="button" data-v="1">High</button></div></div>
+      </div>
+      <div class="out"><small>Suggested setting</small><p id="out" aria-live="polite"></p></div>
+    </section>
+
+    <section class="col" aria-labelledby="s4">
+      <p class="step"><b>4</b>Workshop</p>
+      <h2 id="s4">Look past the chatbot</h2>
+      <p class="when">Speculative design workshop</p>
+      <dl class="facts">
+        <div><dt>Premise</dt><dd>A time machine to a 2045 learning environment, adapted from Julian Bleecker</dd></div>
+        <div><dt>Task</dt><dd>Bring back an object, ritual, or practice that shows how AI is, or is not, part of learning</dd></div>
+        <div><dt>Team</dt><dd>Co-designed with Sneha Aravind</dd></div>
+      </dl>
+      <div class="forms" aria-label="Forms AI could take"><span>Objects</span><span>Tools</span><span>Wearables</span><span>Rituals</span></div>
+      <p class="ongoing">This work is ongoing. Results are held back until publication. <a href="mailto:shreyathakkar.uxr@gmail.com">Get in touch</a></p>
+    </section>
+  </div>
+
+  <p class="repeat">What embodied forms might AI take in learning, beyond the chatbot?</p>
+</main>
+
+<footer>
+  <p><a href="../">Home</a> · <a href="../about.html">About</a> · <a href="https://shreyathakkar.com/ai-x-productive-struggle" target="_blank" rel="noopener">Case study</a></p>
+</footer>
+
+<script>
+(function(){
+  const NS='http://www.w3.org/2000/svg';
+  const pit=document.getElementById('pit'), note=document.getElementById('pitnote');
+  const S=[
+    {t:.0, n:'Meet an idea', d:'A new concept or problem arrives.', dx:0, dy:-14, a:'start'},
+    {t:.27, n:'Confusion', d:'Working through what does not make sense yet.', dx:-14, dy:4, a:'end'},
+    {t:.5, n:'Trial', d:'Trying, failing, and trying again.', dx:0, dy:24, a:'middle'},
+    {t:.73, n:'Reasoning', d:'Reasoning toward an answer.', dx:14, dy:4, a:'start'},
+    {t:1, n:'Own it', d:'The idea is understood and can be used.', dx:0, dy:-14, a:'end'}];
+  const curve=pit.querySelector('.curve'), L=curve.getTotalLength(), g=document.getElementById('stops');
+  const stops=S.map((s,i)=>{
+    const p=curve.getPointAtLength(s.t*L);
+    const e=document.createElementNS(NS,'g');e.setAttribute('class','stop');e.setAttribute('tabindex','0');e.setAttribute('role','button');e.setAttribute('aria-label',s.n);
+    const c=document.createElementNS(NS,'circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',7);
+    const x=document.createElementNS(NS,'text');x.setAttribute('x',p.x+s.dx);x.setAttribute('y',p.y+s.dy);x.setAttribute('text-anchor',s.a);x.setAttribute('font-size',13);x.setAttribute('font-weight',600);x.setAttribute('fill','var(--ink)');x.textContent=s.n;
+    e.append(c,x);g.appendChild(e);
+    const pick=()=>{mode('pit');sel(i)};
+    e.addEventListener('click',pick);e.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pick()}});
+    return e;});
+  const MSG={pit:'<b>Through the pit:</b> confusion, trial, and reasoning build understanding. Select a point on the curve.',
+    ai:'<b>AI shortcut:</b> the answer arrives sooner. Early research on cognitive de-skilling suggests skipping the pit may also mean missing some of the learning.'};
+  let cur=null;
+  function sel(i){cur=i;stops.forEach((s,j)=>s.classList.toggle('on',j===i));note.innerHTML=`<b>${S[i].n}:</b> ${S[i].d}`}
+  const pb=[...document.querySelectorAll('[data-p]')];
+  function mode(m){pit.classList.toggle('ai',m==='ai');pb.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.p===m)));if(m==='ai'){stops.forEach(s=>s.classList.remove('on'));cur=null;note.innerHTML=MSG.ai}else if(cur===null)note.innerHTML=MSG.pit}
+  pb.forEach(b=>b.addEventListener('click',()=>{cur=null;stops.forEach(s=>s.classList.remove('on'));mode(b.dataset.p)}));
+  mode('pit');
+
+  const st={task:1,exp:1,stake:1}, out=document.getElementById('out');
+  function upd(){
+    document.querySelectorAll('#dials .seg2').forEach(grp=>grp.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.v===st[grp.dataset.k]))));
+    out.textContent = !st.task ? 'Reduce the effort. Give the answer.'
+      : !st.exp ? 'Show the steps first, then step back.'
+      : !st.stake ? 'Offer hints when the learner asks.'
+      : 'Keep the effort. Let the learner work through it.';
+  }
+  document.querySelectorAll('#dials .seg2').forEach(grp=>grp.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{st[grp.dataset.k]=+b.dataset.v;upd()})));
+  upd();
+})();
+</script>
+</body>
+</html>
