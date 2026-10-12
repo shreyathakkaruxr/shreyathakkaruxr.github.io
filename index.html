@@ -39,14 +39,10 @@ section h2{font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--ink)
 @media(min-width:720px){.work{grid-template-columns:1fr 1fr}}
 .card{display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:20px;text-decoration:none;overflow:hidden;transition:border-color .2s}
 .card:hover{border-color:var(--muted)}
-.card .thumb{aspect-ratio:16/9;overflow:hidden}
-.card .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.card:hover .thumb img{transform:scale(1.02)}
-.card .mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
-.card .body{padding:20px 24px 24px}
-.card h3{margin:0 0 4px;font-size:16px;font-weight:400}
-.card p{margin:0 0 10px;color:var(--muted);font-size:14px}
-.card .go{font-size:14px;color:var(--accent)}
+.card .body{padding:32px 32px 28px;display:flex;flex-direction:column;flex:1}
+.card h3{margin:0 0 8px;font-size:21px;font-weight:600;letter-spacing:-.015em}
+.card p{margin:0 0 24px;color:var(--muted);font-size:15px;max-width:44ch}
+.card .go{margin-top:auto;font-size:14px;color:var(--accent)}
 
 footer{padding:72px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 footer p{margin:0 0 6px}
@@ -70,7 +66,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     <h2 class="display" id="h-work">Work</h2>
     <div class="work">
       <a class="card" href="projects/research-impact.html">
-        <div class="thumb"><img src="images/work-impact.jpg" alt="Research impact tracking: signals, design decisions, and feature priorities" width="895" height="504"></div>
         <div class="body">
           <h3>Research impact tracking</h3>
           <p>A process for recording what teams do with research findings after a study ends</p>
@@ -78,7 +73,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
         </div>
       </a>
       <a class="card" href="https://shreyathakkar.com" target="_blank" rel="noopener">
-        <div class="thumb mosaic"><img src="images/work-laundry.jpg" alt="Laundry systems"><img src="images/work-kitchen.jpg" alt="Kitchen appliances"><img src="images/work-cleaning.jpg" alt="Home cleaning systems"><img src="images/work-polestar.jpg" alt="Polestar mobility systems"></div>
         <div class="body">
           <h3>Portfolio</h3>
           <p>Case studies in appliance research, mobility futures, and design for aging</p>
