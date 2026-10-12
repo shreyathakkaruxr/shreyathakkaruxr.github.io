@@ -75,10 +75,6 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
 .but b{font-weight:600}
 
 /* 2 learning pit */
-.seg2{display:inline-flex;align-self:flex-start;background:var(--inset);border-radius:999px;padding:3px;margin:0 0 12px}
-.seg2 button{all:unset;cursor:pointer;font-size:13px;padding:5px 12px;border-radius:999px;color:var(--muted)}
-.seg2 button[aria-pressed="true"]{background:var(--bg);color:var(--ink);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.1)}
-.seg2 button:focus-visible{outline:2px solid var(--accent)}
 .pit{width:100%;display:block;overflow:visible}
 .pit text{font-family:-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif}
 .pit .curve{fill:none;stroke:var(--clay);stroke-width:4;stroke-linecap:round;transition:opacity .25s}
@@ -89,7 +85,12 @@ h2{font-size:21px;line-height:1.15;letter-spacing:-.025em;margin:0 0 4px}
 .pit .stop.on circle{fill:var(--clay)}
 .pit .stop:focus{outline:none}.pit .stop:focus-visible circle{stroke:var(--ink)}
 .pit.ai .curve,.pit.ai .fill,.pit.ai .stop{opacity:.25}
-.pit:not(.ai) .short,.pit:not(.ai) .shortlbl{opacity:.35}
+.pit .shortg{cursor:pointer}
+.pit .shortg:focus{outline:none}.pit .shortg:focus-visible .short{stroke:var(--ink)}
+.pit .hit{fill:none;stroke:transparent;stroke-width:22}
+.pit .shortg:hover .short{opacity:1}
+.pit:not(.ai) .short,.pit:not(.ai) .shortlbl{opacity:.55}
+.pit.ai .short{stroke-width:3.5}
 .pitnote{background:var(--inset);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--muted);min-height:58px;margin:10px 0 0}
 .pitnote b{color:var(--ink);font-weight:600}
 .cite{font-size:12px;color:var(--muted);margin:10px 0 0}
@@ -141,7 +142,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   </nav>
 
   <header class="top">
-    <p class="eyebrow">Learning and education · Responsible AI · Futures research</p>
+    <p class="eyebrow">Learning and education</p>
     <h1>AI x Productive Friction</h1>
     <p class="lede">What effort to keep when learning with AI, and what forms AI could take beyond the chatbot.</p>
   </header>
@@ -165,15 +166,14 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
       <p class="step"><b>2</b>The learning pit</p>
       <h2 id="s2">Understanding takes shape in the pit</h2>
       <p class="when">Confusion, trial, and reasoning between meeting an idea and owning it</p>
-      <div class="seg2" role="group" aria-label="Path">
-        <button type="button" data-p="pit" aria-pressed="true">Through the pit</button>
-        <button type="button" data-p="ai" aria-pressed="false">AI shortcut</button>
-      </div>
       <svg class="pit" id="pit" viewBox="0 0 420 210" role="group" aria-label="The learning pit">
         <path class="fill" d="M30 50 C 110 50, 120 175, 210 175 C 300 175, 310 50, 390 50 Z"/>
         <path class="curve" d="M30 50 C 110 50, 120 175, 210 175 C 300 175, 310 50, 390 50"/>
-        <path class="short" d="M30 50 L 390 50"/>
-        <text class="shortlbl" x="210" y="40" text-anchor="middle" font-size="12" font-weight="600" fill="var(--sand)">AI shortcut</text>
+        <g class="shortg" id="shortg" tabindex="0" role="button" aria-label="Frictionless AI">
+          <path class="hit" d="M30 50 L 390 50"/>
+          <path class="short" d="M30 50 L 390 50"/>
+          <text class="shortlbl" x="210" y="38" text-anchor="middle" font-size="13" font-weight="600" fill="var(--sand)">Frictionless AI</text>
+        </g>
         <g id="stops"></g>
       </svg>
       <p class="pitnote" id="pitnote" aria-live="polite"></p>
@@ -264,13 +264,14 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     const pick=()=>{mode('pit');sel(i)};
     e.addEventListener('click',pick);e.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pick()}});
     return e;});
-  const MSG={pit:'<b>Through the pit:</b> confusion, trial, and reasoning build understanding. Select a point on the curve.',
-    ai:'<b>AI shortcut:</b> the answer arrives sooner. Early research on cognitive de-skilling suggests skipping the pit may also mean missing some of the learning.'};
+  const MSG={pit:'Select a point on the curve, or the Frictionless AI line.',
+    ai:'<b>Frictionless AI:</b> the answer arrives sooner. Early research on cognitive de-skilling suggests skipping the pit may also mean missing some of the learning.'};
   let cur=null;
   function sel(i){cur=i;stops.forEach((s,j)=>s.classList.toggle('on',j===i));note.innerHTML=`<b>${S[i].n}:</b> ${S[i].d}`}
-  const pb=[...document.querySelectorAll('[data-p]')];
-  function mode(m){pit.classList.toggle('ai',m==='ai');pb.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.p===m)));if(m==='ai'){stops.forEach(s=>s.classList.remove('on'));cur=null;note.innerHTML=MSG.ai}else if(cur===null)note.innerHTML=MSG.pit}
-  pb.forEach(b=>b.addEventListener('click',()=>{cur=null;stops.forEach(s=>s.classList.remove('on'));mode(b.dataset.p)}));
+  const sg=document.getElementById('shortg');
+  function mode(m){pit.classList.toggle('ai',m==='ai');sg.setAttribute('aria-pressed',String(m==='ai'));if(m==='ai'){stops.forEach(s=>s.classList.remove('on'));cur=null;note.innerHTML=MSG.ai}else if(cur===null)note.innerHTML=MSG.pit}
+  const flip=()=>{const on=pit.classList.contains('ai');cur=null;stops.forEach(s=>s.classList.remove('on'));mode(on?'pit':'ai')};
+  sg.addEventListener('click',flip);sg.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}});
   mode('pit');
 
 })();
