@@ -38,6 +38,7 @@ header{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;padding:56px
 section h2{font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--ink);margin:0 0 16px}
 .work{display:grid;gap:24px}
 @media(min-width:720px){.work{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.work{grid-template-columns:repeat(3,1fr)}}
 .card{display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:20px;text-decoration:none;overflow:hidden;transition:border-color .2s}
 .card:hover{border-color:var(--muted)}
 .card .body{padding:32px 32px 28px;display:flex;flex-direction:column;flex:1}
@@ -70,6 +71,13 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
         <div class="body">
           <h3>Research impact tracking</h3>
           <p>A process for recording what teams do with research findings after a study ends</p>
+          <span class="go">View project ›</span>
+        </div>
+      </a>
+      <a class="card" href="projects/productive-friction.html">
+        <div class="body">
+          <h3>AI x Productive Friction</h3>
+          <p>What effort to keep when learning with AI, and what forms AI could take beyond the chatbot</p>
           <span class="go">View project ›</span>
         </div>
       </a>
