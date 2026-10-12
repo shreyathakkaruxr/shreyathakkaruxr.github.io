@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gen AI x Trust · Shreya Thakkar</title>
+<meta name="description" content="Six lenses on trust in generative AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+.hero{margin:40px 0 104px}
+:root[data-theme="dark"] .hero{background:#fff;border-radius:18px;padding:24px}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero{background:#fff;border-radius:18px;padding:24px}}
+.hero img{display:block;width:100%;height:auto}
+
+:root{
+  --bg:#ffffff;--inset:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;
+  --accent:#041e42;
+  --sand:#63768f;--sand-t:#e6eaf0;--sand-ink:#ffffff;
+  --sage:#6f7f62;--sage-t:#e3e8de;--sage-ink:#ffffff;
+  --clay:#a0684a;--clay-t:#efdfd5;--clay-ink:#ffffff;
+  --navy:#041e42;--navy-t:#dce1ea;--navy-ink:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
+    --accent:#9fb3d1;
+    --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
+    --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
+    --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
+    --navy:#5a7299;--navy-t:#1b2433;--navy-ink:#ffffff;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
+  --accent:#9fb3d1;
+  --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
+  --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
+  --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
+  --navy:#5a7299;--navy-t:#1b2433;--navy-ink:#ffffff;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.45;font-size:15px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:14px}
+nav a{text-decoration:none;color:var(--muted)}
+nav > a:first-child{color:var(--ink)}
+nav a:hover{color:var(--ink)}
+nav .links{display:flex;gap:20px}
+nav [aria-current]{color:var(--ink)}
+.display{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-weight:600}
+
+header.top{padding:56px 0 64px}
+.eyebrow{font-size:14px;font-weight:600;color:var(--accent);margin:0 0 8px}
+h1{font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin:0 0 8px}
+.lede{color:var(--muted);font-size:17px;margin:0;max-width:52ch}
+
+
+.src{font-size:12px;color:var(--muted);margin:32px 0 0}
+.src a{color:var(--accent);text-decoration:none}
+footer{padding:72px 0 48px;color:var(--muted);font-size:13px;text-align:center}
+footer p{margin:0 0 6px}
+footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <nav>
+    <a href="../">Shreya Thakkar</a>
+    <span class="links"><a href="../#work" aria-current="page">Work</a><a href="../about.html">About</a></span>
+  </nav>
+
+  <header class="top">
+    <p class="eyebrow">Responsible AI</p>
+    <h1>Gen AI x Trust</h1>
+    <p class="lede">Six lenses on trust</p>
+  </header>
+
+  <figure class="hero"><img src="../images/fig-trust.svg" alt="A person looks at generative AI through six lenses: philosophy, behavior, emotion, learning, agency, and high stakes"></figure>
+  <p class="src">Sources: <a href="https://pair.withgoogle.com/guidebook/" target="_blank" rel="noopener">People + AI Guidebook, Google PAIR</a> · Inspired by <a href="https://www.media.mit.edu/groups/cyborg-psychology/overview/" target="_blank" rel="noopener">Cyborg Psychology, MIT Media Lab</a></p>
+</main>
+
+<footer>
+  <p><a href="../">Home</a> · <a href="../about.html">About</a> · <a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio</a> · <a href="https://github.com/shreyathakkaruxr" target="_blank" rel="noopener">GitHub</a></p>
+  <p>Written by Shreya Thakkar, with editing help from Claude and ChatGPT</p>
+</footer>
+
+</body>
+</html>
