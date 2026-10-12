@@ -40,14 +40,20 @@ h2{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;le
 .card h3{margin:0 0 4px;font-size:21px;letter-spacing:-.025em}
 .card .go{font-size:15px;color:var(--accent);font-weight:500}
 
+.head{text-align:center;margin:24px auto 24px}
+.eyebrow{font-size:15px;font-weight:600;color:var(--accent);margin:0 0 8px;text-transform:none;letter-spacing:0}
+h2.big{font-size:clamp(30px,4.6vw,44px);line-height:1.08;letter-spacing:-.035em;margin:0;color:var(--ink);text-transform:none}
+.panel{background:var(--inset);border-radius:28px;padding:28px 22px}
+@media(min-width:720px){.panel{padding:36px 40px}}
 .list{list-style:none;margin:0;padding:0}
-.list li{display:grid;gap:2px;padding:14px 0;border-top:1px solid var(--hair)}
-.list li:last-child{border-bottom:1px solid var(--hair)}
-@media(min-width:620px){.list li{grid-template-columns:1fr auto;gap:16px;align-items:baseline}}
-.list b{font-weight:600;font-size:16px}
-.list span{color:var(--muted);font-size:15px}
+.list li{display:grid;gap:2px;padding:16px 0;border-bottom:1px solid var(--hair)}
+.list li:first-child{padding-top:0}
+.list li:last-child{border-bottom:0;padding-bottom:0}
+@media(min-width:620px){.list li{grid-template-columns:1fr auto;gap:16px}}
+.list b{font-weight:600}
+.list .meta{color:var(--muted);font-size:15px}
+.list .sub{grid-column:1/-1;color:var(--muted);font-size:15px}
 .list a{color:var(--accent)}
-
 footer{padding:24px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 </style>
@@ -55,7 +61,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 <body>
 <main class="wrap">
   <header>
-    <img class="photo" src="images/shreya.jpg" width="120" height="120" alt="Shreya Thakkar">
+    <img class="photo" src="images/image.jpg" width="120" height="120" alt="Shreya Thakkar">
     <h1 class="display">Shreya Thakkar</h1>
     <p class="role">UX Researcher & Strategist</p>
   </header>
@@ -89,15 +95,28 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
     </div>
   </section>
 
-  <section aria-labelledby="h-talks">
-    <h2 id="h-talks">Talks and papers</h2>
-    <ul class="list">
-      <li><b>The Design Researcher's Room</b><span>IDSA IDC 2026</span></li>
-      <li><b>Negotiating Culture and Constraint in Generative AI for Design</b><span>IDSA IDC 2026</span></li>
-      <li><b>Culturally responsive AI and jugaad innovation</b><span><a href="https://doi.org/10.21606/iasdr.2025.537" target="_blank" rel="noopener">IASDR 2025 ↗</a></span></li>
-      <li><b>Ethical AI integration in research</b><span>World Usability Congress 2025</span></li>
-      <li><b>Ethical AI integration in research</b><span>UXDX</span></li>
-    </ul>
+  <section id="speaking" aria-labelledby="h-talks">
+    <div class="head"><p class="eyebrow">Speaking</p><h2 class="big display" id="h-talks">Talks and papers.</h2></div>
+    <div class="panel">
+      <ul class="list">
+        <li><b>The Design Researcher's Room</b><span class="meta">IDSA IDC 2026 · Pasadena</span><span class="sub">AI and design judgment. Part of The Authenticity Project.</span></li>
+        <li><b>Negotiating Culture and Constraint in Generative AI for Design</b><span class="meta">IDSA IDC 2026</span><span class="sub">Paper with Nidhi Singh Rathore</span></li>
+        <li><b>Culturally responsive AI and jugaad innovation</b><span class="meta"><a href="https://doi.org/10.21606/iasdr.2025.537" target="_blank" rel="noopener">IASDR 2025 ↗</a></span><span class="sub">Peer-reviewed paper</span></li>
+        <li><b>Ethical AI integration in research</b><span class="meta">World Usability Congress 2025 · Austria</span></li>
+        <li><b>Ethical AI integration in research</b><span class="meta">UXDX</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-comm">
+    <div class="head"><h2 class="big display" id="h-comm">Community.</h2></div>
+    <div class="panel">
+      <ul class="list">
+        <li><b>Climate Designers, LA Chapter</b><span class="meta">Chapter lead</span></li>
+        <li><b>IDSA Student Merit Awards</b><span class="meta">Juror, 2025</span></li>
+        <li><b>World Design Organization</b><span class="meta">Juror</span></li>
+      </ul>
+    </div>
   </section>
 </main>
 
