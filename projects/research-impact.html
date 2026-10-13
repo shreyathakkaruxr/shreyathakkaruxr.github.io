@@ -200,6 +200,16 @@ body>footer{margin-top:auto}
 .eyebrow{color:#63768f}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow{color:#9fb3d1}}
 :root[data-theme="dark"] .eyebrow{color:#9fb3d1}
+
+/* Apple-style two-column sections (draft) */
+header.top{text-align:left;padding:72px 0 56px}
+header.top .lede{margin:0;max-width:none}
+.ap{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;border-top:1px solid var(--hair);padding:40px 0 72px;margin:0}
+.ap .aph{margin:0;font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.apb>.apl{margin:0 0 32px;font-size:17px;line-height:1.5;max-width:60ch}
+.ap .hero{margin:0}
+.ap.hzd{padding-top:40px}
+@media(max-width:720px){.ap{grid-template-columns:minmax(0,1fr);gap:16px}}
 </style>
 </head>
 <body>
@@ -218,12 +228,12 @@ body>footer{margin-top:auto}
     <!-- Optional: add one sentence on where this process was developed. -->
   </header>
 
-  <div class="row"><h2 class="ovh">Overview</h2><p>How findings move from one study to teams, decisions, and products.</p></div>
-  <figure class="hero"><img src="../images/fig-impact.svg?v=5" alt="After a study readout, findings fade without tracking; with follow-up, a weekly log, tagging by horizon, and a quarterly report, impact is recorded from signal to outcome"></figure>
-  <div class="row"><h2 class="ovh">Approach</h2><p>Four steps to record impact after each study.</p></div>
-
-  <p class="hint">Scroll for more →</p>
-
+  <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
+    <p class="apl">How findings move from one study to teams, decisions, and products.</p>
+    <figure class="hero"><img src="../images/fig-impact.svg?v=5" alt="After a study readout, findings fade without tracking; with follow-up, a weekly log, tagging by horizon, and a quarterly report, impact is recorded from signal to outcome"></figure>
+  </div></section>
+  <section class="ap"><h2 class="aph">Approach</h2><div class="apb">
+    <p class="apl">Four steps to record impact after each study.</p>
   <div class="flow">
     <section class="col" aria-labelledby="s1">
       <p class="step"><b>1</b></p>
@@ -283,10 +293,10 @@ body>footer{margin-top:auto}
   </div>
 
   <p class="repeat"><b>↻</b> Repeat for each study</p>
+  </div></section>
 
-  <section class="hzd" aria-labelledby="hzd">
-    <h2 id="hzd">Impact horizons in detail</h2>
-    <p>Each log entry gets one horizon.</p>
+  <section class="ap hzd" aria-labelledby="hzd"><h2 class="aph" id="hzd">Impact horizons</h2><div class="apb">
+    <p class="apl">Each log entry gets one horizon.</p>
     <div class="hzwrap">
       <div class="hz2"><svg class="donut big" id="donut2" viewBox="0 0 360 360" role="group" aria-label="Impact horizons diagram"></svg><p class="hzhint">Select a segment or a horizon.</p></div>
       <div class="hzgrid" id="hzgrid">
@@ -324,7 +334,7 @@ body>footer{margin-top:auto}
       </article>
       </div>
     </div>
-  </section>
+  </div></section>
 </main>
 
 <footer>
