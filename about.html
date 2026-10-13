@@ -26,17 +26,17 @@ nav > a:first-child{color:var(--ink)}
 nav .links{display:flex;gap:20px}
 nav [aria-current]{color:var(--ink)}
 
-header{display:grid;gap:16px 32px;align-items:center;padding:56px 0 64px}
-@media(min-width:860px){header{grid-template-columns:auto 1fr}}
+header{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;padding:96px 0 104px}
 h1{font-size:clamp(40px,6vw,60px);line-height:1;letter-spacing:-.04em;margin:0}
 .id{display:flex;align-items:center;gap:20px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.photo{width:112px;height:112px;border-radius:50%;object-fit:cover;flex:none}
+.photo{width:144px;height:144px;border-radius:50%;object-fit:cover;flex:none}
 .proj{display:block;text-decoration:none}
 .proj .go{color:var(--accent);margin-top:4px}
 .proj:hover b{text-decoration:underline}
 .lede{color:var(--muted);font-size:17px;margin:0;max-width:62ch;line-height:1.4;letter-spacing:-.01em}
-.lede strong{display:block;color:var(--ink);font-size:24px;line-height:1.2;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+.hname{margin:0 0 6px;font-size:32px;line-height:1.1;font-weight:600;letter-spacing:-.025em;color:var(--ink)}
+.lede strong{display:block;color:var(--ink);font-size:21px;line-height:1.25;font-weight:500;letter-spacing:-.02em;margin-bottom:10px}
 
 .grid{display:grid;gap:56px 72px;padding:0 0 24px}
 @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
@@ -73,8 +73,9 @@ body>footer{margin-top:auto}
   </nav>
 
   <header>
-    <div class="id"><img class="photo" src="images/image.jpg" width="112" height="112" alt="Shreya Thakkar"><h1 class="sr">About</h1></div>
-    <p class="lede"><strong>Senior UX Researcher<br>&amp; Strategist</strong>Mixed-methods and human factors research<br>for hardware, software, and AI experiences.</p>
+    <img class="photo" src="images/image.jpg" width="144" height="144" alt="Shreya Thakkar">
+    <div><h1 class="hname">Shreya Thakkar</h1>
+    <p class="lede"><strong>Senior UX Researcher &amp; Strategist</strong>Mixed-methods and human factors research<br>for hardware, software, and AI experiences.</p></div>
   </header>
 
   <div class="grid">
