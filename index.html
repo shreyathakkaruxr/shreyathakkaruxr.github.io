@@ -56,7 +56,21 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 body{min-height:100vh;display:flex;flex-direction:column}
 body>*{width:100%;box-sizing:border-box}
 body>footer{margin-top:auto}
-</style>
+.hl{position:relative;display:inline-block;padding-bottom:6px}.hl .ul{position:absolute;left:0;bottom:-2px;width:100%;height:10px;overflow:visible}.hl .ul path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s cubic-bezier(.45,0,.25,1) .6s forwards}@keyframes draw{to{stroke-dashoffset:0}}@media (prefers-reduced-motion:reduce){.hl .ul path{animation:none;stroke-dashoffset:0}}
+.thumb{display:block}
+.thumb img{width:100%;height:100%;object-fit:contain;display:block}
+:root[data-theme="dark"] .thumb{background:#fff}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .thumb{background:#fff}}
+
+.work{gap:24px}
+section#work h2{margin-bottom:40px}
+.card{border:1px solid #e8e8ed;border-radius:28px;background:#fff;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:scale(1.01);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.thumb{aspect-ratio:16/9;padding:18px 22px;border:0}
+.card .body{padding:24px 28px 28px}
+.eb{font-size:12px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:#6e6e73;margin:0 0 8px!important}
+.card h3{font-size:21px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.card:nth-child(1) .thumb,.card:nth-child(1).t{background:#f5e4e0}.card:nth-child(2) .thumb,.card:nth-child(2).t{background:#ecebe4}.card:nth-child(3) .thumb,.card:nth-child(3).t{background:#e4e8da}</style>
 </head>
 <body>
 <div class="wrap">
@@ -68,29 +82,32 @@ body>footer{margin-top:auto}
   <header>
     <img class="photo" src="images/image.jpg" width="144" height="144" alt="Shreya Thakkar">
     <div><h1 class="hname">Shreya Thakkar</h1>
-    <p class="lede"><strong>Senior UX Researcher &amp; Strategist</strong>Mixed-methods and human factors research<br>for hardware, software, and AI experiences.</p></div>
+    <p class="lede"><strong>Senior UX Researcher &amp; Strategist</strong>Mixed-methods and human factors research<br>for <span class="hl">hardware, software, and AI<svg class="ul" viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 7 C 30 2, 50 11, 80 6 S 130 2, 160 7 S 215 11, 245 5 S 285 4, 298 7" fill="none" stroke="#a0684a" stroke-width="2.2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span> experiences.</p></div>
   </header>
 
   <section id="work" aria-labelledby="h-work">
     <h2 class="display" id="h-work">Work</h2>
     <div class="work">
       <a class="card" href="projects/research-impact.html">
+        <span class="thumb"><img src="images/thumb-impact.svg?v=1" alt="" loading="lazy"></span>
         <div class="body">
-          <h3>Research Impact Mapping</h3>
+          <p class="eb">Framework</p><h3>Research Impact Mapping</h3>
           <p>What happens to research after the study ends?</p>
           <span class="go">View project ›</span>
         </div>
       </a>
       <a class="card" href="projects/productive-friction.html">
+        <span class="thumb"><img src="images/thumb-friction.svg?v=1" alt="" loading="lazy"></span>
         <div class="body">
-          <h3>AI x Productive Friction</h3>
+          <p class="eb">Futures research</p><h3>AI x Productive Friction</h3>
           <p>How might we learn with AI in 2045, beyond the chatbot?</p>
           <span class="go">View project ›</span>
         </div>
       </a>
       <a class="card" href="projects/trust-lenses.html">
+        <span class="thumb"><img src="images/thumb-trust.svg?v=1" alt="" loading="lazy"></span>
         <div class="body">
-          <h3>AI x Trust</h3>
+          <p class="eb">Research synthesis</p><h3>AI x Trust</h3>
           <p>How do people build trust with generative AI?</p>
           <span class="go">View project ›</span>
         </div>
