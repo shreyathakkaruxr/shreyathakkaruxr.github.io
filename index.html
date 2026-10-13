@@ -29,11 +29,12 @@ nav > a:first-child{color:var(--ink)}
 nav .links{display:flex;gap:20px}
 nav [aria-current]{color:var(--ink)}
 
-header{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;padding:56px 0 64px}
-.photo{width:112px;height:112px;border-radius:50%;object-fit:cover;flex:none}
+header{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;padding:96px 0 104px}
+.photo{width:144px;height:144px;border-radius:50%;object-fit:cover;flex:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .lede{color:var(--muted);font-size:17px;margin:0;max-width:62ch;line-height:1.4;letter-spacing:-.01em}
-.lede strong{display:block;color:var(--ink);font-size:24px;line-height:1.2;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+.hname{margin:0 0 6px;font-size:32px;line-height:1.1;font-weight:600;letter-spacing:-.025em;color:var(--ink)}
+.lede strong{display:block;color:var(--ink);font-size:21px;line-height:1.25;font-weight:500;letter-spacing:-.02em;margin-bottom:10px}
 
 section h2{font-size:21px;font-weight:600;letter-spacing:-.02em;color:var(--ink);margin:0 0 16px}
 .work{display:grid;gap:24px}
@@ -50,6 +51,11 @@ footer{padding:72px 0 48px;color:var(--muted);font-size:13px;text-align:center}
 footer p{margin:0 0 6px}
 footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 .card p{text-wrap:balance}
+
+/* footer at bottom */
+body{min-height:100vh;display:flex;flex-direction:column}
+body>*{width:100%;box-sizing:border-box}
+body>footer{margin-top:auto}
 </style>
 </head>
 <body>
@@ -60,9 +66,9 @@ footer a{text-decoration:none}footer a:hover{color:var(--ink)}
   </nav>
 
   <header>
-    <img class="photo" src="images/image.jpg" width="112" height="112" alt="Shreya Thakkar">
-    <h1 class="sr">Shreya Thakkar</h1>
-    <p class="lede"><strong>Senior UX Researcher<br>&amp; Strategist</strong>Mixed-methods and human factors research<br>for hardware, software, and AI experiences.</p>
+    <img class="photo" src="images/image.jpg" width="144" height="144" alt="Shreya Thakkar">
+    <div><h1 class="hname">Shreya Thakkar</h1>
+    <p class="lede"><strong>Senior UX Researcher &amp; Strategist</strong>Mixed-methods and human factors research<br>for hardware, software, and AI experiences.</p></div>
   </header>
 
   <section id="work" aria-labelledby="h-work">
