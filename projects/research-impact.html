@@ -210,6 +210,22 @@ header.top .lede{margin:0;max-width:none}
 .ap .hero{margin:0}
 .ap.hzd{padding-top:40px}
 @media(max-width:720px){.ap{grid-template-columns:minmax(0,1fr);gap:16px}}
+
+/* story sections: why, context, constraints, approach */
+.sub{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.sub ~ .apl{margin-bottom:40px}
+.why{list-style:none;margin:0;padding:0;display:grid;gap:24px}
+@media(min-width:720px){.why{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.why li{border-top:3px solid var(--c);padding-top:14px}
+.why b,.cons b,.moves b{display:block;font-size:17px;font-weight:600;letter-spacing:-.015em;margin:0 0 4px}
+.why span,.cons span,.moves span{display:block;font-size:15px;color:var(--muted);line-height:1.45}
+.cons{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+@media(min-width:720px){.cons{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cons li{display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:start}
+.cons li svg{color:var(--accent);margin-top:1px}
+.moves{list-style:none;margin:0;padding:0;display:grid;gap:20px;counter-reset:m}
+.moves li{display:grid;grid-template-columns:28px 1fr;gap:12px;counter-increment:m}
+.moves li::before{content:counter(m);width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--bg);display:grid;place-items:center;font-size:13px;font-weight:600}
 </style>
 </head>
 <body>
@@ -232,6 +248,35 @@ header.top .lede{margin:0;max-width:none}
     <p class="apl">How findings move from one study to teams, decisions, and products.</p>
     <figure class="hero"><img src="../images/fig-impact.svg?v=5" alt="After a study readout, findings fade without tracking; with follow-up, a weekly log, tagging by horizon, and a quarterly report, impact is recorded from signal to outcome"></figure>
   </div></section>
+  <section class="ap"><h2 class="aph">Why map research impact?</h2><div class="apb">
+    <p class="apl">Research pays off when a team acts on it, often weeks later and out of sight. Mapping links each study to the decisions it shaped.</p>
+    <ul class="why">
+      <li style="--c:var(--sand)"><b>Proves value</b><span>Shows the return on research when budgets tighten.</span></li>
+      <li style="--c:var(--sage)"><b>Captures invisible wins</b><span>Features cut, risks avoided, new ways of working.</span></li>
+      <li style="--c:var(--clay)"><b>Earns an earlier seat</b><span>A track record brings research into decisions sooner.</span></li>
+    </ul>
+  </div></section>
+
+  <section class="ap"><h2 class="aph">At a glance</h2><div class="apb">
+    <h3 class="sub">Context</h3>
+    <p class="apl">Evidence of research impact lives in chats, roadmaps and memory, so quarterly reports listed the number of studies completed.</p>
+    <h3 class="sub">Constraints</h3>
+    <ul class="cons">
+      <li><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Time</b><span>Had to fit into a weekly routine.</span></div></li>
+      <li><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9"/></svg><div><b>Long cycles</b><span>Hardware outcomes can arrive months after a study.</span></div></li>
+      <li><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="8.5" y="14" width="7" height="7" rx="1.5"/></svg><div><b>Access</b><span>Product and business data sits across teams.</span></div></li>
+    </ul>
+  </div></section>
+
+  <section class="ap"><h2 class="aph">How I approached it</h2><div class="apb">
+    <p class="apl">I adapted an industry framework for a hardware org with three changes:</p>
+    <ol class="moves">
+      <li><div><b>Name the decision up front</b><span>Each study brief states the decision it informs.</span></div></li>
+      <li><div><b>Log early impact</b><span>Signals and decisions count, so impact shows up before outcomes arrive.</span></div></li>
+      <li><div><b>Keep the cost low</b><span>Five minutes a week, a follow-up at 4–6 weeks, one page each quarter.</span></div></li>
+    </ol>
+  </div></section>
+
   <section class="ap"><h2 class="aph">Approach</h2><div class="apb">
     <p class="apl">Four steps to record impact after each study.</p>
   <div class="flow">
@@ -250,7 +295,7 @@ header.top .lede{margin:0;max-width:none}
     <section class="col" aria-labelledby="s2">
       <p class="step"><b>2</b></p>
       <h2 id="s2">Update the log</h2>
-      <p class="when">Every Friday · 10 min</p>
+      <p class="when">Every Friday · 5 min</p>
       <ol class="log">
         <li><span class="disc" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="5"><circle cx="26" cy="26" r="21"/><circle cx="26" cy="26" r="10"/></svg></span><div><b>Plan</b><span>Set the decision, metric, and baseline at kickoff.</span></div></li>
         <li><span class="disc" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 44 44" fill="currentColor"><rect x="4" y="28" width="8" height="14" rx="2"/><rect x="18" y="16" width="8" height="26" rx="2"/><rect x="32" y="2" width="8" height="40" rx="2"/></svg></span><div><b>Signals</b><span>Record who attended and where findings were cited.</span></div></li>
