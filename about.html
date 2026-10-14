@@ -76,16 +76,16 @@ section h2{border-top:1px solid var(--hair);padding-top:20px;margin-bottom:20px}
 
 /* intro with hand-drawn note */
 header{padding-bottom:64px}
-.intro{padding:0 0 104px}
+.intro{padding:0 0 150px}
 .intro .l1{font-size:clamp(26px,3.4vw,36px);line-height:1.2;font-weight:600;letter-spacing:-.03em;margin:0;color:var(--ink);text-wrap:balance}
 .intro .l2{font-size:21px;line-height:1.45;font-weight:400;letter-spacing:-.015em;margin:96px 0 0;color:var(--ink);max-width:880px}
 .nw{white-space:nowrap}
-.messy{position:relative;display:inline-block;color:var(--ink);font-weight:600}
-.note{position:absolute;left:74%;bottom:calc(100% + 10px);width:max-content;font-family:Caveat,"Bradley Hand","Segoe Print",cursive;font-weight:500;font-size:19px;line-height:1.1;color:#5f9a4a;letter-spacing:0;white-space:nowrap;text-align:left;pointer-events:none}
-.note svg{position:absolute;left:-24px;top:14px;width:22px;height:30px;overflow:visible}
+.l2 .em{position:relative;display:inline-block;font-weight:600;color:var(--ink)}
+.note{position:absolute;left:44px;top:calc(100% + 16px);width:max-content;font-family:Caveat,"Bradley Hand","Segoe Print",cursive;font-weight:500;font-size:19px;line-height:1.1;color:#5f9a4a;letter-spacing:0;white-space:nowrap;text-align:left;pointer-events:none}
+.note svg{position:absolute;left:-28px;top:-26px;width:22px;height:30px;overflow:visible;transform:scaleY(-1)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .note{color:#98c784}}
 :root[data-theme="dark"] .note{color:#98c784}
-@media(max-width:720px){.intro .l2{margin-top:72px;padding-bottom:64px}.br{display:none}.note{font-size:18px;left:34px;bottom:auto;top:calc(100% + 14px)}.note svg{left:-28px;top:-26px;transform:scaleY(-1)}}
+@media(max-width:720px){.intro{padding-bottom:110px}.intro .l2{position:relative;margin-top:72px}.l2 .em{position:static}.br{display:none}.note{font-size:18px;left:34px}}
 </style>
 </head>
 <body>
@@ -102,7 +102,7 @@ header{padding-bottom:64px}
   </header>
 
   <section class="intro" aria-label="About">
-    <p class="l2">Interested in the fascinating ways<br class="br"> people and emerging technology <span class="nw"><span class="messy">shape one another<span class="note" aria-hidden="true">interactions are layered,<br>situated, and evolving<svg viewBox="0 0 34 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4C12 6 6 16 8 32"/><path d="M3 27l5 6 5-6"/></svg></span></span>.</span></p>
+    <p class="l2">Interested in the fascinating ways<br class="br"> <b class="em">people and emerging technology<span class="note" aria-hidden="true">interactions are layered,<br>situated, and evolving<svg viewBox="0 0 34 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4C12 6 6 16 8 32"/><path d="M3 27l5 6 5-6"/></svg></span></b> shape one another.</p>
   </section>
 
   <div class="grid">
