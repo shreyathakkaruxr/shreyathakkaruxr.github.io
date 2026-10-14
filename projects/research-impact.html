@@ -227,10 +227,15 @@ header.top .lede{margin:0;max-width:none}
 .moves li{display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;counter-increment:m}
 .moves li::before{content:counter(m);font-size:17px;font-weight:600;color:var(--muted);line-height:1.35;text-align:center}
 
+/* credit line */
+.apb>.apl:has(+ .credit){margin-bottom:8px}
+.credit{font-size:14px;color:var(--muted);margin:0 0 32px}
+.credit a{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:3px}
+.credit a:hover{color:var(--ink)}
 /* soft highlight */
-.scribble{background:rgba(127,176,105,.22);border-radius:3px;padding:1px 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .scribble{background:rgba(152,199,132,.2)}}
-:root[data-theme="dark"] .scribble{background:rgba(152,199,132,.2)}
+.scribble{background:rgba(170,220,90,.42);border-radius:3px;padding:1px 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .scribble{background:rgba(180,225,100,.28)}}
+:root[data-theme="dark"] .scribble{background:rgba(180,225,100,.28)}
 .moves span .scribble{display:inline;font-size:inherit;color:inherit;line-height:inherit}
 </style>
 </head>
@@ -275,6 +280,7 @@ header.top .lede{margin:0;max-width:none}
 
   <section class="ap"><h2 class="aph">How I approached it</h2><div class="apb">
     <p class="apl">I adapted an industry framework for a hardware org with three changes:</p>
+    <p class="credit">Inspired by <a href="https://www.userresearchstrategist.com/" target="_blank" rel="noopener">Nikki Anderson, The User Research Strategist</a>.</p>
     <ol class="moves">
       <li><div><b>Name the decision up front</b><span>Each study brief states the decision it informs.</span></div></li>
       <li><div><b>Log early impact</b><span><span class="scribble">Signals and decisions count</span>, so impact shows up before outcomes arrive.</span></div></li>
@@ -390,7 +396,7 @@ header.top .lede{margin:0;max-width:none}
     <p class="apl">Used across 10+ studies at Electrolux North America since 2025.</p>
     <ul class="cons">
       <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><div><b>Visibility</b><span>Stakeholders can trace which decisions research informed.</span></div></li>
-      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><div><b>Reporting</b><span>Quarterly reports show influence + activity.</span></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><div><b>Reports</b><span>Quarterly reports show influence + activity.</span></div></li>
       <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><div><b>Next</b><span>Extend to global teams and connect log entries to business metrics.</span></div></li>
     </ul>
   </div></section>
