@@ -226,6 +226,11 @@ header.top .lede{margin:0;max-width:none}
 @media(min-width:720px){.moves{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
 .moves li{display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;counter-increment:m}
 .moves li::before{content:counter(m);font-size:17px;font-weight:600;color:var(--muted);line-height:1.35;text-align:center}
+
+/* hand-drawn underline */
+.scribble{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='12' viewBox='0 0 400 12' preserveAspectRatio='none'%3E%3Cpath d='M2 7.5 C 80 5.2, 170 8.8, 260 6.2 S 360 5.4, 398 4.2' fill='none' stroke='%237fb069' stroke-width='1.6' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:0 100%;background-size:100% 12px;padding-bottom:7px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .scribble{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='12' viewBox='0 0 400 12' preserveAspectRatio='none'%3E%3Cpath d='M2 7.5 C 80 5.2, 170 8.8, 260 6.2 S 360 5.4, 398 4.2' fill='none' stroke='%2398c784' stroke-width='1.6' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E")}}
+:root[data-theme="dark"] .scribble{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='12' viewBox='0 0 400 12' preserveAspectRatio='none'%3E%3Cpath d='M2 7.5 C 80 5.2, 170 8.8, 260 6.2 S 360 5.4, 398 4.2' fill='none' stroke='%2398c784' stroke-width='1.6' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E")}
 </style>
 </head>
 <body>
@@ -258,7 +263,7 @@ header.top .lede{margin:0;max-width:none}
   </div></section>
 
   <section class="ap"><h2 class="aph">Context</h2><div class="apb">
-    <p class="apl">Evidence of research impact lives in chats, roadmaps and memory, so quarterly reports listed the number of studies completed.</p>
+    <p class="apl">Evidence of <span class="scribble">research impact lives in chats, roadmaps and memory</span>, so quarterly reports listed the number of studies completed.</p>
     <h3 class="sub">Constraints</h3>
     <ul class="cons">
       <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Time</b><span>Had to fit into a weekly routine.</span></div></li>
