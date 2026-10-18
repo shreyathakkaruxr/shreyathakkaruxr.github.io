@@ -19,9 +19,8 @@
 <style>
 .hero{margin:40px 0 56px}
 .sep{border:0;border-top:1px solid var(--hair);margin:0 0 56px}
-:root[data-theme="dark"] .hero{background:#fff;border-radius:18px;padding:24px}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero{background:#fff;border-radius:18px;padding:24px}}
 .hero img{display:block;width:100%;height:auto}
+.hero picture{display:block}
 .ovh{font-size:21px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin:0 0 24px}
 .ovh + .hero{margin-top:0}
 
@@ -234,9 +233,12 @@ header.top .lede{margin:0;max-width:none}
 .credit a:hover{color:var(--ink)}
 /* soft highlight */
 .scribble{background:rgba(170,220,90,.42);border-radius:3px;padding:1px 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .scribble{background:rgba(180,225,100,.28)}}
-:root[data-theme="dark"] .scribble{background:rgba(180,225,100,.28)}
-.moves span .scribble{display:inline;font-size:inherit;color:inherit;line-height:inherit}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .scribble{background:rgba(160,230,60,.34)}}
+:root[data-theme="dark"] .scribble{background:rgba(160,230,60,.34)}
+.moves span .scribble{display:inline;font-size:inherit;color:var(--ink);line-height:inherit}
+
+/* phone: keep diagram readable, swipe sideways */
+@media(max-width:720px){.hero{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-right:-16px;padding-right:16px}.hero img{min-width:720px}.hero::after{content:"Swipe to see the full diagram \2192";display:block;font-size:13px;color:var(--muted);margin-top:8px;position:sticky;left:0}}
 </style>
 </head>
 <body>
@@ -257,7 +259,7 @@ header.top .lede{margin:0;max-width:none}
 
   <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">How findings move from one study to teams, decisions, and products.</p>
-    <figure class="hero"><img src="../images/fig-impact.svg?v=5" alt="After a study readout, findings fade without tracking; with follow-up, a weekly log, tagging by horizon, and a quarterly report, impact is recorded from signal to outcome"></figure>
+    <figure class="hero"><picture><source srcset="../images/fig-impact-dark.svg?v=7" media="(prefers-color-scheme: dark)"><img src="../images/fig-impact.svg?v=7" alt="After a study readout, findings fade without tracking; with follow-up, a weekly log, tagging by horizon, and a quarterly report, impact is recorded from signal to outcome"></picture></figure>
   </div></section>
   <section class="ap"><h2 class="aph">Why map impact?</h2><div class="apb">
     <p class="apl">Research pays off when a team acts on it, often weeks later and out of sight. Mapping <span class="scribble">links each study to the decisions it shaped</span>.</p>
