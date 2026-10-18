@@ -255,7 +255,7 @@ header.top .lede{margin:0;max-width:none}
 
   <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">AI saves effort, learning needs effort, and context decides how much to keep.</p>
-    <figure class="hero"><picture><source srcset="../images/fig-friction-dark.svg?v=7" media="(prefers-color-scheme: dark)"><img src="../images/fig-friction.svg?v=7" alt="A learner moves from a question to an AI answer, through the effort of learning to understanding, past a dial for context, to forms of AI beyond the chatbot"></picture></figure>
+    <figure class="hero"><picture><source srcset="../images/fig-friction-dark.svg?v=8" media="(prefers-color-scheme: dark)"><img src="../images/fig-friction.svg?v=8" alt="A learner moves from a question to an AI answer, through the effort of learning to understanding, past a dial for context, to forms of AI beyond the chatbot"></picture></figure>
   </div></section>
 
   <section class="ap"><h2 class="aph">Context</h2><div class="apb">
@@ -429,8 +429,8 @@ function mkPop(host){
   function set(k){cur=k;pit.classList.toggle('ai',k==='ai');sg.setAttribute('aria-pressed',String(k==='ai'));
     stops.forEach((s,j)=>s.classList.toggle('on',j===k));
     if(k===null)pop.hide();
-    else if(k==='ai')pop.show(sg.querySelector('.shortlbl'),'below','var(--sand)',`<b>Frictionless AI</b>${AI}`);
-    else pop.show(stops[k].querySelector('circle'),S[k].s,'var(--clay)',`<b>${S[k].n}</b>${S[k].d}`);}
+    else if(k==='ai')pop.show(pit,'below','var(--clay)',`<b>Frictionless AI</b>${AI}`);
+    else pop.show(pit,'below','var(--clay)',`<b>${S[k].n}</b>${S[k].d}`);}
   const flip=()=>set(cur==='ai'?null:'ai');
   sg.addEventListener('click',()=>{if(!HOV)flip()});sg.addEventListener('pointerenter',()=>{if(HOV)set('ai')});sg.addEventListener('pointerleave',()=>{if(HOV)set(null)});sg.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}});
   addEventListener('keydown',e=>{if(e.key==='Escape')set(null)});
