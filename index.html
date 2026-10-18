@@ -73,6 +73,9 @@ body>footer{margin-top:auto}
 section#work h2{margin-bottom:40px;border-top:1px solid var(--hair);padding-top:20px}
 .card{border:1px solid #f2f2f5;border-radius:28px;background:#fff;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
 .card:hover{border-color:#e5e5ea;transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.07)}
+/* dark mode cards */
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .card{background:var(--inset,#1c1c1e);border-color:var(--hair)}:root:not([data-theme="light"]) .card:hover{border-color:#48484a;box-shadow:0 12px 28px rgba(0,0,0,.4)}}
+:root[data-theme="dark"] .card{background:var(--inset,#1c1c1e);border-color:var(--hair)}
 .thumb{aspect-ratio:16/9;padding:18px 22px;border:0}
 .card .body{padding:24px 28px 28px}
 .eb{font-size:11px;font-weight:400;letter-spacing:.03em;text-transform:uppercase;color:#6e6e73;margin:0 0 8px!important}
