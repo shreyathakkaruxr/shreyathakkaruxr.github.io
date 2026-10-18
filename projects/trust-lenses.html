@@ -19,9 +19,8 @@
 <style>
 .hero{margin:40px 0 56px}
 .sep{border:0;border-top:1px solid var(--hair);margin:0 0 56px}
-:root[data-theme="dark"] .hero{background:#fff;border-radius:18px;padding:24px}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero{background:#fff;border-radius:18px;padding:24px}}
 .hero img{display:block;width:100%;height:auto}
+.hero picture{display:block}
 .ovh{font-size:21px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin:0 0 24px}
 .ovh + .hero{margin-top:0}
 
@@ -108,6 +107,9 @@ header.top .lede{margin:0;max-width:none}
 .ap .beyond{padding:0;margin:0}
 .ap .pit{max-width:520px}
 @media(max-width:720px){.ap{grid-template-columns:minmax(0,1fr);gap:16px}}
+
+/* phone: keep diagram readable, swipe sideways */
+@media(max-width:720px){.hero{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-right:-16px;padding-right:16px}.hero img{min-width:720px}.hero::after{content:"Swipe to see the full diagram \2192";display:block;font-size:13px;color:var(--muted);margin-top:8px;position:sticky;left:0}}
 </style>
 </head>
 <body>
@@ -125,7 +127,7 @@ header.top .lede{margin:0;max-width:none}
 
   <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">Six lenses for studying how people trust generative AI.</p>
-    <figure class="hero"><img src="../images/fig-trust.svg?v=3" alt="A person looks at generative AI through six lenses (philosophy, behavior, emotion, learning, agency, and high stakes) to reach trust calibration; without the lenses, trust drifts to over-trust or under-trust"></figure>
+    <figure class="hero"><picture><source srcset="../images/fig-trust-dark.svg?v=7" media="(prefers-color-scheme: dark)"><img src="../images/fig-trust.svg?v=7" alt="A person looks at generative AI through six lenses (philosophy, behavior, emotion, learning, agency, and high stakes) to reach trust calibration; without the lenses, trust drifts to over-trust or under-trust"></picture></figure>
   </div></section>
   <section class="ap"><h2 class="aph">Sources</h2><div class="apb">
     <p class="src"><a href="https://pair.withgoogle.com/guidebook/" target="_blank" rel="noopener">People + AI Guidebook, Google PAIR</a> · Inspired by <a href="https://www.media.mit.edu/groups/cyborg-psychology/overview/" target="_blank" rel="noopener">Cyborg Psychology, MIT Media Lab</a></p>
