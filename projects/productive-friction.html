@@ -339,7 +339,7 @@ header.top .lede{margin:0;max-width:none}
         <g class="opt" data-k="1" tabindex="0" role="button" aria-label="Restrict"><rect class="hitr" x="320" y="115" width="160" height="105"/>
           <line x1="400" y1="168" x2="400" y2="202" stroke="var(--accent)" stroke-width="1.5"/><circle cx="400" cy="210" r="6.5" fill="var(--accent)"/>
           <text x="400" y="138" text-anchor="middle" font-size="17" font-weight="600" fill="var(--ink)">Restrict</text>
-          <text x="400" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">A hint, not the solution</text></g>
+          <text x="400" y="158" text-anchor="middle" font-size="13" fill="var(--muted)">One hint at a time</text></g>
         <text x="790" y="40" text-anchor="middle" font-size="17" font-weight="600" fill="var(--ink)">Reshape</text>
         <text x="790" y="60" text-anchor="middle" font-size="13" fill="var(--muted)">Forms of AI</text>
         <g class="opt" data-k="2" tabindex="0" role="button" aria-label="Object"><rect class="hitr" x="760" y="90" width="110" height="40"/>
@@ -436,8 +436,8 @@ function mkPop(host){
 (function(){
   const HOV=matchMedia('(hover:hover) and (pointer:fine)').matches, VERB=HOV?'Hover over':'Tap';
   const D=[
-    ['Elicit','Asks the learner to try first.','var(--accent)','below'],
-    ['Restrict','Gives a hint, not the full solution.','var(--accent)','below'],
+    ['Elicit','The AI waits for an attempt, so the learner does the thinking.','var(--accent)','below'],
+    ['Restrict','Hints arrive step by step, so the learner keeps working the problem.','var(--accent)','below'],
     ['Object','AI in a physical thing the learner holds or uses.','var(--navy)','left'],
     ['Ritual','AI in a repeated practice, such as a daily review.','var(--clay)','left'],
     ['Companion','AI that learns alongside the learner.','var(--sage)','left'],
