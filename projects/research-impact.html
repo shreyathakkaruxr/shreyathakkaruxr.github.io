@@ -356,7 +356,7 @@ header.top .lede{margin:0;max-width:none}
   <section class="ap hzd" aria-labelledby="hzd"><h2 class="aph" id="hzd">Impact horizons</h2><div class="apb">
     <p class="apl">Each log entry gets one horizon.</p>
     <div class="hzwrap">
-      <div class="hz2"><svg class="donut big" id="donut2" viewBox="0 0 360 360" role="group" aria-label="Impact horizons diagram"></svg><p class="hzhint">Select a segment or a horizon.</p></div>
+      <div class="hz2"><svg class="donut big" id="donut2" viewBox="0 0 360 360" role="group" aria-label="Impact horizons diagram"></svg><p class="hzhint"></p></div>
       <div class="hzgrid" id="hzgrid">
       <article class="hzc" data-h="0" tabindex="0" role="button" aria-pressed="false" style="--c:var(--sand)">
         <h3>Signal</h3>
@@ -445,7 +445,8 @@ function mkPop(host){
   ];
   const NS='http://www.w3.org/2000/svg', C=180, R0=66, R1=118, R2=178;
   const svgs=[document.getElementById('donut'),document.getElementById('donut2')], grid=document.getElementById('hzgrid'), legend=document.getElementById('legend'), detail=document.getElementById('detail');
-  const DEFAULT='Select a segment or a horizon.', pop=mkPop(document.querySelector('.hz')), pop2=mkPop(document.querySelector('.hz2'));
+  const HOV=matchMedia('(hover:hover) and (pointer:fine)').matches, VERB=HOV?'Hover over':'Tap';
+  const DEFAULT=VERB+' a segment or a horizon.', pop=mkPop(document.querySelector('.hz')), pop2=mkPop(document.querySelector('.hz2'));
   const pt=(r,a)=>{const t=(a-90)*Math.PI/180;return [C+r*Math.cos(t),C+r*Math.sin(t)]};
   function arc(r0,r1,a0,a1){
     const [x0,y0]=pt(r1,a0),[x1,y1]=pt(r1,a1),[x2,y2]=pt(r0,a1),[x3,y3]=pt(r0,a0);
@@ -504,13 +505,16 @@ function mkPop(host){
   const toggle=(hi,ii,a,sd)=>{ anchor=a||null; side=sd||'above'; if(current && current.hi===hi && current.ii===ii) render(null,null); else render(hi,ii); };
   segs.forEach(s=>{
     const a=s.g.querySelector('path');
-    s.g.addEventListener('click',()=>toggle(s.hi,s.ii,a));
+    s.g.addEventListener('click',()=>{if(!HOV)toggle(s.hi,s.ii,a)});
+    s.g.addEventListener('pointerenter',e=>{if(HOV){anchor=a;side='above';render(s.hi,s.ii)}});
+    s.g.addEventListener('pointerleave',e=>{if(HOV)render(null,null)});
     s.g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(s.hi,s.ii,a)}});
   });
-  btns.forEach((b,i)=>b.addEventListener('click',()=>toggle(i,null,b,'below')));
+  btns.forEach((b,i)=>{b.addEventListener('click',()=>{if(!HOV)toggle(i,null,b,'below')});b.addEventListener('pointerenter',()=>{if(HOV){anchor=b;side='below';render(i,null)}});b.addEventListener('pointerleave',()=>{if(HOV)render(null,null)})});
   addEventListener('keydown',e=>{if(e.key==='Escape'&&current)render(null,null)});
-  cards.forEach((c,i)=>{c.addEventListener('click',()=>toggle(i,null));c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(i,null)}})});
+  cards.forEach((c,i)=>{c.addEventListener('click',()=>{if(!HOV)toggle(i,null)});c.addEventListener('pointerenter',()=>{if(HOV){anchor=null;render(i,null)}});c.addEventListener('pointerleave',()=>{if(HOV)render(null,null)});c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(i,null)}})});
   render(null,null);
+  document.querySelectorAll('.hzhint').forEach(e=>e.textContent=DEFAULT);
 })();
 </script>
 </body>
