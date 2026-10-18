@@ -26,7 +26,7 @@
 
 :root{
   --bg:#ffffff;--inset:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;
-  --accent:#041e42;
+  --accent:#34506e;
   --sand:#63768f;--sand-t:#e6eaf0;--sand-ink:#ffffff;
   --sage:#6f7f62;--sage-t:#e3e8de;--sage-ink:#ffffff;
   --clay:#a0684a;--clay-t:#efdfd5;--clay-ink:#ffffff;
@@ -35,7 +35,7 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
-    --accent:#9fb3d1;
+    --accent:#a3bbd8;
     --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
     --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
     --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
@@ -44,7 +44,7 @@
 }
 :root[data-theme="dark"]{
   --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
-  --accent:#9fb3d1;
+  --accent:#a3bbd8;
   --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
   --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
   --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
@@ -92,9 +92,9 @@ body>*{width:100%;box-sizing:border-box}
 body>footer{margin-top:auto}
 
 /* project color */
-.eyebrow{color:#5a6a4e}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow{color:#a9b79a}}
-:root[data-theme="dark"] .eyebrow{color:#a9b79a}
+.eyebrow{color:#4a6a8c}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow{color:#a3bbd8}}
+:root[data-theme="dark"] .eyebrow{color:#a3bbd8}
 
 /* Apple-style two-column sections (draft) */
 header.top{text-align:left;padding:72px 0 56px}
@@ -108,8 +108,50 @@ header.top .lede{margin:0;max-width:none}
 .ap .pit{max-width:520px}
 @media(max-width:720px){.ap{grid-template-columns:minmax(0,1fr);gap:16px}}
 
+.sub{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 16px;letter-spacing:-.005em}
+.apb>.apl + .sub{margin-top:8px}
+.why li{display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start}
+.why li svg{color:var(--ink);opacity:.7;margin-top:1px}
+.why b,.cons b,.moves b{display:block;font-size:17px;font-weight:600;letter-spacing:-.015em;margin:0 0 4px}
+.why span,.cons span,.moves span{display:block;font-size:15px;color:var(--muted);line-height:1.45}
+.why,.cons{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+@media(min-width:720px){.why,.cons{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.cons li{display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start}
+.cons li svg{color:var(--ink);opacity:.7;margin-top:1px}
+.moves{list-style:none;margin:0;padding:0;display:grid;gap:20px;counter-reset:m}
+@media(min-width:720px){.moves{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.moves li{display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;counter-increment:m}
+.moves li::before{content:counter(m);font-size:17px;font-weight:600;color:var(--muted);line-height:1.35;text-align:center}
+
+/* credit line */
+.apb>.apl:has(+ .credit){margin-bottom:8px}
+.credit{font-size:14px;color:var(--muted);margin:0 0 32px}
+.credit a{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:3px}
+.credit a:hover{color:var(--ink)}
+/* soft highlight */
+.scribble{background:rgba(140,175,215,.32);border-radius:3px;padding:1px 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.moves span .scribble{display:inline;font-size:inherit;color:var(--ink);line-height:inherit}
+.scnX{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+@media(min-width:720px){.scnX{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.scn li{border-top:3px solid var(--c);padding-top:14px}
+.scn small{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:0 0 4px}
+.scn b{display:block;font-size:17px;font-weight:600;letter-spacing:-.015em;margin:0 0 4px}
+.scn span{display:block;font-size:15px;color:var(--muted);line-height:1.45}
+.result{margin:28px 0 0;font-size:17px;line-height:1.5}
+.result small{display:block;font-size:14px;font-weight:600;color:var(--muted);margin:0 0 6px}
+
+/* single-line sections: no extra gap */
+.apb>.apl:last-child,.apb>.credit:last-child{margin-bottom:0}
+.ap{padding-bottom:48px}
+.qs3{margin-top:20px}
+
+
 /* phone: keep diagram readable, swipe sideways */
 @media(max-width:720px){.hero{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-right:-16px;padding-right:16px}.hero img{min-width:720px}.hero::after{content:"Swipe to see the full diagram \2192";display:block;font-size:13px;color:var(--muted);margin-top:8px;position:sticky;left:0}}
+.why.six{row-gap:28px}
+.apb>.apl a{color:var(--accent)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .scribble{background:rgba(120,160,210,.30)}}
+:root[data-theme="dark"] .scribble{background:rgba(120,160,210,.30)}
 </style>
 </head>
 <body>
@@ -129,10 +171,14 @@ header.top .lede{margin:0;max-width:none}
     <p class="apl">Six lenses for studying how people trust generative AI.</p>
     <figure class="hero"><picture><source srcset="../images/fig-trust-dark.svg?v=7" media="(prefers-color-scheme: dark)"><img src="../images/fig-trust.svg?v=7" alt="A person looks at generative AI through six lenses (philosophy, behavior, emotion, learning, agency, and high stakes) to reach trust calibration; without the lenses, trust drifts to over-trust or under-trust"></picture></figure>
   </div></section>
-  <section class="ap"><h2 class="aph">Sources</h2><div class="apb">
-    <p class="src"><a href="https://pair.withgoogle.com/guidebook/" target="_blank" rel="noopener">People + AI Guidebook, Google PAIR</a> · Inspired by <a href="https://www.media.mit.edu/groups/cyborg-psychology/overview/" target="_blank" rel="noopener">Cyborg Psychology, MIT Media Lab</a></p>
+  <section class="ap"><h2 class="aph">Context</h2><div class="apb">
+    <p class="apl">Trust in AI shifts with the stakes. <span class="scribble">Designing for trust starts with understanding what’s at risk</span>.</p>
+    <p class="credit">Sources: <a href="https://pair.withgoogle.com/guidebook/" target="_blank" rel="noopener">People + AI Guidebook, Google PAIR</a> · Inspired by <a href="https://www.media.mit.edu/groups/cyborg-psychology/overview/" target="_blank" rel="noopener">Cyborg Psychology, MIT Media Lab</a></p>
   </div></section>
 
+  <section class="ap"><h2 class="aph">Where it stands</h2><div class="apb">
+    <p class="apl">Work in progress. <a href="mailto:shreyathakkar.uxr@gmail.com">Get in touch</a> to collaborate.</p>
+  </div></section>
 </main>
 
 <footer>
