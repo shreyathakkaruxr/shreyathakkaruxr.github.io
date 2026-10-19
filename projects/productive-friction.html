@@ -266,7 +266,7 @@ header.top .lede{margin:0;max-width:none}
 
   <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">AI saves effort, learning needs effort, and context decides how much to keep.</p>
-    <figure class="hero"><picture><source id="mo-src" srcset="../images/fig-friction-dark.svg?v=10" media="(prefers-color-scheme: dark)"><img id="mo-img" src="../images/fig-friction.svg?v=10" alt="A learner moves from a question to an AI answer, through the effort of learning to understanding, past a dial for context, to forms of AI beyond the chatbot: an object, a ritual, a companion, and an open question"></picture></figure>
+    <figure class="hero"><picture><source id="mo-src" srcset="../images/fig-friction-dark.svg?v=11" media="(prefers-color-scheme: dark)"><img id="mo-img" src="../images/fig-friction.svg?v=11" alt="A question gets a quick AI answer, which keeps understanding lower; a learner moves through the effort of learning to understanding, past a dial for context, to forms of AI beyond the chatbot: an object, a ritual, a companion, and an open question"></picture></figure>
     <button type="button" class="motion" id="mo-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
   </div></section>
 
@@ -461,7 +461,7 @@ function mkPop(host){
 </script>
 <script>
 (()=>{const img=document.getElementById('mo-img'),src=document.getElementById('mo-src'),btn=document.getElementById('mo-btn');
-if(!img||!btn)return;const RUN=20000,still=['../images/fig-friction.svg?v=10','../images/fig-friction-dark.svg?v=10'],anim=['../images/fig-friction-anim.svg?v=2','../images/fig-friction-anim-dark.svg?v=2'];
+if(!img||!btn)return;const RUN=20000,still=['../images/fig-friction.svg?v=11','../images/fig-friction-dark.svg?v=11'],anim=['../images/fig-friction-anim.svg?v=3','../images/fig-friction-anim-dark.svg?v=3'];
 const ic={play:'<path d="M3 2v8l7-4z" fill="currentColor"/>',pause:'<path d="M3 2h2v8H3zM7 2h2v8H7z" fill="currentColor"/>',replay:'<path d="M9.5 6A3.5 3.5 0 1 1 6 2.5h1.5M6 1l1.6 1.5L6 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>'};
 let timer=null,playing=false;
 function set(k,label){btn.querySelector('svg').innerHTML=ic[k];btn.querySelector('span').textContent=label;btn.setAttribute('aria-label',label+' diagram animation')}
