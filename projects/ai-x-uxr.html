@@ -172,6 +172,9 @@ header.top .lede{margin:0;max-width:none}
 .gal a:hover img{border-color:var(--muted)}
 .gal figcaption{font-size:14px;color:var(--muted);margin-top:8px}
 .gal .conf{font-style:italic}
+.motion{display:inline-flex;align-items:center;gap:6px;margin:12px 0 0;padding:4px 10px;border:1px solid var(--hair);border-radius:999px;background:none;color:var(--muted);font:inherit;font-size:13px;cursor:pointer}
+.motion:hover{color:var(--ink);border-color:var(--muted)}
+.motion:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -188,7 +191,8 @@ header.top .lede{margin:0;max-width:none}
   </header>
   <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">A shared practice where AI drafts and researchers decide.</p>
-    <figure class="hero"><picture><source srcset="../images/fig-aiux-dark.svg?v=4" media="(prefers-color-scheme: dark)"><img src="../images/fig-aiux.svg?v=4" alt="Researchers who each used AI differently converge on a shared prompt and skill. AI drafts transcripts, tags, and summaries; researchers verify, interpret, prioritize and synthesize, and tell the story in an insight that notes AI's role. Prompts and skills are reviewed each quarter."></picture></figure>
+    <figure class="hero" id="aiux-fig"><picture><source id="aiux-src" srcset="../images/fig-aiux-still-dark.svg?v=2" media="(prefers-color-scheme: dark)"><img id="aiux-img" src="../images/fig-aiux-still.svg?v=2" alt="AI tool use varied by researcher. Researchers converge on a shared prompt and skill. AI drafts transcripts, tags, and summaries; researchers verify, interpret, prioritize and synthesize, and tell the story as an actionable insight. Prompts and skills are reviewed each quarter."></picture></figure>
+    <button type="button" class="motion" id="aiux-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
   </div></section>
 
   <section class="ap"><h2 class="aph">Context</h2><div class="apb">
@@ -236,5 +240,17 @@ header.top .lede{margin:0;max-width:none}
   <p>Written by Shreya Thakkar, with coding help from Claude</p>
 </footer>
 
+<script>
+(()=>{const img=document.getElementById('aiux-img'),src=document.getElementById('aiux-src'),btn=document.getElementById('aiux-btn');
+if(!img||!btn)return;const RUN=12000,still=['../images/fig-aiux-still.svg?v=2','../images/fig-aiux-still-dark.svg?v=2'],anim=['../images/fig-aiux.svg?v=5','../images/fig-aiux-dark.svg?v=5'];
+const ic={play:'<path d="M3 2v8l7-4z" fill="currentColor"/>',pause:'<path d="M3 2h2v8H3zM7 2h2v8H7z" fill="currentColor"/>',replay:'<path d="M9.5 6A3.5 3.5 0 1 1 6 2.5h1.5M6 1l1.6 1.5L6 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>'};
+let timer=null,playing=false;
+function set(k,label){btn.querySelector('svg').innerHTML=ic[k];btn.querySelector('span').textContent=label;btn.setAttribute('aria-label',label+' diagram animation')}
+function stop(done){clearTimeout(timer);playing=false;img.src=still[0];src.srcset=still[1];set(done?'replay':'play',done?'Replay':'Play')}
+function play(){const t='&t='+Date.now();img.src=anim[0]+t;src.srcset=anim[1]+t;playing=true;set('pause','Pause');clearTimeout(timer);timer=setTimeout(()=>stop(true),RUN)}
+btn.hidden=false;btn.addEventListener('click',()=>playing?stop(false):play());
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){set('play','Play');return}
+const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){io.disconnect();play()}},{threshold:.5});io.observe(img);})();
+</script>
 </body>
 </html>
