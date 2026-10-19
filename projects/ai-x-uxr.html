@@ -176,6 +176,16 @@ header.top .lede{margin:0;max-width:none}
 .motion{display:inline-flex;align-items:center;gap:6px;margin:24px 0 0;padding:4px 10px;border:1px solid var(--hair);border-radius:999px;background:none;color:var(--muted);font:inherit;font-size:13px;cursor:pointer}
 .motion:hover{color:var(--ink);border-color:var(--muted)}
 .motion:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.pnav{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid var(--hair);padding:32px 0 0;margin:0 0 8px}
+.pnav a{display:flex;align-items:center;gap:14px;color:var(--muted);text-decoration:none;font-size:15px;line-height:1.3}
+.pnav a:hover{color:var(--ink)}
+.pnav .arw{flex:none;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border:1px solid var(--hair);border-radius:999px;transition:border-color .15s}
+.pnav a:hover .arw{border-color:var(--muted)}
+.pnav a:focus-visible{outline:none}.pnav a:focus-visible .arw{outline:2px solid var(--accent);outline-offset:2px}
+.pnav .lb{white-space:nowrap}
+.pnav .nx{text-align:right}
+.pnav small{display:block;font-size:13px;color:var(--muted)}
+.pnav b{font-weight:600;color:var(--ink)}
 </style>
 </head>
 <body>
@@ -234,6 +244,10 @@ header.top .lede{margin:0;max-width:none}
       <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><div><b>Visibility</b><span>Presented at UX360, IDSA IDC 2026, and World Usability Congress 2025.</span></div></li>
     </ul>
   </div></section>
+  <nav class="pnav" aria-label="Project navigation">
+    <a href="../#work" aria-label="Back to all work"><span class="arw"><svg width="22" height="22" viewBox="0 0 14 14" aria-hidden="true"><path d="M8.5 3 L4.5 7 L8.5 11" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lb">All work</span></a>
+    <a class="nx" href="productive-friction.html" aria-label="Next project: AI x Productive Friction"><span><small>Next</small><b>AI x Productive Friction</b></span><span class="arw"><svg width="22" height="22" viewBox="0 0 14 14" aria-hidden="true"><path d="M5.5 3 L9.5 7 L5.5 11" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  </nav>
 </main>
 
 <footer>
