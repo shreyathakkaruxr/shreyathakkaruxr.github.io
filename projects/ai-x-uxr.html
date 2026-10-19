@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3XZXL7JWM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S3XZXL7JWM');
+  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI x UXR · Shreya Thakkar</title>
+<meta name="description" content="A shared practice for using AI in UX research: AI drafts, researchers decide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+.hero{margin:40px 0 56px}
+.sep{border:0;border-top:1px solid var(--hair);margin:0 0 56px}
+.hero img{display:block;width:100%;height:auto}
+.hero picture{display:block}
+.ovh{font-size:21px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin:0 0 24px}
+.ovh + .hero{margin-top:0}
+
+:root{
+  --bg:#ffffff;--inset:#f5f5f7;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;
+  --accent:#7a5a12;
+  --sand:#63768f;--sand-t:#e6eaf0;--sand-ink:#ffffff;
+  --sage:#6f7f62;--sage-t:#e3e8de;--sage-ink:#ffffff;
+  --clay:#a0684a;--clay-t:#efdfd5;--clay-ink:#ffffff;
+  --navy:#041e42;--navy-t:#dce1ea;--navy-ink:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
+    --accent:#e3c27a;
+    --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
+    --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
+    --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
+    --navy:#5a7299;--navy-t:#1b2433;--navy-ink:#ffffff;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
+  --accent:#e3c27a;
+  --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
+  --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
+  --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
+  --navy:#5a7299;--navy-t:#1b2433;--navy-ink:#ffffff;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.45;font-size:15px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:14px}
+nav a{text-decoration:none;color:var(--muted)}
+nav > a:first-child{color:var(--ink)}
+nav a:hover{color:var(--ink)}
+nav .links{display:flex;gap:20px}
+nav [aria-current]{color:var(--ink)}
+.display{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;font-weight:600}
+
+header.top{padding:56px 0 64px}
+.eyebrow{font-size:14px;font-weight:600;color:var(--accent);margin:0 0 8px}
+h1{font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin:0 0 8px}
+.lede{color:var(--muted);font-size:17px;margin:0;max-width:52ch}
+
+
+.src{font-size:12px;color:var(--muted);margin:32px 0 0}
+.src a{color:var(--accent);text-decoration:none}
+footer{padding:72px 0 48px;color:var(--muted);font-size:13px;text-align:center}
+footer p{margin:0 0 6px}
+footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+
+/* Apple-style header and section rows */
+header.top{text-align:center;padding:72px 0}
+header.top h1{font-size:44px;letter-spacing:-.03em;margin:0 0 12px}
+header.top .lede{margin:0 auto;font-size:19px;color:var(--ink);text-wrap:balance}
+.row{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:baseline;border-top:1px solid var(--hair);padding:40px 0 0;margin:0 0 56px}
+.row h2.ovh{margin:0;font-size:24px}
+.row p{margin:0;font-size:17px;line-height:1.5;max-width:60ch}
+@media(max-width:720px){.row{grid-template-columns:1fr;gap:8px}}
+.hero{margin:0 0 88px}
+
+/* footer at bottom */
+body{min-height:100vh;display:flex;flex-direction:column}
+body>*{width:100%;box-sizing:border-box}
+body>footer{margin-top:auto}
+
+/* project color */
+.eyebrow{color:#a3781a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow{color:#d9b45f}}
+:root[data-theme="dark"] .eyebrow{color:#d9b45f}
+
+/* Apple-style two-column sections (draft) */
+header.top{text-align:left;padding:72px 0 56px}
+header.top .lede{margin:0;max-width:none}
+.ap{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;border-top:1px solid var(--hair);padding:40px 0 72px;margin:0}
+.ap .aph{margin:0;font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.apb>.apl{margin:0 0 32px;font-size:17px;line-height:1.5;max-width:60ch}
+.ap .hero{margin:0}
+.ap .src{margin:0;font-size:15px}
+.ap .beyond{padding:0;margin:0}
+.ap .pit{max-width:520px}
+@media(max-width:720px){.ap{grid-template-columns:minmax(0,1fr);gap:16px}}
+
+.sub{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 16px;letter-spacing:-.005em}
+.apb>.apl + .sub{margin-top:8px}
+.why li{display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start}
+.why li svg{color:var(--ink);opacity:.7;margin-top:1px}
+.why b,.cons b,.moves b{display:block;font-size:17px;font-weight:600;letter-spacing:-.015em;margin:0 0 4px}
+.why span,.cons span,.moves span{display:block;font-size:15px;color:var(--muted);line-height:1.45}
+.why,.cons{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+@media(min-width:720px){.why,.cons{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.cons li{display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start}
+.cons li svg{color:var(--ink);opacity:.7;margin-top:1px}
+.moves{list-style:none;margin:0;padding:0;display:grid;gap:20px;counter-reset:m}
+@media(min-width:720px){.moves{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.moves li{display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;counter-increment:m}
+.moves li::before{content:counter(m);font-size:17px;font-weight:600;color:var(--muted);line-height:1.35;text-align:center}
+
+/* credit line */
+.apb>.apl:has(+ .credit){margin-bottom:8px}
+.apb>.apl + .apl{margin-top:-16px}
+.credit{font-size:14px;color:var(--muted);margin:0 0 32px}
+.credit a{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:3px}
+.credit a:hover{color:var(--ink)}
+/* soft highlight */
+.scribble{background:rgba(238,190,70,.34);border-radius:3px;padding:1px 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.moves span .scribble{display:inline;font-size:inherit;color:var(--ink);line-height:inherit}
+.scnX{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+@media(min-width:720px){.scnX{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.scn li{border-top:3px solid var(--c);padding-top:14px}
+.scn small{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:0 0 4px}
+.scn b{display:block;font-size:17px;font-weight:600;letter-spacing:-.015em;margin:0 0 4px}
+.scn span{display:block;font-size:15px;color:var(--muted);line-height:1.45}
+.result{margin:28px 0 0;font-size:17px;line-height:1.5}
+.result small{display:block;font-size:14px;font-weight:600;color:var(--muted);margin:0 0 6px}
+
+/* single-line sections: no extra gap */
+.apb>.apl:last-child,.apb>.credit:last-child{margin-bottom:0}
+.ap{padding-bottom:48px}
+.qs3{margin-top:20px}
+
+
+/* phone: keep diagram readable, swipe sideways */
+@media(max-width:720px){.hero{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-right:-16px;padding-right:16px}.hero img{min-width:720px}.hero::after{content:"Swipe to see the full diagram \2192";display:block;font-size:13px;color:var(--muted);margin-top:8px;position:sticky;left:0}}
+.why.six{row-gap:28px}
+.apb>.apl a{color:var(--accent)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .scribble{background:rgba(230,180,60,.28)}}
+:root[data-theme="dark"] .scribble{background:rgba(230,180,60,.28)}
+.moves.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:1000px){.moves.four{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.gal{display:grid;gap:24px}
+@media(min-width:720px){.gal{grid-template-columns:1fr 1fr}.gal .wide{grid-column:1/-1}}
+.gal figure{margin:0}
+.gal img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--hair)}
+.gal a{display:block}
+.gal a:hover img{border-color:var(--muted)}
+.gal figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <nav>
+    <a href="../">Shreya Thakkar</a>
+    <span class="links"><a href="../#work" aria-current="page">Work</a><a href="../about.html">About</a></span>
+  </nav>
+
+  <header class="top">
+    <p class="eyebrow">UX research practice</p>
+    <h1>AI x UXR</h1>
+    <p class="lede">How can researchers use AI without losing rigor?</p>
+  </header>
+  <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
+    <p class="apl">A shared practice where AI drafts and researchers decide.</p>
+    <figure class="hero"><picture><source srcset="../images/fig-aiux-dark.svg?v=3" media="(prefers-color-scheme: dark)"><img src="../images/fig-aiux.svg?v=3" alt="Researchers who each used AI differently converge on a shared prompt and skill. AI drafts transcripts, tags, and summaries; researchers verify, interpret, prioritize and synthesize, and tell the story in an insight that notes AI's role. Prompts and skills are reviewed each quarter."></picture></figure>
+  </div></section>
+
+  <section class="ap"><h2 class="aph">Context</h2><div class="apb">
+    <p class="apl">AI tools spread across the research team, and each researcher used them differently. Without shared methods, <span class="scribble">analysis quality depended on the researcher</span>.</p>
+    <p class="apl">This project built a shared practice for AI in research: faster analysis, with methods stakeholders can trust.</p>
+    <h3 class="sub">Constraints</h3>
+    <ul class="cons">
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="8.5" y="14" width="7" height="7" rx="1.5"/></svg><div><b>Tools</b><span>Six or more research tools, with no central repository connecting their work.</span></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Time and resources</b><span>Built alongside active research projects, without dedicated time.</span></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><div><b>Pace of change</b><span>AI tools changed every few months, so the practice had to outlast any single tool.</span></div></li>
+    </ul>
+  </div></section>
+
+  <section class="ap"><h2 class="aph">How I approached it</h2><div class="apb">
+    <p class="apl">Five decisions shaped the practice:</p>
+    <ol class="moves">
+      <li><div><b>Focus AI on repetitive tasks</b><span><span class="scribble">Interpretation and cultural analysis stay human-led</span>.</span></div></li>
+      <li><div><b>Engineer the context</b><span>Standard prompt templates (context, role, data, format) keep outputs consistent across researchers.</span></div></li>
+      <li><div><b>Keep templates living</b><span>Prompts and playbooks are reviewed each quarter as tools and skills change.</span></div></li>
+      <li><div><b>Disclose AI use</b><span>Each report notes where AI supported the work and where researchers led, so stakeholders trust the findings.</span></div></li>
+      <li><div><b>Reinvest time in storytelling</b><span>Time saved on coding and summaries goes into synthesis and storytelling, so teams can act on findings.</span></div></li>
+    </ol>
+  </div></section>
+
+  <section class="ap"><h2 class="aph">In practice</h2><div class="apb">
+    <p class="apl">The standards and tools the team uses.</p>
+    <div class="gal">
+      <figure class="wide"><a href="https://cdn.myportfolio.com/eb8a5309-81df-48eb-b187-ed2ac0de7e06/572d10c8-3214-43a3-b9cd-38ca400616d2_rw_1200.png?h=d608f7d67f459acae550a8af42ed781f" target="_blank" rel="noopener"><img src="https://cdn.myportfolio.com/eb8a5309-81df-48eb-b187-ed2ac0de7e06/572d10c8-3214-43a3-b9cd-38ca400616d2_rw_1200.png?h=d608f7d67f459acae550a8af42ed781f" alt="Research strategy: practice audit, framework design, and pilot testing, with three principles for AI research and an AI-assisted research workflow" loading="lazy"></a><figcaption>Research strategy: principles and workflow</figcaption></figure>
+      <figure class="wide"><a href="https://cdn.myportfolio.com/eb8a5309-81df-48eb-b187-ed2ac0de7e06/1bec2461-b1a4-4230-8ce9-4aa83a15ed39_rw_1200.png?h=e273dc840fdd2e1f9d0267a8fdb942e0" target="_blank" rel="noopener"><img src="https://cdn.myportfolio.com/eb8a5309-81df-48eb-b187-ed2ac0de7e06/1bec2461-b1a4-4230-8ce9-4aa83a15ed39_rw_1200.png?h=e273dc840fdd2e1f9d0267a8fdb942e0" alt="How the framework was operationalized: a decision tree for when to use AI, tool-specific playbooks, and a prompt template library" loading="lazy"></a><figcaption>Decision tree and prompt template library</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="ap"><h2 class="aph">Impact to date</h2><div class="apb">
+    <p class="apl">An evolving practice, updated as tools and skills change. <a href="mailto:shreyathakkar.uxr@gmail.com">Reach out</a> to learn more.</p>
+    <ul class="cons">
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg><div><b>Speed</b><span>About 40% faster analysis.</span></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 13.8c2 .8 3.5 3 3.5 6.2"/></svg><div><b>Adoption</b><span>Four business units, with 12 researchers trained.</span></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><div><b>Visibility</b><span>Presented at UX360, IDSA IDC 2026, and World Usability Congress 2025.</span></div></li>
+    </ul>
+  </div></section>
+</main>
+
+<footer>
+  <p><a href="../">Home</a> · <a href="../about.html">About</a> · <a href="https://shreyathakkar.com" target="_blank" rel="noopener">Portfolio</a> · <a href="https://github.com/shreyathakkaruxr" target="_blank" rel="noopener">GitHub</a></p>
+  <p>Written by Shreya Thakkar, with coding help from Claude</p>
+</footer>
+
+</body>
+</html>
