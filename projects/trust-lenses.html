@@ -171,6 +171,11 @@ header.top .lede{margin:0;max-width:none}
 .pnav .nx{text-align:right}
 .pnav small{display:block;font-size:13px;color:var(--muted)}
 .pnav b{font-weight:600;color:var(--ink)}
+.meta{display:grid;gap:20px;margin:40px 0 0;padding:0}
+@media(min-width:720px){.meta{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.meta div{margin:0}
+.meta dt{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 4px}
+.meta dd{margin:0;font-size:17px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -189,6 +194,11 @@ header.top .lede{margin:0;max-width:none}
   <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">Six lenses for studying how people trust generative AI.</p>
     <figure class="hero"><picture><source srcset="../images/fig-trust-dark.svg?v=7" media="(prefers-color-scheme: dark)"><img src="../images/fig-trust.svg?v=7" alt="A person looks at generative AI through six lenses (philosophy, behavior, emotion, learning, agency, and high stakes) to reach trust calibration; without the lenses, trust drifts to over-trust or under-trust"></picture></figure>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Independent researcher</dd></div>
+      <div><dt>Timeline</dt><dd>2026, in progress</dd></div>
+      <div><dt>Teams</dt><dd>Open to research collaborators</dd></div>
+    </dl>
   </div></section>
   <section class="ap"><h2 class="aph">Context</h2><div class="apb">
     <p class="apl">Trust in AI shifts with the stakes. <span class="scribble">Designing for trust starts with understanding what’s at risk</span>.</p>

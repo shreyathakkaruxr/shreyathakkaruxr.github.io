@@ -260,6 +260,11 @@ header.top .lede{margin:0;max-width:none}
 .pnav small{display:block;font-size:13px;color:var(--muted)}
 .pnav b{font-weight:600;color:var(--ink)}
 .ap:has(.motion){padding-bottom:24px}
+.meta{display:grid;gap:20px;margin:40px 0 0;padding:0}
+@media(min-width:720px){.meta{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.meta div{margin:0}
+.meta dt{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 4px}
+.meta dd{margin:0;font-size:17px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -279,6 +284,11 @@ header.top .lede{margin:0;max-width:none}
     <p class="apl">AI saves effort, learning needs effort, and context decides how much to keep.</p>
     <figure class="hero"><picture><source id="mo-src" srcset="../images/fig-friction-dark.svg?v=12" media="(prefers-color-scheme: dark)"><img id="mo-img" src="../images/fig-friction.svg?v=12" alt="A question gets a quick AI answer, which keeps understanding lower; a learner moves through the effort of learning to understanding, past a dial for context, to forms of AI beyond the chatbot: an object, a ritual, a companion, and an open question"></picture></figure>
     <button type="button" class="motion" id="mo-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Co-lead researcher and workshop designer</dd></div>
+      <div><dt>Timeline</dt><dd>2026, ongoing</dd></div>
+      <div><dt>Teams</dt><dd>Co-led with Sneha Arvind</dd></div>
+    </dl>
   </div></section>
 
   <section class="ap"><h2 class="aph">Context</h2><div class="apb">

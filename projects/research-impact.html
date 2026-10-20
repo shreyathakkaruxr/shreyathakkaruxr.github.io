@@ -262,6 +262,11 @@ header.top .lede{margin:0;max-width:none}
 .pnav small{display:block;font-size:13px;color:var(--muted)}
 .pnav b{font-weight:600;color:var(--ink)}
 .ap:has(.motion){padding-bottom:24px}
+.meta{display:grid;gap:20px;margin:40px 0 0;padding:0}
+@media(min-width:720px){.meta{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.meta div{margin:0}
+.meta dt{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 4px}
+.meta dd{margin:0;font-size:17px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -284,6 +289,11 @@ header.top .lede{margin:0;max-width:none}
     <p class="apl">How a study’s findings reach teams, shape decisions, change products, and move metrics.</p>
     <figure class="hero"><picture><source id="mo-src" srcset="../images/fig-impact-dark.svg?v=7" media="(prefers-color-scheme: dark)"><img id="mo-img" src="../images/fig-impact.svg?v=7" alt="After a study readout, findings fade without tracking; with follow-up, a weekly log, tagging by horizon, and a quarterly report, impact is recorded from signal to outcome"></picture></figure>
     <button type="button" class="motion" id="mo-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Lead UX Researcher, Research Operations</dd></div>
+      <div><dt>Timeline</dt><dd>2025–present</dd></div>
+      <div><dt>Teams</dt><dd>Product Management, Design, Engineering, Research leadership</dd></div>
+    </dl>
   </div></section>
   <section class="ap"><h2 class="aph">Why map impact?</h2><div class="apb">
     <p class="apl">Research pays off when a team acts on it, often weeks later and out of sight. Mapping <span class="scribble">links each study to the decisions it shaped</span>.</p>

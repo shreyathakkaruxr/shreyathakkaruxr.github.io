@@ -187,6 +187,11 @@ header.top .lede{margin:0;max-width:none}
 .pnav small{display:block;font-size:13px;color:var(--muted)}
 .pnav b{font-weight:600;color:var(--ink)}
 .ap:has(.motion){padding-bottom:24px}
+.meta{display:grid;gap:20px;margin:40px 0 0;padding:0}
+@media(min-width:720px){.meta{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.meta div{margin:0}
+.meta dt{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 4px}
+.meta dd{margin:0;font-size:17px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -205,6 +210,11 @@ header.top .lede{margin:0;max-width:none}
     <p class="apl">A shared practice where AI drafts and researchers decide.</p>
     <figure class="hero" id="aiux-fig"><picture><source id="aiux-src" srcset="../images/fig-aiux-still-dark.svg?v=5" media="(prefers-color-scheme: dark)"><img id="aiux-img" src="../images/fig-aiux-still.svg?v=5" alt="AI tool use varied by researcher. Researchers converge on shared prompts and skills. AI drafts transcripts, tags, and summaries; researchers verify, interpret, prioritize and synthesize, and tell the story as an actionable insight. Prompts and skills are reviewed each quarter."></picture></figure>
     <button type="button" class="motion" id="aiux-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Lead UX Researcher, Research Practice</dd></div>
+      <div><dt>Timeline</dt><dd>2025–present</dd></div>
+      <div><dt>Teams</dt><dd>UX Research across four business units, Global UX</dd></div>
+    </dl>
   </div></section>
 
   <section class="ap"><h2 class="aph">Context</h2><div class="apb">
