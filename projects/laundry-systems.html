@@ -180,6 +180,9 @@ header.top .lede{margin:0;max-width:none}
 .meta dd{margin:0;font-size:17px;line-height:1.4}
 .shot{margin:0}
 .shot img{display:block;max-width:100%;height:auto;border-radius:12px}
+.gallery .row3{display:flex;gap:12px;margin-top:12px;align-items:flex-start}
+.gallery .row3 img{min-width:0;width:100%;height:auto;border-radius:12px}
+@media(max-width:720px){.gallery .row3{flex-direction:column}.gallery .row3 img{flex:none!important}}
 .shot figcaption{font-size:14px;color:var(--muted);margin:12px 0 0;font-style:italic}
 
 /* four phases */
@@ -259,7 +262,7 @@ header.top .lede{margin:0;max-width:none}
     <p class="apl">Three moves kept research ahead of hardware decisions:</p>
     <ol class="moves">
       <li><div><b>Define premium early</b><span>Perception and futures research defined signals of premium.</span></div></li>
-      <li><div><b>Test with physical mockups</b><span>Human factors and RITE rounds <span class="scribble">caught issues early</span>.</span></div></li>
+      <li><div><b>Test with physical mockups</b><span>Human factors and RITE rounds <span class="scribble">caught usability gaps early</span>.</span></div></li>
       <li><div><b>Design for error recovery and notifications</b><span>Mapped all error scenarios, with clear alerts and recovery steps.</span></div></li>
     </ol>
   </div></section>
@@ -318,7 +321,15 @@ header.top .lede{margin:0;max-width:none}
       <li><b>40%</b><span>Faster concept-to-market</span></li>
       <li><b>1</b><span>Interaction language across washers, dryers, and app</span></li>
     </ul>
-    <figure class="shot" style="margin-top:40px"><img src="../images/laundry-tower.jpg?v=1" width="2000" height="1334" alt="A stacked washer and dryer tower in a laundry room" loading="lazy"><figcaption>Current-generation appliances. My research shaped the next generation, launching in 2027.</figcaption></figure>
+    <figure class="shot gallery" style="margin-top:40px">
+      <img src="../images/laundry-tower.jpg?v=1" width="2000" height="1334" alt="A stacked washer and dryer tower in a laundry room" loading="lazy">
+      <div class="row3">
+        <img src="../images/laundry-pair.jpg?v=1" width="576" height="413" style="flex:1.395" alt="A washer and dryer side by side in a bright laundry room" loading="lazy">
+        <img src="../images/laundry-app-wifi.jpg?v=1" width="1280" height="720" style="flex:1.778" alt="App screen guiding a person to turn on Wi-Fi mode on the appliance" loading="lazy">
+        <img src="../images/laundry-app-remote.png?v=1" width="1280" height="720" style="flex:1.778" alt="A phone showing remote wash cycle settings" loading="lazy">
+      </div>
+      <figcaption>Current-generation appliances and app. My research shaped the next generation, launching in 2027.</figcaption>
+    </figure>
     <p class="nda">Product details are under NDA. <a href="mailto:shreyathakkar.uxr@gmail.com">Reach out</a> to learn more.</p>
   </div></section>
   <nav class="pnav" aria-label="Project navigation">
