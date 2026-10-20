@@ -225,11 +225,13 @@ header.top .lede{margin:0;max-width:none}
 :root[data-theme="dark"] .lfig{--soft:#33373e;--d1:#8a96aa;--d2:#6f8aa3}
 .lfig .base{fill:none;stroke:var(--soft);stroke-width:2}
 .lfig .trail{fill:none;stroke-width:2.4}.lfig .t1{stroke:var(--d1)}.lfig .t2{stroke:var(--d2)}
-.lfig .lbl{font-size:16px;fill:var(--muted);text-anchor:middle;transition:fill .3s}.lfig .lbl.on{fill:var(--ink)}
+.lfig .lbl{font-size:16px;font-weight:600;fill:var(--muted);text-anchor:middle;transition:fill .3s}.lfig .lbl.on{fill:var(--ink)}
 .lfig .head{font-size:16px;font-weight:600;fill:var(--ink);text-anchor:middle;transition:opacity .6s}
 .lfig .node{font-size:15px;fill:var(--muted);text-anchor:middle}
 .lfig .branch{fill:none;stroke:var(--accent);stroke-width:2.6}
 .lfig .outline{fill:var(--bg);stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
+.lfig .track{fill:none;stroke:var(--soft);stroke-width:3.5}
+.lfig .ring{fill:none;stroke:var(--accent);stroke-width:3.5;stroke-linecap:round}
 .lfig .sd{transition:opacity .4s}.lfig .mover{stroke:var(--bg);stroke-width:2;opacity:0}
 </style>
 </head>
@@ -248,13 +250,13 @@ header.top .lede{margin:0;max-width:none}
 
   <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">End-to-end research for the next generation of washers, dryers, and app: <span class="scribble">35+ studies in 16 weeks</span>, from discovery to design freeze.</p>
-    <figure class="hero"><svg class="lfig" viewBox="118 20 952 290" role="img" aria-labelledby="lf-t"><title id="lf-t">From homes, research moves through Discover and Define to a brief, then Develop and Deliver to design freeze. Three lines carry one interaction language to the washer, dryer, and app. Without early research, fixes come after tooling.</title>
+    <figure class="hero"><svg class="lfig" viewBox="118 0 952 318" role="img" aria-labelledby="lf-t"><title id="lf-t">From homes, research moves through Discover and Define to a brief, then Develop and Deliver to design freeze. Three lines carry one interaction language to the washer, dryer, and app. Without early research, fixes come after tooling.</title>
   <!-- one line of labels: phases + outcome -->
-  <text class="lbl" x="320" y="56">Discover</text>
-  <text class="lbl" x="460" y="56">Define</text>
-  <text class="lbl" x="608" y="56">Develop</text>
-  <text class="lbl" x="762" y="56">Deliver</text>
-  <text class="head" id="head" x="970" y="56">One interaction language</text>
+  <text class="lbl" x="320" y="34"><tspan class="num" style="fill:var(--d1)">01</tspan> Discover</text>
+  <text class="lbl" x="460" y="34"><tspan class="num" style="fill:var(--d1)">02</tspan> Define</text>
+  <text class="lbl" x="608" y="34"><tspan class="num" style="fill:var(--d2)">03</tspan> Develop</text>
+  <text class="lbl" x="762" y="34"><tspan class="num" style="fill:var(--d2)">04</tspan> Deliver</text>
+  <text class="head" id="head" x="970" y="34">One interaction language</text>
 
   <!-- homes -->
   <g class="outline">
@@ -262,7 +264,7 @@ header.top .lede{margin:0;max-width:none}
     <path transform="translate(8 -6)" stroke-opacity=".55" d="M136 164 L151 150 L166 164 V184 H136 Z"/>
     <path d="M136 164 L151 150 L166 164 V184 H136 Z"/><path d="M146 184 V173 H156 V184" stroke-width="1.6"/>
   </g>
-  <text class="node" x="151" y="206">Homes</text>
+  <g class="outline" stroke-width="1.8" stroke-linecap="round"><circle cx="205" cy="137" r="5.5"/><path d="M194 166 C194 152 199 147 205 147 C211 147 216 152 216 166"/><rect x="209" y="148" width="11" height="14" rx="1.5" transform="rotate(8 214.5 155)"/><path d="M211.8 153 h5.5 M211.6 156.3 h5.5 M211.4 159.6 h3.5" stroke-width="1.1" transform="rotate(8 214.5 155)"/></g><text class="node" x="151" y="206">Homes</text>
   <line x1="184" y1="168" x2="250" y2="168" style="stroke:var(--d1)" stroke-width="2.4"/>
 
   <!-- counterfactual -->
@@ -284,20 +286,21 @@ header.top .lede{margin:0;max-width:none}
   <circle cx="840" cy="168" r="5" class="outline" id="freeze"/><text class="node" x="840" y="198">design freeze</text>
 
   <!-- three lines out to products -->
-  <path class="branch" d="M845 168 H872 C896 168,896 101,918 101"/>
+  <path class="branch" d="M845 168 H872 C896 168,896 87,918 87"/>
   <path class="branch" d="M845 168 H872 C896 168,896 183,918 183"/>
-  <path class="branch" d="M845 168 H872 C896 168,896 262,918 262"/>
+  <path class="branch" d="M845 168 H872 C896 168,896 278,918 278"/>
 
   <g class="prod">
-    <g transform="translate(928 72)"><rect class="outline" width="42" height="58" rx="5"/><path class="outline" d="M0 12h42" stroke-width="1.4"/><circle class="outline" cx="21" cy="35" r="10"/></g><text class="node" x="996" y="107" style="text-anchor:start;fill:var(--ink);font-size:16px">washer</text>
+    <g transform="translate(928 58)"><rect class="outline" width="42" height="58" rx="5"/><path class="outline" d="M0 12h42" stroke-width="1.4"/><circle class="outline" cx="21" cy="35" r="10"/></g><text class="node" x="996" y="98" style="text-anchor:start;fill:var(--ink);font-size:16px">washer</text>
   </g>
   <g class="prod">
     <g transform="translate(928 154)"><rect class="outline" width="42" height="58" rx="5"/><path class="outline" d="M0 12h42" stroke-width="1.4"/><rect class="outline" x="24" y="3.5" width="12" height="4" rx="1" stroke-width="1.3"/><circle class="outline" cx="21" cy="35" r="10"/></g><text class="node" x="996" y="189" style="text-anchor:start;fill:var(--ink);font-size:16px">dryer</text>
   </g>
   <g class="prod">
-    <g transform="translate(935 234)"><rect class="outline" width="28" height="56" rx="5"/><path class="outline" d="M9 47h10" stroke-width="1.4"/></g><text class="node" x="996" y="267" style="text-anchor:start;fill:var(--ink);font-size:16px">app</text>
+    <g transform="translate(935 250)"><rect class="outline" width="28" height="56" rx="5"/><path class="outline" d="M9 47h10" stroke-width="1.4"/></g><text class="node" x="996" y="283" style="text-anchor:start;fill:var(--ink);font-size:16px">app</text>
   </g>
 
+  <g id="rings"><circle class="track" cx="949" cy="93" r="15"/><circle class="ring" cx="949" cy="93" r="15"/><circle class="track" cx="949" cy="189" r="15"/><circle class="ring" cx="949" cy="189" r="15"/><circle class="track" cx="949" cy="272" r="9"/><circle class="ring" cx="949" cy="272" r="9"/></g>
   <!-- the two dots -->
   <circle class="mover" id="m1" r="7"/><circle class="mover" id="m2" r="7"/>
 </svg></figure>
@@ -420,6 +423,7 @@ const up=document.getElementById('up'),low=document.getElementById('low'),trails
 const m=[document.getElementById('m1'),document.getElementById('m2')];
 const lbls=[...document.querySelectorAll('.lbl')],head=document.getElementById('head');
 const branches=[...document.querySelectorAll('.branch')],prods=[...document.querySelectorAll('.prod')];
+const rings=[...document.querySelectorAll('.ring')];rings.forEach(r=>{r.dataset.c=2*Math.PI*r.r.baseVal.value;r.setAttribute('transform',`rotate(-90 ${r.cx.baseVal.value} ${r.cy.baseVal.value})`)});
 const freeze=document.getElementById('freeze'),sd=[...document.querySelectorAll('.sd')];
 const routes=[up,low],L=routes.map(r=>r.getTotalLength());
 // split each route at the brief (x=530) so the trail changes color between diamonds
@@ -450,7 +454,8 @@ function frame(now){
   m.forEach(x=>x.style.opacity=k<1?1:0);
   freeze.style.fill=k>=1?'var(--accent)':'';freeze.style.stroke=k>=1?'var(--accent)':'';
   const kp=Math.max(0,Math.min((t-T1-T2*.6)/T3,1));
-  prods.forEach(p=>p.style.opacity=ease(kp));
+  prods.forEach(p=>p.style.opacity=.3+.7*ease(kp));
+  rings.forEach(r=>dash(r,+r.dataset.c,+r.dataset.c*k));
   head.style.opacity=kp>=1?1:0;
   if(t<T1+T2+T3)raf=requestAnimationFrame(frame);
 }
