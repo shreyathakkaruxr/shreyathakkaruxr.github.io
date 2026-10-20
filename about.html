@@ -85,7 +85,8 @@ header{padding-bottom:64px}
 .note svg{position:absolute;left:-21px;top:-21px;width:22px;height:30px;overflow:visible;transform:scaleY(-1)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .note{color:#98c784}}
 :root[data-theme="dark"] .note{color:#98c784}
-@media(max-width:720px){.intro{padding-bottom:110px}.intro .l2{position:relative;margin-top:72px}.l2 .em{position:static}.br{display:none}.note{font-size:18px;left:34px}}
+@media(min-width:721px){.note{left:190px;top:calc(100% + 44px)}.note svg{top:-44px;height:50px}}
+@media(max-width:720px){.intro{padding-bottom:110px}.intro .l2{position:relative;margin-top:72px}.l2 .em{position:static;display:inline}.br{display:none}.note{font-size:18px;left:34px}}
 .contact{margin:14px 0 0;font-size:15px;display:flex;gap:10px;color:var(--muted)}
 .contact a{color:var(--accent);text-decoration:none}
 .contact a:hover{text-decoration:underline}
@@ -106,7 +107,7 @@ header{padding-bottom:64px}
   </header>
 
   <section class="intro" aria-label="About">
-    <p class="l2">I study how <b class="em">people and emerging technology<span class="note" aria-hidden="true">interactions are layered,<br>situated, and evolving<svg viewBox="0 0 34 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4C12 6 6 16 8 32"/><path d="M3 27l5 6 5-6"/></svg></span></b> shape one another.</p>
+    <p class="l2">I study the evolving relationships between <b class="em">people and emerging technologies<span class="note" aria-hidden="true">interactions are layered,<br>situated, and evolving<svg viewBox="0 0 34 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4C12 6 6 16 8 32"/><path d="M3 27l5 6 5-6"/></svg></span></b>,<br class="br"> to inform design strategy and shape future experiences.</p>
   </section>
 
   <div class="grid">
