@@ -435,7 +435,7 @@ const tr=routes.map((r,i)=>{const p=r.cloneNode();p.removeAttribute('id');p.setA
 function dash(el,len,draw){el.style.strokeDasharray=len;el.style.strokeDashoffset=len-draw}
 branches.forEach(b=>{b.dataset.l=b.getTotalLength()});
 const bounds=[250,390,530,685,840];
-const T1=5200,T2=900,T3=900; // dots, branches, products
+const T1=6500,T2=1100,T3=1100; // dots, branches, products
 let start,raf;
 const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
 function frame(now){
