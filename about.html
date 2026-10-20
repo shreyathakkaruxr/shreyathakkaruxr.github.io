@@ -86,6 +86,7 @@ header{padding-bottom:64px}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .note{color:#98c784}}
 :root[data-theme="dark"] .note{color:#98c784}
 .marrow{display:none}
+@media(max-width:720px){.intro .l2 .br{display:inline}}
 @media(max-width:720px){.intro{position:relative}.note{left:auto;right:0;text-align:right}.note svg{display:none}.marrow{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;stroke:#5f9a4a;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .marrow{stroke:#98c784}}:root[data-theme="dark"] .marrow{stroke:#98c784}
 @media(min-width:721px){.note{left:190px;top:calc(100% + 44px)}.note svg{top:-44px;height:50px}}
@@ -110,7 +111,7 @@ header{padding-bottom:64px}
   </header>
 
   <section class="intro" aria-label="About"><svg class="marrow" aria-hidden="true"><path class="ms" fill="none"/><path class="mh" fill="none"/></svg>
-    <p class="l2">I study the evolving relationships between <b class="em">people and <span class="anc">emerging</span> technologies<span class="note" aria-hidden="true">interactions are layered<br>and situated<svg viewBox="0 0 34 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4C12 6 6 16 8 32"/><path d="M3 27l5 6 5-6"/></svg></span></b>,<br class="br"> to inform design strategy and shape future experiences.</p>
+    <p class="l2">I study the relationships between <b class="em">people and emerging <span class="anc">technologies</span><span class="note" aria-hidden="true">interactions are layered,<br>situated, and evolving<svg viewBox="0 0 34 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4C12 6 6 16 8 32"/><path d="M3 27l5 6 5-6"/></svg></span></b>,<br class="br"> to inform design strategy and shape future experiences.</p>
   </section>
 
   <div class="grid">
@@ -187,9 +188,11 @@ header{padding-bottom:64px}
 <script>
 (()=>{const i=document.querySelector('.intro'),a=document.querySelector('.anc'),n=document.querySelector('.note'),m=document.querySelector('.marrow');
 if(!i||!a||!n||!m)return;const mq=matchMedia('(max-width:720px)');
-function draw(){if(!mq.matches)return;const r=i.getBoundingClientRect(),ar=a.getBoundingClientRect(),nr=n.getBoundingClientRect();
+function rightBelow(p,y){let mr=0;const w=document.createTreeWalker(p,NodeFilter.SHOW_TEXT,{acceptNode:t=>t.parentElement.closest('.note')?2:1});let t;while(t=w.nextNode()){const rg=document.createRange();rg.selectNodeContents(t);for(const q of rg.getClientRects()){if(q.top>y&&q.width>1)mr=Math.max(mr,q.right)}}return mr}
+function place(){const p=document.querySelector('.intro .l2'),em=document.querySelector('.l2 .em');if(mq.matches){n.style.left='';return}const er=em.getClientRects()[0],mr=rightBelow(p,er.bottom-2);n.style.left=Math.max(60,mr-er.left+40)+'px'}
+function draw(){place();if(!mq.matches)return;const r=i.getBoundingClientRect(),ar=a.getBoundingClientRect(),nr=n.getBoundingClientRect();
 const sx=nr.right-r.left-18,sy=nr.top-r.top-6,ex=ar.right-r.left+6,ey=ar.top-r.top+ar.height*.62;
-const p=document.querySelector('.intro .l2'),rg=document.createRange();rg.selectNodeContents(p);let mr=0;for(const q of rg.getClientRects()){if(q.top>ar.bottom-2&&q.width>1)mr=Math.max(mr,q.right-r.left)}const gx=Math.min(r.width+14,Math.max(mr+12,ex+18,sx+4));const c1x=gx,c2x=gx;m.querySelector('.ms').setAttribute('d',`M${sx} ${sy} C${sx} ${sy-24},${gx} ${sy-20},${gx} ${sy-46} L${gx} ${ey+26} C${gx} ${ey+8},${ex+14} ${ey},${ex} ${ey}`);
+const p=document.querySelector('.intro .l2');const mr=rightBelow(p,ar.bottom-2)-r.left;const gx=Math.min(r.width+14,Math.max(mr+12,ex+18,sx+4));const c1x=gx,c2x=gx;m.querySelector('.ms').setAttribute('d',`M${sx} ${sy} C${sx} ${sy-24},${gx} ${sy-20},${gx} ${sy-46} L${gx} ${ey+14} C${gx} ${ey+2},${ex+22} ${ey},${ex} ${ey}`);
 const dx=-14,dy=0,L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L,h=7,c=Math.cos(.5),s=Math.sin(.5);
 const p1=[ex-h*(ux*c-uy*s),ey-h*(uy*c+ux*s)],p2=[ex-h*(ux*c+uy*s),ey-h*(uy*c-ux*s)];
 m.querySelector('.mh').setAttribute('d',`M${p1[0]} ${p1[1]} L${ex} ${ey} L${p2[0]} ${p2[1]}`)}
