@@ -35,6 +35,7 @@ nav a{text-decoration:none;color:var(--muted)}
 nav a:hover{color:var(--ink)}
 nav > a:first-child{color:var(--ink)}
 nav .links{display:flex;gap:20px}
+@media(max-width:480px){nav{flex-wrap:wrap;gap:8px 16px}nav .links{gap:16px}}
 nav [aria-current]{color:var(--ink)}
 
 header{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;padding:96px 0 104px}
@@ -101,7 +102,7 @@ section#work{border-top:1px solid var(--hair);padding-top:48px}
 <div class="wrap">
   <nav>
     <a href="./" aria-current="page">Shreya Thakkar</a>
-    <div class="links"><a href="./#work">Work</a><a href="about.html">About</a></div>
+    <div class="links"><a href="./#work">Work</a><a href="independent-research.html">Independent research</a><a href="about.html">About</a></div>
   </nav>
 
   <header>
@@ -135,22 +136,6 @@ section#work{border-top:1px solid var(--hair);padding-top:48px}
           <p class="eb">Consumer tech</p><h3>Laundry Systems</h3>
           <p>The next generation of laundry systems, in 16 weeks.</p>
           <span class="foot"><span class="go">View project ›</span><span class="status">Applied research</span></span>
-        </div>
-      </a>
-      <a class="card" href="projects/productive-friction.html">
-        <span class="thumb thumb-photo"><img src="images/card-friction-paper.jpg?v=4" alt="" loading="lazy"></span>
-        <div class="body">
-          <p class="eb">Learning and education</p><h3>AI x Productive Friction</h3>
-          <p>How might we learn with AI in 2045, beyond the chatbot?</p>
-          <span class="foot"><span class="go">View project ›</span><span class="status">Research in progress</span></span>
-        </div>
-      </a>
-      <a class="card" href="projects/trust-lenses.html">
-        <span class="thumb thumb-photo thumb-fit thumb-paper"><img src="images/card-trust-v2.jpg?v=1" alt="" loading="lazy"></span>
-        <div class="body">
-          <p class="eb">Human-AI interaction</p><h3>AI x Trust</h3>
-          <p>How is trust in AI formed, shaped, and sustained?</p>
-          <span class="foot"><span class="go">View project ›</span><span class="status">Research in progress</span></span>
         </div>
       </a>
     </div>

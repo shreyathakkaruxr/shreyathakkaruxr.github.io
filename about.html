@@ -32,6 +32,7 @@ nav a{text-decoration:none;color:var(--muted)}
 nav a:hover{color:var(--ink)}
 nav > a:first-child{color:var(--ink)}
 nav .links{display:flex;gap:20px}
+@media(max-width:480px){nav{flex-wrap:wrap;gap:8px 16px}nav .links{gap:16px}}
 nav [aria-current]{color:var(--ink)}
 
 header{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;padding:96px 0 104px}
@@ -103,7 +104,7 @@ header{padding-bottom:64px}
 <div class="wrap">
   <nav>
     <a href="./">Shreya Thakkar</a>
-    <div class="links"><a href="./#work">Work</a><a href="about.html" aria-current="page">About</a></div>
+    <div class="links"><a href="./#work">Work</a><a href="independent-research.html">Independent research</a><a href="about.html" aria-current="page">About</a></div>
   </nav>
 
   <header>
