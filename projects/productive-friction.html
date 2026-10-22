@@ -276,6 +276,10 @@ header.top .lede{margin:0;max-width:none}
 :root[data-theme="dark"] .pill{background:#3a2725;color:#e8b9b4}:root[data-theme="dark"] .pill:hover{background:#4a3230}
 .pill .dot{width:7px;height:7px;border-radius:50%;background:#c48782;flex:none;margin-right:8px}
 .pill.sm .dot{width:6px;height:6px;margin-right:6px}
+.event .pill{background:#fdf7f6}
+.event .pill:hover{background:#f8ecea}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .event .pill{background:#261d1c}:root:not([data-theme="light"]) .event .pill:hover{background:#3a2725}}
+:root[data-theme="dark"] .event .pill{background:#261d1c}:root[data-theme="dark"] .event .pill:hover{background:#3a2725}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
