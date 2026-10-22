@@ -94,12 +94,12 @@ section#work{border-top:1px solid var(--hair);padding-top:48px}
 .thumb.thumb-fit.thumb-aiux img{object-fit:cover;object-position:center}
 .thumb.thumb-fit{position:relative;overflow:hidden}.thumb.thumb-fit img{position:absolute;inset:0}
 header>div{min-height:161px;display:flex;flex-direction:column;justify-content:center}
-.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:#f6ece5;color:#7a4a32;font-size:14px;font-weight:500;text-decoration:none;border:1px solid #ead6c8;transition:border-color .2s}
-.pill:hover{border-color:#a0684a}
-.pill .dot{width:7px;height:7px;border-radius:50%;background:#c0603a;flex:none}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill{background:#2e221b;color:#e3bfa6;border-color:#4a3428}}
-:root[data-theme="dark"] .pill{background:#2e221b;color:#e3bfa6;border-color:#4a3428}
-.pill.sm{padding:3px 10px;font-size:12px;gap:6px}.pill.sm .dot{width:6px;height:6px}
+.pill.sm{padding:4px 10px;font-size:12px}
+.pill{display:inline-flex;align-items:center;gap:0;padding:8px 16px;border-radius:980px;background:#f6e8e6;color:#8a4f4a;font-size:14px;font-weight:400;letter-spacing:-.01em;text-decoration:none;border:0;transition:background .2s}
+.pill:hover{background:#efd9d6}
+.pill:focus-visible{outline:2px solid #c48782;outline-offset:2px}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill{background:#3a2725;color:#e8b9b4}:root:not([data-theme="light"]) .pill:hover{background:#4a3230}}
+:root[data-theme="dark"] .pill{background:#3a2725;color:#e8b9b4}:root[data-theme="dark"] .pill:hover{background:#4a3230}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -124,7 +124,7 @@ header>div{min-height:161px;display:flex;flex-direction:column;justify-content:c
         <div class="body">
           <p class="eb">Education</p><h3>Learning with AI in 2045</h3>
           <p>Imagining embodied AI beyond chatbots.</p>
-          <span class="foot"><span class="go">View project ›</span><span class="status pill sm"><span class="dot" aria-hidden="true"></span>SXSW EDU 2027</span></span>
+          <span class="foot"><span class="go">View project ›</span><span class="status pill sm">SXSW EDU 2027</span></span>
         </div>
       </a>
       <a class="card" href="projects/trust-lenses.html">
