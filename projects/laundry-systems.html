@@ -235,6 +235,26 @@ header.top .lede{margin:0;max-width:none}
 .lfig .ring{fill:none;stroke:var(--accent);stroke-width:3.5;stroke-linecap:round}
 .lfig .rocket{transform-box:fill-box;stroke:var(--accent);opacity:0}.lfig .rocket.up{animation:lf-launch 1.6s cubic-bezier(.3,0,.4,1) forwards}@keyframes lf-launch{0%{opacity:0;transform:translateY(8px)}25%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-34px)}}.lfig .bmover{fill:var(--accent);stroke:var(--bg);stroke-width:2;opacity:0}
 .lfig .sd{transition:opacity .4s}.lfig .hatch{stroke:var(--d2);stroke-width:1.2;opacity:0;transition:opacity .4s}.lfig .mover{stroke:var(--bg);stroke-width:2;opacity:0}
+.disc{margin:0}
+.dnum{font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--muted);margin:0 0 6px}
+.disc h3{font-size:21px;line-height:1.25;font-weight:600;letter-spacing:-.02em;margin:0 0 24px}
+.dfig{margin:0 0 32px;padding:24px;background:var(--inset);border-radius:16px}
+.dpanels{display:block;width:100%;max-width:620px;height:auto;margin:0 auto}
+.dpanels .pn{fill:var(--bg);stroke:var(--hair);stroke-width:1.5}
+.dpanels .ds{fill:var(--ink)}
+.dpanels .dt{fill:var(--bg);font:600 18px -apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif;text-anchor:middle}
+.dpanels .bt{fill:none;stroke:var(--muted);stroke-width:1.2;opacity:.7}
+.dpanels .cap{fill:var(--muted);font:500 14px -apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif;text-anchor:middle}
+.dpanels .cap.on{fill:var(--ink);font-weight:600}
+.dpanels .ck circle{fill:var(--accent)}.dpanels .ck path{fill:none;stroke:var(--bg);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dfig figcaption{font-size:13px;color:var(--muted);text-align:center;margin:12px 0 0;font-style:italic}
+.dsteps{display:grid;gap:24px;margin:0}
+@media(min-width:900px){.dsteps{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}}
+.dsteps div{border-top:1px solid var(--hair);padding-top:14px;margin:0}
+.dsteps dt{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 6px}
+.dsteps dd{margin:0;font-size:15px;line-height:1.45}
+.dsteps .chg{border-top:2px solid var(--accent)}
+.dsteps .chg dt{color:var(--accent)}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -336,6 +356,21 @@ header.top .lede{margin:0;max-width:none}
       <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Compressed timeline</b><span><span class="scribble">16 weeks to design freeze, down from 32</span>, with hardware decisions locked early.</span></div></li>
       <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><div><b>Global markets</b><span>Needs and expectations vary by region.</span></div></li>
     </ul>
+  </div></section>
+
+  <section class="ap"><h2 class="aph">Key discoveries</h2><div class="apb">
+    <p class="apl">Where research changed the direction of the design.</p>
+    <article class="disc">
+      <p class="dnum">01 · Control panel</p>
+      <h3>Show every cycle on the control panel</h3>
+      <figure class="dfig"><svg class="dpanels" viewBox="0 0 620 200" role="img" aria-label="Two control panel concepts: a dead-front panel with fewer buttons, and a panel with all cycles visible. The team moved forward with all cycles visible."><g transform="translate(0 0)"><rect class="pn" x="0" y="20" width="290" height="110" rx="12"/><rect class="ds" x="104" y="44" width="82" height="40" rx="6"/><text class="dt" x="145" y="71">0:45</text><rect class="bt" x="30" y="58" width="40" height="14" rx="3"/><rect class="bt" x="220" y="58" width="40" height="14" rx="3"/><text class="cap" x="145" y="158">Dead front, fewer buttons</text></g><g transform="translate(330 0)"><rect class="pn" x="0" y="20" width="290" height="110" rx="12"/><rect class="bt" x="16" y="38" width="34" height="14" rx="3"/><rect class="bt" x="54" y="38" width="34" height="14" rx="3"/><rect class="bt" x="92" y="38" width="34" height="14" rx="3"/><rect class="bt" x="16" y="64" width="34" height="14" rx="3"/><rect class="bt" x="54" y="64" width="34" height="14" rx="3"/><rect class="bt" x="92" y="64" width="34" height="14" rx="3"/><rect class="bt" x="16" y="90" width="34" height="14" rx="3"/><rect class="bt" x="54" y="90" width="34" height="14" rx="3"/><rect class="bt" x="92" y="90" width="34" height="14" rx="3"/><rect class="ds" x="134" y="44" width="70" height="40" rx="6"/><text class="dt" x="169" y="71">0:45</text><rect class="bt" x="214" y="38" width="30" height="14" rx="3"/><rect class="bt" x="250" y="38" width="30" height="14" rx="3"/><rect class="bt" x="214" y="64" width="30" height="14" rx="3"/><rect class="bt" x="250" y="64" width="30" height="14" rx="3"/><rect class="bt" x="214" y="90" width="30" height="14" rx="3"/><rect class="bt" x="250" y="90" width="30" height="14" rx="3"/><text class="cap on" x="145" y="158">All cycles visible</text><g class="ck"><circle cx="145" cy="184" r="10"/><path d="M140 184l3.5 3.5 6.5-7"/></g></g></svg><figcaption>Simplified sketch of the two concepts tested. Product details are under NDA.</figcaption></figure>
+      <dl class="dsteps">
+        <div><dt>Team believed</dt><dd>A dead-front panel (controls hidden until lit) with fewer visible cycles and buttons would feel cleaner and more premium.</dd></div>
+        <div><dt>Research showed</dt><dd>In a comparative usability test (n&nbsp;=&nbsp;12), participants completed favorite-cycle tasks more successfully when all cycles were visible.</dd></div>
+        <div><dt>Recommended</dt><dd>Keep all cycles visible on the control panel.</dd></div>
+        <div class="chg"><dt>What changed</dt><dd>The team moved forward with the all-cycles-visible control panel.</dd></div>
+      </dl>
+    </article>
   </div></section>
 
   <section class="ap"><h2 class="aph">How I approached it</h2><div class="apb">
