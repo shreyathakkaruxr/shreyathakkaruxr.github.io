@@ -76,10 +76,10 @@ body>footer{margin-top:auto}
 section h2{border-top:1px solid var(--hair);padding-top:20px;margin-bottom:20px}
 
 /* intro with hand-drawn note */
-header{padding-bottom:64px}
-.intro{padding:0 0 150px}
+header{padding-bottom:104px}
+.intro{padding:0 0 150px;border-top:1px solid var(--hair)}
 .intro .l1{font-size:clamp(26px,3.4vw,36px);line-height:1.2;font-weight:600;letter-spacing:-.03em;margin:0;color:var(--ink);text-wrap:balance}
-.intro .l2{font-size:21px;line-height:1.45;font-weight:400;letter-spacing:-.015em;margin:96px 0 0;color:var(--ink);max-width:880px}
+.intro .l2{font-size:21px;line-height:1.45;font-weight:400;letter-spacing:-.015em;margin:40px 0 0;color:var(--ink);max-width:880px}
 .nw{white-space:nowrap}
 .l2 .em{position:relative;display:inline-block;font-weight:600;color:var(--ink)}
 .note{position:absolute;left:44px;top:calc(100% + 28px);width:max-content;font-family:Caveat,"Bradley Hand","Segoe Print",cursive;font-weight:500;font-size:19px;line-height:1.1;color:#5f9a4a;letter-spacing:0;white-space:nowrap;text-align:left;pointer-events:none}
@@ -91,7 +91,7 @@ header{padding-bottom:64px}
 @media(max-width:720px){.intro{position:relative}.note{left:auto;right:0;text-align:right}.note svg{display:none}.marrow{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;stroke:#5f9a4a;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .marrow{stroke:#98c784}}:root[data-theme="dark"] .marrow{stroke:#98c784}
 @media(min-width:721px){.note{left:190px;top:calc(100% + 44px)}.note svg{top:-44px;height:50px}}
-@media(max-width:720px){.intro{padding-bottom:110px}.intro .l2{position:relative;margin-top:72px}.l2 .em{position:static;display:inline}.br{display:none}.note{font-size:18px;left:auto;right:0}}
+@media(max-width:720px){.intro{padding-bottom:110px}.intro .l2{position:relative;margin-top:40px}.l2 .em{position:static;display:inline}.br{display:none}.note{font-size:18px;left:auto;right:0}}
 .contact{margin:14px 0 0;font-size:15px;display:flex;gap:10px;color:var(--muted)}
 .contact a{color:var(--accent);text-decoration:none}
 .contact a:hover{text-decoration:underline}

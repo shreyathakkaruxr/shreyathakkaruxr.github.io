@@ -38,7 +38,7 @@ nav .links{display:flex;gap:20px}
 @media(max-width:480px){nav{flex-wrap:wrap;gap:8px 16px}nav .links{gap:16px}}
 nav [aria-current]{color:var(--ink)}
 
-header{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;padding:72px 0 56px}
+header{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;padding:96px 0 104px}
 .photo{width:160px;height:160px;border-radius:50%;object-fit:cover;flex:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .lede{color:var(--muted);font-size:17px;margin:0;max-width:62ch;line-height:1.4;letter-spacing:-.01em}
@@ -93,6 +93,7 @@ section#work{border-top:1px solid var(--hair);padding-top:48px}
 .thumb.thumb-fit.thumb-aiux{aspect-ratio:16/9;background:#d6d7dc}
 .thumb.thumb-fit.thumb-aiux img{object-fit:cover;object-position:center}
 .thumb.thumb-fit{position:relative;overflow:hidden}.thumb.thumb-fit img{position:absolute;inset:0}
+header>div{min-height:161px;display:flex;flex-direction:column;justify-content:center}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -106,7 +107,8 @@ section#work{border-top:1px solid var(--hair);padding-top:48px}
   </nav>
 
   <header>
-    <h1 class="hname">Independent research</h1>
+    <div><h1 class="hname">Independent research</h1>
+    <p class="lede">Projects I pursue out of curiosity.<br>Where I learn, explore, and test new ideas.</p></div>
   </header>
 
   <section id="work" aria-label="Independent research">
