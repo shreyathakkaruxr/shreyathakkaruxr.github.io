@@ -100,6 +100,8 @@ header>div{min-height:161px;display:flex;flex-direction:column;justify-content:c
 .pill:focus-visible{outline:2px solid #c48782;outline-offset:2px}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill{background:#3a2725;color:#e8b9b4}:root:not([data-theme="light"]) .pill:hover{background:#4a3230}}
 :root[data-theme="dark"] .pill{background:#3a2725;color:#e8b9b4}:root[data-theme="dark"] .pill:hover{background:#4a3230}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:#c48782;flex:none;margin-right:8px}
+.pill.sm .dot{width:6px;height:6px;margin-right:6px}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -124,7 +126,7 @@ header>div{min-height:161px;display:flex;flex-direction:column;justify-content:c
         <div class="body">
           <p class="eb">Education</p><h3>Learning with AI in 2045</h3>
           <p>Imagining embodied AI beyond chatbots.</p>
-          <span class="foot"><span class="go">View project ›</span><span class="status pill sm">SXSW EDU 2027</span></span>
+          <span class="foot"><span class="go">View project ›</span><span class="status pill sm"><span class="dot" aria-hidden="true"></span>SXSW EDU 2027</span></span>
         </div>
       </a>
       <a class="card" href="projects/trust-lenses.html">

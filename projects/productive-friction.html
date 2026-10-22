@@ -274,6 +274,8 @@ header.top .lede{margin:0;max-width:none}
 .pill:focus-visible{outline:2px solid #c48782;outline-offset:2px}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill{background:#3a2725;color:#e8b9b4}:root:not([data-theme="light"]) .pill:hover{background:#4a3230}}
 :root[data-theme="dark"] .pill{background:#3a2725;color:#e8b9b4}:root[data-theme="dark"] .pill:hover{background:#4a3230}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:#c48782;flex:none;margin-right:8px}
+.pill.sm .dot{width:6px;height:6px;margin-right:6px}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -294,7 +296,7 @@ header.top .lede{margin:0;max-width:none}
 
   <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">AI saves effort, learning needs effort, and context decides how much to keep.</p>
-    <p class="event"><a class="pill" href="https://schedule.sxswedu.com/2027/events/PP1163387" target="_blank" rel="noopener"><span><b>SXSW EDU 2027</b> · Workshop · Austin, March 13–16 ↗</span></a></p>
+    <p class="event"><a class="pill" href="https://schedule.sxswedu.com/2027/events/PP1163387" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span><b>SXSW EDU 2027</b> · Workshop · Austin, March 13–16 ↗</span></a></p>
     <figure class="hero"><picture><source id="mo-src" srcset="../images/fig-friction-dark.svg?v=12" media="(prefers-color-scheme: dark)"><img id="mo-img" src="../images/fig-friction.svg?v=12" alt="A question gets a quick AI answer, which keeps understanding lower; a learner moves through the effort of learning to understanding, past a dial for context, to forms of AI beyond the chatbot: an object, a ritual, a companion, and an open question"></picture></figure>
     <button type="button" class="motion" id="mo-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
     <dl class="meta">
