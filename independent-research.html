@@ -102,6 +102,10 @@ header>div{min-height:161px;display:flex;flex-direction:column;justify-content:c
 :root[data-theme="dark"] .pill{background:#3a2725;color:#e8b9b4}:root[data-theme="dark"] .pill:hover{background:#4a3230}
 .pill .dot{width:7px;height:7px;border-radius:50%;background:#c48782;flex:none;margin-right:8px}
 .pill.sm .dot{width:6px;height:6px;margin-right:6px}
+.pill.sm{background:#fdf7f6}
+.card:hover .pill.sm{background:#f8ecea}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill.sm{background:#261d1c}}
+:root[data-theme="dark"] .pill.sm{background:#261d1c}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
