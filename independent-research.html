@@ -11,6 +11,7 @@
   </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
 <title>Independent research · Shreya Thakkar</title>
 <meta name="description" content="Senior UX Researcher and Strategist. Mixed-methods and human factors research for hardware, software, and AI experiences.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +20,7 @@
 <style>
 :root{--bg:#ffffff;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;--accent:#041e42;
   --sand:#63768f;--sage:#6f7f62;--clay:#a0684a;--navy:#041e42}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f0f10;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1;
+@media not all{:root:not([data-theme="light"]){--bg:#0f0f10;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1;
   --sand:#7d8fa6;--sage:#7f906f;--clay:#b57756;--navy:#5a7299}}
 :root[data-theme="dark"]{--bg:#0f0f10;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1;
   --sand:#7d8fa6;--sage:#7f906f;--clay:#b57756;--navy:#5a7299}
@@ -68,14 +69,14 @@ body>footer{margin-top:auto}
 .thumb{display:block}
 .thumb img{width:100%;height:100%;object-fit:contain;display:block}
 :root[data-theme="dark"] .thumb{background:#fff}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .thumb{background:#fff}}
+@media not all{:root:not([data-theme="light"]) .thumb{background:#fff}}
 
 .work{gap:24px}
 section#work{border-top:1px solid var(--hair);padding-top:48px}
 .card{border:1px solid #f2f2f5;border-radius:28px;background:#fff;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
 .card:hover{border-color:#e5e5ea;transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.07)}
 /* dark mode cards */
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .card{background:var(--inset,#1c1c1e);border-color:var(--hair)}:root:not([data-theme="light"]) .card:hover{border-color:#48484a;box-shadow:0 12px 28px rgba(0,0,0,.4)}}
+@media not all{:root:not([data-theme="light"]) .card{background:var(--inset,#1c1c1e);border-color:var(--hair)}:root:not([data-theme="light"]) .card:hover{border-color:#48484a;box-shadow:0 12px 28px rgba(0,0,0,.4)}}
 :root[data-theme="dark"] .card{background:var(--inset,#1c1c1e);border-color:var(--hair)}
 .thumb{aspect-ratio:16/9;padding:18px 22px;border:0}
 .card .body{padding:24px 28px 28px}
@@ -98,14 +99,15 @@ header>div{min-height:161px;display:flex;flex-direction:column;justify-content:c
 .pill{display:inline-flex;align-items:center;gap:0;padding:8px 16px;border-radius:980px;background:#f6e8e6;color:#8a4f4a;font-size:14px;font-weight:400;letter-spacing:-.01em;text-decoration:none;border:0;transition:background .2s}
 .pill:hover{background:#efd9d6}
 .pill:focus-visible{outline:2px solid #c48782;outline-offset:2px}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill{background:#3a2725;color:#e8b9b4}:root:not([data-theme="light"]) .pill:hover{background:#4a3230}}
+@media not all{:root:not([data-theme="light"]) .pill{background:#3a2725;color:#e8b9b4}:root:not([data-theme="light"]) .pill:hover{background:#4a3230}}
 :root[data-theme="dark"] .pill{background:#3a2725;color:#e8b9b4}:root[data-theme="dark"] .pill:hover{background:#4a3230}
 .pill .dot{width:7px;height:7px;border-radius:50%;background:#c48782;flex:none;margin-right:8px}
 .pill.sm .dot{width:6px;height:6px;margin-right:6px}
 .pill.sm{background:#fdf7f6}
 .card:hover .pill.sm{background:#f8ecea}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill.sm{background:#261d1c}}
+@media not all{:root:not([data-theme="light"]) .pill.sm{background:#261d1c}}
 :root[data-theme="dark"] .pill.sm{background:#261d1c}
+:root{color-scheme:light only}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">

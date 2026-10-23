@@ -11,6 +11,7 @@
   </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
 <title>About · Shreya Thakkar</title>
 <meta name="description" content="Senior UX Researcher and Strategist. Mixed-methods and human factors research for hardware, software, and AI experiences.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#ffffff;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;--accent:#041e42}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f0f10;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1}}
+@media not all{:root:not([data-theme="light"]){--bg:#0f0f10;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1}}
 :root[data-theme="dark"]{--bg:#0f0f10;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;--accent:#9fb3d1}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -84,18 +85,19 @@ header{padding-bottom:64px}
 .l2 .em{position:relative;display:inline-block;font-weight:600;color:var(--ink)}
 .note{position:absolute;left:44px;top:calc(100% + 28px);width:max-content;font-family:Caveat,"Bradley Hand","Segoe Print",cursive;font-weight:500;font-size:19px;line-height:1.1;color:#5f9a4a;letter-spacing:0;white-space:nowrap;text-align:left;pointer-events:none}
 .note svg{position:absolute;left:-21px;top:-21px;width:22px;height:30px;overflow:visible;transform:scaleY(-1)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .note{color:#98c784}}
+@media not all{:root:not([data-theme="light"]) .note{color:#98c784}}
 :root[data-theme="dark"] .note{color:#98c784}
 .marrow{display:none}
 @media(max-width:720px){.intro .l2 .br{display:inline}}
 @media(max-width:720px){.intro{position:relative}.note{left:auto;right:0;text-align:right}.note svg{display:none}.marrow{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;stroke:#5f9a4a;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .marrow{stroke:#98c784}}:root[data-theme="dark"] .marrow{stroke:#98c784}
+@media not all{:root:not([data-theme="light"]) .marrow{stroke:#98c784}}:root[data-theme="dark"] .marrow{stroke:#98c784}
 @media(min-width:721px){.note{left:190px;top:calc(100% + 44px)}.note svg{top:-44px;height:50px}}
 @media(max-width:720px){.intro{padding-bottom:110px}.intro .l2{position:relative;margin-top:72px}.l2 .em{position:static;display:inline}.br{display:none}.note{font-size:18px;left:auto;right:0}}
 .contact{margin:14px 0 0;font-size:15px;display:flex;gap:10px;color:var(--muted)}
 .contact a{color:var(--accent);text-decoration:none}
 .contact a:hover{text-decoration:underline}
 @media(max-width:720px){.marrow{display:none!important}.intro{padding-bottom:96px}}
+:root{color-scheme:light only}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">

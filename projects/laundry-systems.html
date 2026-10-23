@@ -11,6 +11,7 @@
   </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
 <title>Shaping next-gen connected laundry · Shreya Thakkar</title>
 <meta name="description" content="End-to-end research, from discovery to design freeze, for the next generation of laundry appliances.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +33,7 @@
   --clay:#a0684a;--clay-t:#efdfd5;--clay-ink:#ffffff;
   --navy:#041e42;--navy-t:#dce1ea;--navy-ink:#ffffff;
 }
-@media (prefers-color-scheme: dark){
+@media not all{
   :root:not([data-theme="light"]){
     --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
     --accent:#7fa2ec;
@@ -94,7 +95,7 @@ body>footer{margin-top:auto}
 
 /* project color */
 .eyebrow{color:#0047ab}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow{color:#7fa2ec}}
+@media not all{:root:not([data-theme="light"]) .eyebrow{color:#7fa2ec}}
 :root[data-theme="dark"] .eyebrow{color:#7fa2ec}
 
 /* Apple-style two-column sections (draft) */
@@ -154,7 +155,7 @@ header.top .lede{margin:0;max-width:none}
 @media(max-width:720px){.hero{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-right:-16px;padding-right:16px}.hero img,.hero .lfig{min-width:720px}.hero::after{content:"Swipe to see the full diagram \2192";display:block;font-size:13px;color:var(--muted);margin-top:8px;position:sticky;left:0}}
 .why.six{row-gap:28px}
 .apb>.apl a{color:var(--accent)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .scribble{background:
+@media not all{:root:not([data-theme="light"]) .scribble{background:
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='rgb%2890%2C135%2C225%29' stop-opacity='0.33'/%3E%3Cstop offset='1' stop-color='rgb%2890%2C135%2C225%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%2890%2C135%2C225%29' fill-opacity='.30' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3Cpath fill='url%28%23g%29' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3C/svg%3E") left center/13px 100% no-repeat,
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='1' y1='0' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='rgb%2890%2C135%2C225%29' stop-opacity='0.33'/%3E%3Cstop offset='1' stop-color='rgb%2890%2C135%2C225%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%2890%2C135%2C225%29' fill-opacity='.30' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3Cpath fill='url%28%23g%29' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3C/svg%3E") right center/13px 100% no-repeat,
   linear-gradient(rgba(90,135,225,.30),rgba(90,135,225,.30)) center/calc(100% - 26px) 96% no-repeat}}
@@ -222,7 +223,7 @@ header.top .lede{margin:0;max-width:none}
 .ap:has(.motion){padding-bottom:24px}
 
 .lfig{--soft:#d5dae1;--d1:#5f6e86;--d2:#7f9cb3;display:block;width:100%;height:auto;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .lfig{--soft:#33373e;--d1:#8a96aa;--d2:#6f8aa3}}
+@media not all{:root:not([data-theme="light"]) .lfig{--soft:#33373e;--d1:#8a96aa;--d2:#6f8aa3}}
 :root[data-theme="dark"] .lfig{--soft:#33373e;--d1:#8a96aa;--d2:#6f8aa3}
 .lfig .base{fill:none;stroke:var(--soft);stroke-width:2}
 .lfig .trail{fill:none;stroke-width:2.4}.lfig .t1{stroke:var(--d1)}.lfig .t2{stroke:var(--d2)}
@@ -254,6 +255,7 @@ header.top .lede{margin:0;max-width:none}
 .disc + .disc{margin-top:72px;padding-top:56px;border-top:1px solid var(--hair)}
 .dlist{margin:0;padding:0 0 0 18px}.dlist li{margin:0 0 4px}
 .dpanels .dg{fill:#5f9a4a}.dpanels .dm{fill:var(--muted)}.dpanels .tl,.dpanels .ta{stroke:var(--accent)}.dpanels .tc{fill:var(--accent)}
+:root{color-scheme:light only}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">

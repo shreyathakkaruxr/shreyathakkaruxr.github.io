@@ -11,6 +11,7 @@
   </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
 <title>Learning with AI in 2045 · Shreya Thakkar</title>
 <meta name="description" content="What effort to keep when learning with AI, and what forms AI could take beyond the chatbot.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +36,7 @@
   --clay:#a8694a;--clay-t:#f0e1d8;--clay-ink:#ffffff;
   --navy:#6e4330;--navy-t:#e8ddd7;--navy-ink:#ffffff;
 }
-@media (prefers-color-scheme: dark){
+@media not all{
   :root:not([data-theme="light"]){
     --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
     --accent:#d4a98c;
@@ -190,7 +191,7 @@ body>footer{margin-top:auto}
 
 /* project color */
 .eyebrow{color:#a0684a}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow{color:#c4a48c}}
+@media not all{:root:not([data-theme="light"]) .eyebrow{color:#c4a48c}}
 :root[data-theme="dark"] .eyebrow{color:#c4a48c}
 
 /* Apple-style two-column sections (draft) */
@@ -272,14 +273,15 @@ header.top .lede{margin:0;max-width:none}
 .pill{display:inline-flex;align-items:center;gap:0;padding:8px 16px;border-radius:980px;background:#f6e8e6;color:#8a4f4a;font-size:14px;font-weight:400;letter-spacing:-.01em;text-decoration:none;border:0;transition:background .2s}
 .pill:hover{background:#efd9d6}
 .pill:focus-visible{outline:2px solid #c48782;outline-offset:2px}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill{background:#3a2725;color:#e8b9b4}:root:not([data-theme="light"]) .pill:hover{background:#4a3230}}
+@media not all{:root:not([data-theme="light"]) .pill{background:#3a2725;color:#e8b9b4}:root:not([data-theme="light"]) .pill:hover{background:#4a3230}}
 :root[data-theme="dark"] .pill{background:#3a2725;color:#e8b9b4}:root[data-theme="dark"] .pill:hover{background:#4a3230}
 .pill .dot{width:7px;height:7px;border-radius:50%;background:#c48782;flex:none;margin-right:8px}
 .pill.sm .dot{width:6px;height:6px;margin-right:6px}
 .event .pill{background:#fdf7f6}
 .event .pill:hover{background:#f8ecea}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .event .pill{background:#261d1c}:root:not([data-theme="light"]) .event .pill:hover{background:#3a2725}}
+@media not all{:root:not([data-theme="light"]) .event .pill{background:#261d1c}:root:not([data-theme="light"]) .event .pill:hover{background:#3a2725}}
 :root[data-theme="dark"] .event .pill{background:#261d1c}:root[data-theme="dark"] .event .pill:hover{background:#3a2725}
+:root{color-scheme:light only}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -301,7 +303,7 @@ header.top .lede{margin:0;max-width:none}
   <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">AI saves effort, learning needs effort, and context decides how much to keep.</p>
     <p class="event"><a class="pill" href="https://schedule.sxswedu.com/2027/events/PP1163387" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span><span><b>SXSW EDU 2027</b> · Workshop · Austin, March 13–16 ↗</span></a></p>
-    <figure class="hero"><picture><source id="mo-src" srcset="../images/fig-friction-dark.svg?v=12" media="(prefers-color-scheme: dark)"><img id="mo-img" src="../images/fig-friction.svg?v=12" alt="A question gets a quick AI answer, which keeps understanding lower; a learner moves through the effort of learning to understanding, past a dial for context, to forms of AI beyond the chatbot: an object, a ritual, a companion, and an open question"></picture></figure>
+    <figure class="hero"><picture><source id="mo-src" srcset="../images/fig-friction-dark.svg?v=12" media="not all"><img id="mo-img" src="../images/fig-friction.svg?v=12" alt="A question gets a quick AI answer, which keeps understanding lower; a learner moves through the effort of learning to understanding, past a dial for context, to forms of AI beyond the chatbot: an object, a ritual, a companion, and an open question"></picture></figure>
     <button type="button" class="motion" id="mo-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
     <dl class="meta">
       <div><dt>Role</dt><dd>Co-lead researcher and workshop designer</dd></div>

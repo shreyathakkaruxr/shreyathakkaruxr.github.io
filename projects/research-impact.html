@@ -11,6 +11,7 @@
   </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
 <title>Making research impact visible · Shreya Thakkar</title>
 <meta name="description" content="A process for recording what teams do with research findings after the study.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +33,7 @@
   --clay:#62905a;--clay-t:#e3ebe1;--clay-ink:#1d1d1f;
   --navy:#33603f;--navy-t:#dae2dc;--navy-ink:#ffffff;
 }
-@media (prefers-color-scheme: dark){
+@media not all{
   :root:not([data-theme="light"]){
     --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
     --accent:#a9c48a;
@@ -198,7 +199,7 @@ body>footer{margin-top:auto}
 
 /* project color */
 .eyebrow{color:#5f9a4a}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow{color:#98c784}}
+@media not all{:root:not([data-theme="light"]) .eyebrow{color:#98c784}}
 :root[data-theme="dark"] .eyebrow{color:#98c784}
 
 /* Apple-style two-column sections (draft) */
@@ -237,7 +238,7 @@ header.top .lede{margin:0;max-width:none}
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='rgb%28160%2C230%2C60%29' stop-opacity='0.37'/%3E%3Cstop offset='1' stop-color='rgb%28160%2C230%2C60%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%28160%2C230%2C60%29' fill-opacity='.34' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3Cpath fill='url%28%23g%29' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3C/svg%3E") left center/13px 100% no-repeat,
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='1' y1='0' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='rgb%28160%2C230%2C60%29' stop-opacity='0.37'/%3E%3Cstop offset='1' stop-color='rgb%28160%2C230%2C60%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%28160%2C230%2C60%29' fill-opacity='.34' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3Cpath fill='url%28%23g%29' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3C/svg%3E") right center/13px 100% no-repeat,
   linear-gradient(rgba(160,230,60,.34),rgba(160,230,60,.34)) center/calc(100% - 26px) 96% no-repeat;border-radius:0;padding:2px 9px;margin:0 -8px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .scribble{background:
+@media not all{:root:not([data-theme="light"]) .scribble{background:
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='rgb%28160%2C230%2C60%29' stop-opacity='0.37'/%3E%3Cstop offset='1' stop-color='rgb%28160%2C230%2C60%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%28160%2C230%2C60%29' fill-opacity='.34' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3Cpath fill='url%28%23g%29' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3C/svg%3E") left center/13px 100% no-repeat,
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='1' y1='0' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='rgb%28160%2C230%2C60%29' stop-opacity='0.37'/%3E%3Cstop offset='1' stop-color='rgb%28160%2C230%2C60%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%28160%2C230%2C60%29' fill-opacity='.34' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3Cpath fill='url%28%23g%29' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3C/svg%3E") right center/13px 100% no-repeat,
   linear-gradient(rgba(160,230,60,.34),rgba(160,230,60,.34)) center/calc(100% - 26px) 96% no-repeat}}
@@ -268,6 +269,7 @@ header.top .lede{margin:0;max-width:none}
 .meta div{margin:0}
 .meta dt{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 4px}
 .meta dd{margin:0;font-size:17px;line-height:1.4}
+:root{color-scheme:light only}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -291,7 +293,7 @@ header.top .lede{margin:0;max-width:none}
 
   <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">How a study’s findings reach teams, shape decisions, change products, and move metrics.</p>
-    <figure class="hero"><picture><source id="mo-src" srcset="../images/fig-impact-dark.svg?v=7" media="(prefers-color-scheme: dark)"><img id="mo-img" src="../images/fig-impact.svg?v=7" alt="After a study readout, findings fade without tracking; with follow-up, a weekly log, tagging by horizon, and a quarterly report, impact is recorded from signal to outcome"></picture></figure>
+    <figure class="hero"><picture><source id="mo-src" srcset="../images/fig-impact-dark.svg?v=7" media="not all"><img id="mo-img" src="../images/fig-impact.svg?v=7" alt="After a study readout, findings fade without tracking; with follow-up, a weekly log, tagging by horizon, and a quarterly report, impact is recorded from signal to outcome"></picture></figure>
     <button type="button" class="motion" id="mo-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
     <dl class="meta">
       <div><dt>Role</dt><dd>Lead UX Researcher, Research Operations</dd></div>
