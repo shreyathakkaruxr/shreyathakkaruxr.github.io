@@ -310,8 +310,8 @@ header.top .lede{margin:0;max-width:none}
       <a href="#why-map-impact">Why map impact?</a>
       <a href="#context">Context</a>
       <a href="#how-i-approached-it">How I approached it</a>
-      <a href="#in-practice">In practice</a>
-      <a href="#impact-horizons">Impact horizons</a>
+      <a class="tsub" href="#in-practice">In practice</a>
+      <a class="tsub" href="#impact-horizons">Impact horizons</a>
       <a href="#impact-to-date">Impact to date</a>
     </div></aside>
     <div class="lmain">
@@ -602,7 +602,7 @@ const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){io.disconnect();pl
 <script>
 (()=>{const links=[...document.querySelectorAll('.toc a')];if(!links.length)return;
 const map=links.map(a=>[a,document.querySelector(a.getAttribute('href'))]).filter(x=>x[1]);
-const parent=links.find(a=>a.getAttribute('href')==='#discoveries');
+const parent=links.find(a=>a.getAttribute("href")==="#how-i-approached-it");
 function update(){const y=innerHeight*0.3;let cur=map[0];
 for(const m of map){if(m[1].getBoundingClientRect().top<=y)cur=m}
 links.forEach(a=>a.classList.remove('on'));cur[0].classList.add('on');
