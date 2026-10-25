@@ -195,6 +195,19 @@ header.top .lede{margin:0;max-width:none}
 .meta dt{font-size:14px;font-weight:600;color:var(--muted);margin:0 0 4px}
 .meta dd{margin:0;font-size:17px;line-height:1.4}
 :root{color-scheme:light only}
+.lay{display:grid;grid-template-columns:190px minmax(0,1fr);gap:56px;border-top:1px solid var(--hair)}
+.toc{position:sticky;top:24px;align-self:start;padding-top:44px}
+.toc .tl{display:flex;flex-direction:column;text-align:left}
+.toc a{position:relative;display:block;padding:5px 0 5px 16px;font-size:14px;line-height:1.3;color:#a1a1a6;text-decoration:none;transition:color .2s}
+.toc a.tsub{padding-left:30px;font-size:13px}
+.toc a:hover{color:var(--ink)}
+.toc a.on{color:var(--accent)}
+.toc a.on::before{content:"";position:absolute;left:0;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:1px;background:var(--accent)}
+.toc a.tsub.on{color:#4f74b8}.toc a.tsub.on::before{display:none}
+.lmain .ap{grid-template-columns:minmax(0,1fr);gap:16px}
+.lmain .ap:first-child{border-top:0}
+.lmain .ap,.lmain .disc{scroll-margin-top:24px}
+@media(max-width:999px){.lay{grid-template-columns:minmax(0,1fr);gap:0}.toc{display:none}.lmain .ap:first-child{border-top:0}}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -212,7 +225,16 @@ header.top .lede{margin:0;max-width:none}
     <h1>Scaling AI in UX research</h1>
     <p class="lede">Shared AI workflows for research teams across 4 business units.</p>
   </header>
-  <section class="ap"><h2 class="aph">Overview</h2><div class="apb">
+  <div class="lay">
+    <aside class="toc" aria-label="On this page"><div class="tl">
+      <a href="#overview">Overview</a>
+      <a href="#context">Context</a>
+      <a href="#how-i-approached-it">How I approached it</a>
+      <a href="#applied-research">Applied research</a>
+      <a href="#impact-to-date">Impact to date</a>
+    </div></aside>
+    <div class="lmain">
+  <section class="ap" id="overview"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">A shared practice where AI drafts and researchers decide.</p>
     <figure class="hero" id="aiux-fig"><picture><source id="aiux-src" srcset="../images/fig-aiux-still-dark.svg?v=5" media="not all"><img id="aiux-img" src="../images/fig-aiux-still.svg?v=5" alt="AI tool use varied by researcher. Researchers converge on shared prompts and skills. AI drafts transcripts, tags, and summaries; researchers verify, interpret, prioritize and synthesize, and tell the story as an actionable insight. Prompts and skills are reviewed each quarter."></picture></figure>
     <button type="button" class="motion" id="aiux-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
@@ -223,7 +245,7 @@ header.top .lede{margin:0;max-width:none}
     </dl>
   </div></section>
 
-  <section class="ap"><h2 class="aph">Context</h2><div class="apb">
+  <section class="ap" id="context"><h2 class="aph">Context</h2><div class="apb">
     <p class="apl">AI tools spread across the research team, and each researcher used them differently. Without shared methods, <span class="scribble">analysis quality depended on the researcher</span>.</p>
     <p class="apl">This project built a shared practice for AI in research: faster analysis, with methods stakeholders can trust.</p>
     <h3 class="sub">Constraints</h3>
@@ -234,7 +256,7 @@ header.top .lede{margin:0;max-width:none}
     </ul>
   </div></section>
 
-  <section class="ap"><h2 class="aph">How I approached it</h2><div class="apb">
+  <section class="ap" id="how-i-approached-it"><h2 class="aph">How I approached it</h2><div class="apb">
     <p class="apl">Five decisions shaped the practice:</p>
     <ol class="moves">
       <li><div><b>Focus AI on repetitive tasks</b><span><span class="scribble">Interpretation and cultural analysis stay human-led</span>.</span></div></li>
@@ -245,7 +267,7 @@ header.top .lede{margin:0;max-width:none}
     </ol>
   </div></section>
 
-  <section class="ap"><h2 class="aph">Applied research</h2><div class="apb">
+  <section class="ap" id="applied-research"><h2 class="aph">Applied research</h2><div class="apb">
     <p class="apl">The standards and tools the team uses.</p>
     <div class="gal">
       <figure class="wide"><a href="https://cdn.myportfolio.com/eb8a5309-81df-48eb-b187-ed2ac0de7e06/572d10c8-3214-43a3-b9cd-38ca400616d2_rw_1200.png?h=d608f7d67f459acae550a8af42ed781f" target="_blank" rel="noopener"><img src="https://cdn.myportfolio.com/eb8a5309-81df-48eb-b187-ed2ac0de7e06/572d10c8-3214-43a3-b9cd-38ca400616d2_rw_1200.png?h=d608f7d67f459acae550a8af42ed781f" alt="Research strategy: practice audit, framework design, and pilot testing, with three principles for AI research and an AI-assisted research workflow" loading="lazy"></a><figcaption>Research strategy: principles and workflow <i class="conf">· Low resolution for confidentiality.</i></figcaption></figure>
@@ -253,7 +275,7 @@ header.top .lede{margin:0;max-width:none}
     </div>
   </div></section>
 
-  <section class="ap"><h2 class="aph">Impact to date</h2><div class="apb">
+  <section class="ap" id="impact-to-date"><h2 class="aph">Impact to date</h2><div class="apb">
     <p class="apl">An evolving practice, updated as tools and skills change. <a href="mailto:shreyathakkar.uxr@gmail.com">Reach out</a> to learn more.</p>
     <ul class="cons">
       <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg><div><b>Speed</b><span><span class="scribble">~40% faster analysis</span>.</span></div></li>
@@ -261,6 +283,8 @@ header.top .lede{margin:0;max-width:none}
       <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><div><b>Visibility</b><span>Presented at IDSA IDC 2026 and World Usability Congress 2025.</span></div></li>
     </ul>
   </div></section>
+    </div>
+  </div>
   <nav class="pnav" aria-label="Project navigation">
     <a href="../#work" aria-label="Back to all work"><span class="arw"><svg width="22" height="22" viewBox="0 0 14 14" aria-hidden="true"><path d="M8.5 3 L4.5 7 L8.5 11" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lb">All work</span></a>
     <a class="nx" href="research-impact.html" aria-label="Next project: Making research impact visible"><span><small>Next</small><b>Making research impact visible</b></span><span class="arw"><svg width="22" height="22" viewBox="0 0 14 14" aria-hidden="true"><path d="M5.5 3 L9.5 7 L5.5 11" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
@@ -283,6 +307,18 @@ function play(){const t='&t='+Date.now();img.src=anim[0]+t;src.srcset=anim[1]+t;
 btn.hidden=false;btn.addEventListener('click',()=>playing?stop(false):play());
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){set('play','Play');return}
 const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){io.disconnect();play()}},{threshold:.5});io.observe(img);})();
+</script>
+<script>
+(()=>{const links=[...document.querySelectorAll('.toc a')];if(!links.length)return;
+const map=links.map(a=>[a,document.querySelector(a.getAttribute('href'))]).filter(x=>x[1]);
+const parent=links.find(a=>a.getAttribute('href')==='#discoveries');
+function update(){const y=innerHeight*0.3;let cur=map[0];
+for(const m of map){if(m[1].getBoundingClientRect().top<=y)cur=m}
+links.forEach(a=>a.classList.remove('on'));cur[0].classList.add('on');
+if(cur[0].classList.contains('tsub')&&parent)parent.classList.add('on')}
+addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+links.forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});history.replaceState(null,'',a.getAttribute('href'))}));})();
 </script>
 </body>
 </html>
