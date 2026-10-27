@@ -96,7 +96,7 @@ header{padding-bottom:64px}
 .contact{margin:14px 0 0;font-size:15px;display:flex;gap:10px;color:var(--muted)}
 .contact a{color:var(--accent);text-decoration:none}
 .contact a:hover{text-decoration:underline}
-@media(max-width:720px){.marrow{display:none!important}.intro{padding-bottom:104px}.note{top:calc(100% + 36px)}.note svg{display:block;left:-24px;top:-30px;width:22px;height:34px}}
+@media(max-width:720px){.intro{padding-bottom:104px}.note{top:calc(100% + 30px)}}
 :root{color-scheme:light only}
 .contact{align-items:center}
 .contact .pill.spk{margin-left:14px;color:#8a4f4a}
@@ -225,11 +225,12 @@ if(!i||!a||!n||!m)return;const mq=matchMedia('(max-width:720px)');
 function rightBelow(p,y){let mr=0;const w=document.createTreeWalker(p,NodeFilter.SHOW_TEXT,{acceptNode:t=>t.parentElement.closest('.note')?2:1});let t;while(t=w.nextNode()){const rg=document.createRange();rg.selectNodeContents(t);for(const q of rg.getClientRects()){if(q.top>y&&q.width>1)mr=Math.max(mr,q.right)}}return mr}
 function place(){const p=document.querySelector('.intro .l2'),em=document.querySelector('.l2 .em');if(mq.matches){n.style.left='';return}const er=em.getClientRects()[0],mr=rightBelow(p,er.bottom-2);n.style.left=Math.max(60,mr-er.left+40)+'px'}
 function draw(){place();if(!mq.matches)return;const r=i.getBoundingClientRect(),ar=a.getBoundingClientRect(),nr=n.getBoundingClientRect();
-const sx=nr.right-r.left-18,sy=nr.top-r.top-6,ex=ar.right-r.left+6,ey=ar.top-r.top+ar.height*.62;
-const p=document.querySelector('.intro .l2');const mr=rightBelow(p,ar.bottom-2)-r.left;const gx=Math.min(r.width+14,Math.max(mr+12,ex+18,sx+4));const c1x=gx,c2x=gx;m.querySelector('.ms').setAttribute('d',`M${sx} ${sy} C${sx} ${sy-24},${gx} ${sy-20},${gx} ${sy-46} L${gx} ${ey+14} C${gx} ${ey+2},${ex+22} ${ey},${ex} ${ey}`);
-const dx=-14,dy=0,L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L,h=7,c=Math.cos(.5),s=Math.sin(.5);
-const p1=[ex-h*(ux*c-uy*s),ey-h*(uy*c+ux*s)],p2=[ex-h*(ux*c+uy*s),ey-h*(uy*c-ux*s)];
-m.querySelector('.mh').setAttribute('d',`M${p1[0]} ${p1[1]} L${ex} ${ey} L${p2[0]} ${p2[1]}`)}
+const p=document.querySelector('.intro .l2'),lr=rightBelow(p,ar.bottom-2)-r.left;
+const sx=nr.right-r.left-34,sy=nr.top-r.top-4,ex=ar.right-r.left-4,ey=ar.bottom-r.top+1;
+const gx=Math.min(r.width+10,Math.max(lr+12,sx+16));
+m.querySelector('.ms').setAttribute('d',`M${sx} ${sy} C${sx+6} ${sy-16},${gx} ${sy-12},${gx} ${sy-36} L${gx} ${ey+14} Q${gx} ${ey},${gx-14} ${ey} L${ex} ${ey}`);
+const h=7,c=Math.cos(.5),s=Math.sin(.5);
+m.querySelector('.mh').setAttribute('d',`M${ex+h*c} ${ey-h*s} L${ex} ${ey} L${ex+h*c} ${ey+h*s}`)}
 draw();addEventListener('resize',draw);if(document.fonts)document.fonts.ready.then(draw);})();
 </script>
 </body>
