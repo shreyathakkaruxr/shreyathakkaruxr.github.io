@@ -369,11 +369,12 @@ header.top .lede{margin:0;max-width:none}
 #approach .trio li .mlabel path{fill:none;stroke:#44a52a;stroke-width:2;stroke-linecap:round}
 #approach .trio li .mlabel i{font-style:normal;font-family:Caveat,"Bradley Hand","Segoe Print",cursive;font-weight:500;font-size:26px;color:#44a52a;line-height:1}
 .srcnote{font-size:14px;color:var(--muted);margin:-8px 0 0}
-.pair2{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:48px 0 64px;align-items:start}
-@media(max-width:719px){.pair2{grid-template-columns:1fr}}
+.pair2{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto auto;column-gap:40px;margin:48px 0 64px}
+.col2{display:grid;grid-row:span 4;grid-template-rows:subgrid}
+@media(max-width:719px){.pair2{grid-template-columns:1fr;grid-template-rows:none;row-gap:48px}.col2{grid-row:auto;grid-template-rows:none;display:block}}
 .col2 h3{font-size:22px;line-height:1.25;font-weight:600;letter-spacing:-.02em;margin:6px 0 10px}
 .col2 .cbody{font-size:16px;line-height:1.5;color:var(--muted);margin:0 0 20px;max-width:40ch}
-.vimg{margin:0}.vimg img{display:block;width:100%;height:auto;border:1px solid var(--hair);border-radius:14px}
+.vimg{margin:0}.vimg img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:contain;background:#f7f7f7;border:1px solid var(--hair);border-radius:14px}
 .vimg figcaption{font-size:13px;color:var(--muted);font-style:italic;text-align:center;margin-top:8px}
 .also2{margin:0 0 72px}
 .afh{font-size:22px;font-weight:600;letter-spacing:-.02em;margin:0 0 20px}
@@ -698,13 +699,13 @@ header.top .lede{margin:0;max-width:none}
         <p class="dnum">01 · Control</p>
         <h3>People decide when the robot vacuum runs.</h3>
         <p class="cbody">People ran robot vacuums when home, chose rooms, and kept up care like emptying bins and washing pads.</p>
-        <figure class="vimg"><img src="../images/slide-control.jpg?v=3" width="660" height="1084" alt="Report photos: a person docking a robot vacuum, a robot at its auto-empty dock, a hand checking a mop pad, with participant quotes" loading="lazy"><figcaption>Snippet from the report</figcaption></figure>
+        <figure class="vimg"><img src="../images/slide-control.jpg?v=5" width="654" height="1078" alt="Report photos: a person docking a robot vacuum, a robot at its auto-empty dock, a hand checking a mop pad, with participant quotes" loading="lazy"><figcaption>Snippet from the report</figcaption></figure>
       </article>
       <article class="col2" id="d2">
         <p class="dnum">02 · Ritual</p>
         <h3>People clean a little, often.</h3>
         <p class="cbody">People cleaned in small moments, while cooking, before guests, and more when someone was sick.</p>
-        <figure class="vimg"><img src="../images/slide-ritual.jpg?v=3" width="538" height="658" alt="Report photos: cleaning under the kitchen sink, a stocked cleaning shelf, and wipes left out as a reminder, with participant quotes" loading="lazy"><figcaption>Snippet from the report</figcaption></figure>
+        <figure class="vimg"><img src="../images/slide-ritual.jpg?v=4" width="538" height="655" alt="Report photos: cleaning under the kitchen sink, a stocked cleaning shelf, and wipes left out as a reminder, with participant quotes" loading="lazy"><figcaption>Snippet from the report</figcaption></figure>
       </article>
     </div>
     <div class="also2">
