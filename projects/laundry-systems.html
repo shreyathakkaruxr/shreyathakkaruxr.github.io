@@ -307,6 +307,11 @@ header.top .lede{margin:0;max-width:none}
 .alsos div{background:var(--inset);border-radius:14px;padding:18px 20px}
 .alsos b{display:block;font-size:16px;font-weight:600;letter-spacing:-.015em;color:var(--ink);margin:0 0 6px}
 .alsos span{display:block;font-size:15px;line-height:1.45;color:var(--muted)}
+.rmap summary{cursor:pointer;font-size:17px;color:var(--accent);list-style:none;display:inline-flex;align-items:center;gap:8px;padding:4px 0}
+.rmap summary::-webkit-details-marker{display:none}
+.rmap summary::before{content:"›";display:inline-block;transition:transform .2s;font-size:20px;line-height:1}
+.rmap[open] summary::before{transform:rotate(90deg)}
+.rmap[open] summary{margin-bottom:24px}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -334,8 +339,8 @@ header.top .lede{margin:0;max-width:none}
       <a class="tsub" href="#d4">02 App interaction</a>
       <a class="tsub" href="#d2">03 Premium design</a>
       <a class="tsub" href="#d3">04 Controls</a>
-      <a href="#roadmap">Research roadmap</a>
       <a href="#impact">Impact</a>
+      <a href="#roadmap">Research roadmap</a>
     </div></aside>
     <div class="lmain">
   <section class="ap" id="overview"><h2 class="aph">Overview</h2><div class="apb">
@@ -484,8 +489,29 @@ header.top .lede{margin:0;max-width:none}
     </article>
   </div></section>
 
+  <section class="ap" id="impact"><h2 class="aph">Impact to date</h2><div class="apb">
+    <p class="apl">Launch planned for 2027.</p>
+    <ul class="stats">
+      <li><b>8</b><span>Major product decisions informed: control panel, app, app notifications, error recovery, premium design, CMF, icons, and tiering</span></li>
+      <li><b>16 weeks</b><span>To design freeze, half the usual 32</span></li>
+      <li><b>~60%</b><span>Less time on core tasks with all cycles visible (usability test, n&nbsp;=&nbsp;12)</span></li>
+      <li><b>1</b><span>Interaction language across washer, dryer, and app</span></li>
+    </ul>
+    <figure class="shot gallery" style="margin-top:40px">
+      <div class="row2">
+        <img style="flex:1.499" src="../images/laundry-tower.jpg?v=1" width="2000" height="1334" alt="A stacked washer and dryer tower in a laundry room" loading="lazy">
+        <img class="match" style="flex:1.395" src="../images/laundry-pair.jpg?v=1" width="576" height="413" alt="A washer and dryer side by side in a bright laundry room" loading="lazy">
+      </div>
+      <div class="row2">
+        <img style="flex:1.778" src="../images/laundry-app-wifi.jpg?v=1" width="1280" height="720" alt="App screen guiding a person to turn on Wi-Fi mode on the appliance" loading="lazy">
+        <img style="flex:1.778" src="../images/laundry-app-remote.png?v=1" width="1280" height="720" alt="A phone showing remote wash cycle settings" loading="lazy">
+      </div>
+      <figcaption>Current-generation appliances and app. My research shaped the next generation.</figcaption>
+    </figure>
+    <p class="nda">Product details are under NDA. <a href="mailto:shreyathakkar.uxr@gmail.com">Reach out</a> to learn more.</p>
+  </div></section>
   <section class="ap" id="roadmap"><h2 class="aph">Research roadmap</h2><div class="apb">
-    <p class="apl">35+ studies: in-depth research with rapid, tactical studies embedded in design and product development.</p>
+    <details class="rmap"><summary>See all 35+ studies, from discovery to design freeze</summary>
   <div class="flow">
     <section class="col" aria-labelledby="p1">
       <p class="step"><b>1</b></p>
@@ -530,28 +556,7 @@ header.top .lede{margin:0;max-width:none}
       </ul>
     </section>
   </div>
-  </div></section>
-
-  <section class="ap" id="impact"><h2 class="aph">Impact to date</h2><div class="apb">
-    <p class="apl">Launch planned for 2027.</p>
-    <ul class="stats">
-      <li><b>8</b><span>Major product decisions informed: control panel, app, app notifications, error recovery, premium design, CMF, icons, and tiering</span></li>
-      <li><b>16 weeks</b><span>To design freeze, half the usual 32</span></li>
-      <li><b>~60%</b><span>Less time on core tasks with all cycles visible (usability test, n&nbsp;=&nbsp;12)</span></li>
-      <li><b>1</b><span>Interaction language across washer, dryer, and app</span></li>
-    </ul>
-    <figure class="shot gallery" style="margin-top:40px">
-      <div class="row2">
-        <img style="flex:1.499" src="../images/laundry-tower.jpg?v=1" width="2000" height="1334" alt="A stacked washer and dryer tower in a laundry room" loading="lazy">
-        <img class="match" style="flex:1.395" src="../images/laundry-pair.jpg?v=1" width="576" height="413" alt="A washer and dryer side by side in a bright laundry room" loading="lazy">
-      </div>
-      <div class="row2">
-        <img style="flex:1.778" src="../images/laundry-app-wifi.jpg?v=1" width="1280" height="720" alt="App screen guiding a person to turn on Wi-Fi mode on the appliance" loading="lazy">
-        <img style="flex:1.778" src="../images/laundry-app-remote.png?v=1" width="1280" height="720" alt="A phone showing remote wash cycle settings" loading="lazy">
-      </div>
-      <figcaption>Current-generation appliances and app. My research shaped the next generation.</figcaption>
-    </figure>
-    <p class="nda">Product details are under NDA. <a href="mailto:shreyathakkar.uxr@gmail.com">Reach out</a> to learn more.</p>
+    </details>
   </div></section>
     </div>
   </div>
