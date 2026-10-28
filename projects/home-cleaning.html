@@ -312,6 +312,20 @@ header.top .lede{margin:0;max-width:none}
 .rmap summary::before{content:"›";display:inline-block;transition:transform .2s;font-size:20px;line-height:1}
 .rmap[open] summary::before{transform:rotate(90deg)}
 .rmap[open] summary{margin-bottom:24px}
+.disc .dq,.col2 .dq{font-size:16px;font-style:italic;color:var(--muted);margin:-2px 0 0;max-width:60ch}
+.col2 .dq{margin:0 0 48px}
+#d3 .dq{margin-bottom:0}
+.dsteps.ds3{grid-template-columns:repeat(3,1fr)!important}
+.imp2{margin:8px 0 0}
+.ihd{display:grid;grid-template-columns:1fr 2fr;gap:28px;margin:0 0 14px}
+.ihd span{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--hair);padding-bottom:6px}
+.irow{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.itag{display:none;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.inum{font-size:48px;font-weight:600;letter-spacing:-.03em;line-height:1;margin:0 0 10px}
+.idesc{font-size:15px;line-height:1.45;margin:0}
+.tnext{font-size:15px;color:var(--muted);margin:28px 0 24px;padding-top:14px;border-top:1px dashed var(--hair)}
+.tnext b{color:var(--ink);font-weight:600}
+@media(max-width:719px){.dsteps.ds3{grid-template-columns:1fr!important}.ihd{display:none}.irow{grid-template-columns:1fr 1fr;row-gap:32px}.itag{display:block}}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -698,12 +712,14 @@ header.top .lede{margin:0;max-width:none}
       <article class="col2" id="d1">
         <p class="dnum">01 · Control</p>
         <h3>People decide when the robot vacuum runs.</h3>
+        <p class="dq">“Sometimes we skipped some rooms because if the child’s room is too messy… it’s going to be a disaster.”</p>
         <p class="cbody">People ran robot vacuums when home, chose rooms, and kept up care like emptying bins and washing pads.</p>
         <figure class="vimg"><img src="../images/slide-control.jpg?v=5" width="654" height="1078" alt="Report photos: a person docking a robot vacuum, a robot at its auto-empty dock, a hand checking a mop pad, with participant quotes" loading="lazy"><figcaption>Snippet from the report</figcaption></figure>
       </article>
       <article class="col2" id="d2">
         <p class="dnum">02 · Ritual</p>
         <h3>People clean a little, often.</h3>
+        <p class="dq">“Each bathroom has cleaning stuff in it so I don’t have to carry supplies between rooms.”</p>
         <p class="cbody">People cleaned in small moments, while cooking, before guests, and more when someone was sick.</p>
         <figure class="vimg"><img src="../images/slide-ritual.jpg?v=4" width="538" height="655" alt="Report photos: cleaning under the kitchen sink, a stocked cleaning shelf, and wipes left out as a reminder, with participant quotes" loading="lazy"><figcaption>Snippet from the report</figcaption></figure>
       </article>
@@ -720,23 +736,17 @@ header.top .lede{margin:0;max-width:none}
     </div>
     <article class="disc" id="d3">
       <p class="dnum">03 · Health</p>
-      <h3>Households managing a medical condition are a distinct, underserved segment.</h3>
+      <h3>Health needs shape how people clean.</h3>
+      <p class="dq">“I’m definitely more particular about cleaning now… I clean differently and focus more on sanitizing.”</p>
       <figure class="dimg dco hc-co"><svg class="callout" aria-hidden="true"><text x="26" y="28">Shreya</text><path d="M20 20 C 0 22, -6 50, 0 90"/><path d="M-7 77 C -5 82, -3 86, 0 90"/><path d="M0 90 C 3 85, 6 81, 9 78"/></svg><img src="../images/cleaning-health.jpg?v=4" width="1024" height="440" alt="Shreya interviews a participant at her kitchen table" loading="lazy"><figcaption>In a participant’s home, led and moderated by Shreya</figcaption></figure>
-      <dl class="dsteps">
-        <div><dt>Team believed</dt><dd>Design vacuums for general cleaning tasks.</dd></div>
-        <div><dt>Research showed</dt><dd>Allergies and other health needs shaped how often people cleaned, what they cleaned, and what they bought. <b>52% of participants with a medical condition owned an air purifier.</b></dd></div>
-        <div><dt>Recommended</dt><dd>Design for health-driven cleaning rituals and medical needs, with health at the top of the needs framework.</dd></div>
-        <div class="chg"><dt>What changed</dt><dd>A health-focused innovation direction, and input to the 3-year roadmap.</dd></div>
-      </dl>
+      <dl class="dsteps ds3"><div><dt>Assumption</dt><dd>Design vacuums for general cleaning tasks.</dd></div><div><dt>Evidence</dt><dd>Allergies and other health needs shaped how often people cleaned and what they bought. <b>52% with a medical condition owned an air purifier</b> (survey, n&nbsp;=&nbsp;500+).</dd></div><div class="chg"><dt>Impact</dt><dd>A health-focused innovation direction, and input to the 3-year roadmap.</dd></div></dl>
     </article>
   </div></section>
 
   <section class="ap" id="impact"><h2 class="aph">Impact to date</h2><div class="apb">
-    <ul class="stats">
-      <li><b>1</b><span>New user segment: households managing a medical condition</span></li>
-      <li><b>12</b><span>Actionable insights for product and innovation teams</span></li>
-      <li><b>3-year</b><span>Roadmap informed by the needs framework</span></li>
-    </ul>
+    <p class="apl">How far each result has gone.</p>
+    <div class="imp2"><div class="ihd"><span>Accepted</span><span>In the roadmap</span></div><div class="irow"><div class="icell"><p class="itag">Accepted</p><p class="inum">12</p><p class="idesc">Actionable insights for product and innovation teams</p></div><div class="icell"><p class="itag">In the roadmap</p><p class="inum">1</p><p class="idesc">New user segment: households managing a medical condition</p></div><div class="icell"><p class="itag">In the roadmap</p><p class="inum">3-year</p><p class="idesc">Roadmap informed by the needs framework</p></div></div></div>
+    <p class="tnext"><b>Next to measure:</b> adoption of health-focused features after launch.</p>
     <p class="nda">Product details are under NDA. <a href="mailto:shreyathakkar.uxr@gmail.com">Reach out</a> to learn more.</p>
   </div></section>
   <section class="ap" id="approach"><h2 class="aph">Research approach</h2><div class="apb">
