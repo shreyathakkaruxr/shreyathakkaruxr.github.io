@@ -309,8 +309,8 @@ header.top .lede{margin:0;max-width:none}
 .alsos span{display:block;font-size:15px;line-height:1.45;color:var(--muted)}
 .rmap summary{cursor:pointer;font-size:17px;color:var(--accent);list-style:none;display:inline-flex;align-items:center;gap:8px;padding:4px 0}
 .rmap summary::-webkit-details-marker{display:none}
-.rmap summary::before{content:"›";display:inline-block;transition:transform .2s;font-size:20px;line-height:1}
-.rmap[open] summary::before{transform:rotate(90deg)}
+.rmap summary::after{content:"↓";display:inline-block;transition:transform .2s;font-size:17px;line-height:1}
+.rmap[open] summary::after{transform:rotate(180deg)}
 .rmap[open] summary{margin-bottom:24px}
 .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin:8px 0 0;padding:0}
 @media(max-width:719px){.tiers{grid-template-columns:1fr;gap:28px}}
