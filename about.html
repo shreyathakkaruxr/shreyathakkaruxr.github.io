@@ -40,7 +40,7 @@ header{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;padding:96px
 h1{font-size:clamp(40px,6vw,60px);line-height:1;letter-spacing:-.04em;margin:0}
 .id{display:flex;align-items:center;gap:20px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.photo{width:160px;height:160px;border-radius:50%;object-fit:cover;flex:none}
+.photo{width:200px;height:200px;border-radius:44px;flex:none;box-shadow:0 0 0 1px rgba(0,0,0,.07)}header{gap:24px 56px}
 .proj{display:block;text-decoration:none}
 .proj .go{color:var(--accent);margin-top:4px}
 .proj:hover b{text-decoration:underline}
@@ -115,7 +115,7 @@ header{padding-bottom:64px}
 .contact .pill.spk:hover{background:#f8ecea}
 @media not all{:root:not([data-theme="light"]) .contact .pill.spk{background:#261d1c}}
 :root[data-theme="dark"] .contact .pill.spk{background:#261d1c}
-/* film print photo */header{gap:24px 56px}.ph{position:relative;display:inline-block;flex:none;line-height:0;background:#fbfaf6;padding:12px 12px 38px;box-shadow:0 1px 3px rgba(0,0,0,.07),3px 10px 22px rgba(0,0,0,.11);transform:rotate(-2.5deg)}.ph .photo{width:160px;height:160px;border-radius:0;filter:contrast(1.04) saturate(.9) sepia(.08)}.ph::after{content:'';position:absolute;inset:0;pointer-events:none;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .2  0 0 0 0 .2  0 0 0 0 .2  0 0 0 .9 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:160px;mix-blend-mode:multiply;opacity:.22}</style>
+</style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -128,7 +128,7 @@ header{padding-bottom:64px}
   </nav>
 
   <header>
-    <span class="ph"><img class="photo" src="images/image.jpg" width="160" height="160" alt="Shreya Thakkar"></span>
+    <img class="photo" src="images/image.jpg" width="160" height="160" alt="Shreya Thakkar">
     <div><h1 class="hname">Shreya Thakkar</h1>
     <p class="lede"><strong>Senior UX Researcher &amp; Strategist</strong>Mixed-methods and human factors research<br>for hardware, software, and AI experiences.</p>
     <p class="contact"><a href="https://www.linkedin.com/in/shreya-thakkar-756ba6142/" target="_blank" rel="noopener">LinkedIn ↗</a><span aria-hidden="true">·</span><a href="mailto:shreyathakkar.uxr@gmail.com">Email ↗</a><a class="pill spk" href="https://schedule.sxswedu.com/2027/events/PP1163387" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Speaking at SXSW EDU 2027 ↗</a></p></div>
