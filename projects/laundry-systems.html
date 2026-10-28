@@ -321,6 +321,16 @@ header.top .lede{margin:0;max-width:none}
 .tier li{margin:0 0 8px}
 .tnext{font-size:15px;color:var(--muted);margin:28px 0 0;padding-top:14px;border-top:1px dashed var(--hair)}
 .tnext b{color:var(--ink);font-weight:600}
+.imp2{margin:8px 0 0}
+.ihd{display:grid;grid-template-columns:1fr 2fr 1fr;gap:28px;margin:0 0 14px}
+.ihd span{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--hair);padding-bottom:6px}
+.irow{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.itag{display:none;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.inum{font-size:48px;font-weight:600;letter-spacing:-.03em;line-height:1;margin:0 0 10px}
+.idesc{font-size:15px;line-height:1.45;margin:0}
+.isub{margin:8px 0 0;padding-left:18px;font-size:14px;line-height:1.45;color:var(--muted)}
+.isub li{margin:0 0 3px}
+@media(max-width:719px){.ihd{display:none}.irow{grid-template-columns:1fr 1fr;row-gap:32px}.itag{display:block}}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -500,7 +510,7 @@ header.top .lede{margin:0;max-width:none}
 
   <section class="ap" id="impact"><h2 class="aph">Impact to date</h2><div class="apb">
     <p class="apl">How far each result has gone, from agreed to measured.</p>
-    <div class="tiers"><div class="tier"><p class="tl">Accepted</p><p class="ts">The team agreed to act on it</p><ul><li>8 product decisions informed: control panel, app, notifications, error recovery, premium design, CMF, icons, and tiering</li></ul></div><div class="tier"><p class="tl">Built in</p><p class="ts">In the design at design freeze</p><ul><li>An all-cycles-visible control panel, replacing the dead-front panel</li><li>Controls tiered by price: no knob in upper tiers, a knob in lower tiers</li><li>One interaction language across washer, dryer, and app</li><li>Favorite cycles, plus energy and water information in the app</li></ul></div><div class="tier"><p class="tl">Measured</p><p class="ts">Tested with people</p><ul><li><b>~60%</b> less time on core tasks with all cycles visible (usability test, n&nbsp;=&nbsp;12, prototype)</li><li>Higher desirability ratings in later concept testing</li></ul></div></div>
+    <div class="imp2"><div class="ihd"><span>Accepted</span><span>Built in</span><span>Measured</span></div><div class="irow"><div class="icell"><p class="itag">Accepted</p><p class="inum">8</p><p class="idesc">Product decisions informed: control panel, app, notifications, error recovery, premium design, CMF, icons, and tiering</p></div><div class="icell"><p class="itag">Built in</p><p class="inum">4</p><p class="idesc">Design changes at design freeze</p><ul class="isub"><li>All-cycles-visible control panel</li><li>Controls tiered by price</li><li>One interaction language</li><li>Favorite cycles, energy and water info</li></ul></div><div class="icell"><p class="itag">Built in</p><p class="inum">1</p><p class="idesc">Interaction language across washer, dryer, and app</p></div><div class="icell"><p class="itag">Measured</p><p class="inum">~60%</p><p class="idesc">Less time on core tasks with all cycles visible (usability test, n&nbsp;=&nbsp;12, prototype)</p></div></div></div>
     <p class="tnext"><b>Next to measure after the 2027 launch:</b> task success, satisfaction, and support calls.</p>
     <figure class="shot gallery" style="margin-top:40px">
       <div class="row2">
