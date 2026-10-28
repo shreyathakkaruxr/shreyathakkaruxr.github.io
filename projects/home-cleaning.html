@@ -369,6 +369,12 @@ header.top .lede{margin:0;max-width:none}
 #approach .trio li .mlabel path{fill:none;stroke:#44a52a;stroke-width:2;stroke-linecap:round}
 #approach .trio li .mlabel i{font-style:normal;font-family:Caveat,"Bradley Hand","Segoe Print",cursive;font-weight:500;font-size:26px;color:#44a52a;line-height:1}
 .srcnote{font-size:14px;color:var(--muted);margin:-8px 0 0}
+.pair2{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:48px 0 64px;align-items:start}
+@media(max-width:719px){.pair2{grid-template-columns:1fr}}
+.col2 h3{font-size:22px;line-height:1.25;font-weight:600;letter-spacing:-.02em;margin:6px 0 10px}
+.col2 .cbody{font-size:16px;line-height:1.5;color:var(--muted);margin:0 0 20px;max-width:40ch}
+.vimg{margin:0}.vimg img{display:block;width:100%;height:auto;border:1px solid var(--hair);border-radius:14px}
+.vimg figcaption{font-size:13px;color:var(--muted);font-style:italic;text-align:center;margin-top:8px}
 </style>
 </head>
 <body>
@@ -674,18 +680,20 @@ header.top .lede{margin:0;max-width:none}
 <text class="m" x="548" y="310">Appliances and systems</text>
 <text class="m" x="250" y="356" text-anchor="middle" font-style="italic">Each layer shapes the others.</text>
 </svg></figure>
-    <article class="disc" id="d1">
-      <p class="dnum">01 · Control</p>
-      <h3>People decide when the robot vacuum runs.</h3>
-      
-      <div class="dside"><p class="dfind">People ran robot vacuums when home, chose rooms, and kept up care like emptying bins and washing pads.</p><figure class="dimg dslide"><img src="../images/slide-control.jpg?v=3" width="660" height="1084" alt="Report page: People control, robots execute, manual control over preset schedules" loading="lazy"><figcaption>Snippet from the report</figcaption></figure></div>
-    </article>
-    <article class="disc" id="d2">
-      <p class="dnum">02 · Ritual</p>
-      <h3>People clean a little, often.</h3>
-      
-      <div class="dside"><p class="dfind">People cleaned in small moments, while cooking, before guests, and more when someone was sick.</p><figure class="dimg dslide"><img src="../images/slide-ritual.jpg?v=3" width="538" height="658" alt="Report page: cleaning is part of the daily routine, personal rituals of home care" loading="lazy"><figcaption>Snippet from the report</figcaption></figure></div>
-    </article>
+    <div class="pair2">
+      <article class="col2" id="d1">
+        <p class="dnum">01 · Control</p>
+        <h3>People decide when the robot vacuum runs.</h3>
+        <p class="cbody">People ran robot vacuums when home, chose rooms, and kept up care like emptying bins and washing pads.</p>
+        <figure class="vimg"><img src="../images/slide-control.jpg?v=3" width="660" height="1084" alt="Report photos: a person docking a robot vacuum, a robot at its auto-empty dock, a hand checking a mop pad, with participant quotes" loading="lazy"><figcaption>Snippet from the report</figcaption></figure>
+      </article>
+      <article class="col2" id="d2">
+        <p class="dnum">02 · Ritual</p>
+        <h3>People clean a little, often.</h3>
+        <p class="cbody">People cleaned in small moments, while cooking, before guests, and more when someone was sick.</p>
+        <figure class="vimg"><img src="../images/slide-ritual.jpg?v=3" width="538" height="658" alt="Report photos: cleaning under the kitchen sink, a stocked cleaning shelf, and wipes left out as a reminder, with participant quotes" loading="lazy"><figcaption>Snippet from the report</figcaption></figure>
+      </article>
+    </div>
     <article class="disc" id="d3">
       <p class="dnum">03 · Health</p>
       <h3>Households managing a medical condition are a distinct, underserved segment.</h3>
