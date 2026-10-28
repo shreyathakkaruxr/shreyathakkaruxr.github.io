@@ -773,5 +773,19 @@ if('IntersectionObserver'in window){var io=new IntersectionObserver(function(es)
 btn.addEventListener('click',function(){started=true;restart()});
 })();
 </script>
+<script>
+(()=>{const links=[...document.querySelectorAll('.toc a')];if(!links.length)return;
+const map=links.map(a=>[a,document.querySelector(a.getAttribute('href'))]).filter(x=>x[1]);
+const parent=links.find(a=>a.getAttribute('href')==='#discoveries');
+function update(){const y=innerHeight*0.15;let cur=map[0];
+for(const m of map){if(m[1].getBoundingClientRect().top<=y)cur=m}
+const ct=cur[1].getBoundingClientRect().top;
+links.forEach(a=>a.classList.remove('on'));
+map.forEach(m=>{if(Math.abs(m[1].getBoundingClientRect().top-ct)<2)m[0].classList.add('on')});
+if(cur[0].classList.contains('tsub')&&parent)parent.classList.add('on')}
+addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+links.forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});history.replaceState(null,'',a.getAttribute('href'))}));})();
+</script>
 </body>
 </html>
