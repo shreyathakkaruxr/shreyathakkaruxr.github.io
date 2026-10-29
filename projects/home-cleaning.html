@@ -345,10 +345,12 @@ header.top .lede{margin:0;max-width:none}
 .hc .dimg img{width:100%;height:auto;border-radius:16px}
 .hc-hero{margin:24px 0 0}
 .hc-hero svg{display:block;width:100%;height:auto}
-#hcfig.paused *{animation-play-state:paused!important}
+#hcfig.paused *{animation:none!important}
+#hcfig.paused .lbC,#hcfig.paused .lbR,#hcfig.paused .lbH{font-weight:500;fill:#a1a1a6}
 @media(max-width:719px){.hc-hero{overflow-x:auto;-webkit-overflow-scrolling:touch}.hc-hero svg{min-width:760px}}
 #hc-btn{margin:12px 0 40px}
 @media (prefers-reduced-motion: reduce){#hcfig *{animation-delay:0s!important;animation-duration:.01s!important}}
+#hcfig.still *{animation-delay:0s!important;animation-duration:.01s!important}
 :root{--accent:#5b6b4f}
 .hc-co{padding-top:52px}
 .hc-co .callout{left:23%;top:0}
@@ -578,11 +580,11 @@ header.top .lede{margin:0;max-width:none}
 <text class="m" x="64" y="298" text-anchor="start">Understanding routines, hacks,</text>
 <text class="m" x="64" y="316" text-anchor="start">surfaces, and workarounds</text>
 <path id="fl0" class="hair" d="M200 138 C280 138, 300 168, 388 168"/><path id="mv0" d="M200 138 C280 138, 300 168, 388 168 L392 168" fill="none" stroke="none"/>
-<circle r="3.6" fill="#6f7f62"><animateMotion dur="5.00s" begin="0s" fill="freeze" keyPoints="0;0;1" keyTimes="0;0.600;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1"><mpath href="#mv0"/></animateMotion></circle>
+<circle class="mvdot" data-k="0" r="3.6" fill="#6f7f62"/>
 <path id="fl1" class="hair" d="M200 168 C280 168, 300 168, 388 168"/><path id="mv1" d="M200 168 C280 168, 300 168, 388 168 L428 168" fill="none" stroke="none"/>
-<circle r="3.6" fill="#6f7f62"><animateMotion dur="7.60s" begin="0s" fill="freeze" keyPoints="0;0;1" keyTimes="0;0.737;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1"><mpath href="#mv1"/></animateMotion></circle>
+<circle class="mvdot" data-k="1" r="3.6" fill="#6f7f62"/>
 <path id="fl2" class="hair" d="M200 198 C280 198, 300 168, 388 168"/><path id="mv2" d="M200 198 C280 198, 300 168, 388 168 L464 168" fill="none" stroke="none"/>
-<circle r="3.6" fill="#6f7f62"><animateMotion dur="10.20s" begin="0s" fill="freeze" keyPoints="0;0;1" keyTimes="0;0.804;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1"><mpath href="#mv2"/></animateMotion></circle>
+<circle class="mvdot" data-k="2" r="3.6" fill="#6f7f62"/>
 <circle cx="500" cy="168" r="108" fill="none" stroke="#c9d2bf" stroke-width="1.2"/>
 <circle class="draw" pathLength="1" style="--d:5.0s" cx="500" cy="168" r="108" fill="none" stroke="#9aab8a" stroke-width="1.6" transform="rotate(180 500 168)"/>
 <circle cx="500" cy="168" r="72" fill="none" stroke="#9aab8a" stroke-width="1.2"/>
@@ -773,15 +775,21 @@ header.top .lede{margin:0;max-width:none}
   <p>Written by Shreya Thakkar, with coding help from Claude</p>
 </footer>
 <script>
-(function(){var svg=document.getElementById('hcfig'),btn=document.getElementById('hc-btn');if(!svg)return;
+(function(){var fig=document.querySelector('.hc-hero'),svg=document.getElementById('hcfig'),btn=document.getElementById('hc-btn');if(!svg)return;
 var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-function restart(){var c=svg.cloneNode(true);c.classList.remove('paused');svg.parentNode.replaceChild(c,svg);svg=c;try{svg.setCurrentTime(0);svg.unpauseAnimations()}catch(e){}}
-if(reduce){try{svg.pauseAnimations();svg.setCurrentTime(20)}catch(e){}btn.hidden=true;return}
-svg.classList.add('paused');try{svg.pauseAnimations()}catch(e){}
-var started=false;
-function start(){if(started)return;started=true;restart()}
-if('IntersectionObserver'in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){start();io.disconnect()}})},{threshold:.4});io.observe(svg)}else start();
-btn.addEventListener('click',function(){started=true;restart()});
+var dots=[].slice.call(svg.querySelectorAll('.mvdot')),starts=[3.0,5.6,8.2],dur=2.0,raf=null,t0=0;
+var paths=dots.map(function(d){return svg.getElementById?svg.getElementById('mv'+d.getAttribute('data-k')):document.getElementById('mv'+d.getAttribute('data-k'))});
+function ease(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2}
+function place(d,p,f){var L=p.getTotalLength(),pt=p.getPointAtLength(L*f);d.setAttribute('cx',pt.x);d.setAttribute('cy',pt.y)}
+function frame(now){var t=(now-t0)/1000,done=true;dots.forEach(function(d,i){var f=Math.min(Math.max((t-starts[i])/dur,0),1);place(d,paths[i],ease(f));if(f<1)done=false});if(!done)raf=requestAnimationFrame(frame)}
+function end(){dots.forEach(function(d,i){place(d,paths[i],1)})}
+function play(){if(raf)cancelAnimationFrame(raf);svg.classList.add('paused');svg.classList.remove('run');void svg.getBoundingClientRect();svg.classList.remove('paused');svg.classList.add('run');t0=performance.now();raf=requestAnimationFrame(frame)}
+dots.forEach(function(d,i){place(d,paths[i],0)});
+if(reduce){svg.classList.add('still');end();if(btn)btn.hidden=true;return}
+svg.classList.add('paused');var started=false;
+function start(){if(started)return;started=true;play()}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){start();io.disconnect()}})},{threshold:.25});io.observe(fig||svg)}else start();
+if(btn)btn.addEventListener('click',function(){started=true;play()});
 })();
 </script>
 <script>
