@@ -43,24 +43,6 @@
   --clay:#a0684a;--clay-t:#efdfd5;--clay-ink:#ffffff;
   --navy:#041e42;--navy-t:#dce1ea;--navy-ink:#ffffff;
 }
-@media not all{
-  :root:not([data-theme="light"]){
-    --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
-    --accent:#e3c27a;
-    --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
-    --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
-    --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
-    --navy:#5a7299;--navy-t:#1b2433;--navy-ink:#ffffff;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
-  --accent:#e3c27a;
-  --sand:#7d8fa6;--sand-t:#222831;--sand-ink:#ffffff;
-  --sage:#7f906f;--sage-t:#232a1f;--sage-ink:#ffffff;
-  --clay:#b57756;--clay-t:#33241c;--clay-ink:#ffffff;
-  --navy:#5a7299;--navy-t:#1b2433;--navy-ink:#ffffff;
-}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.45;font-size:15px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden}
@@ -105,10 +87,8 @@ body>footer{margin-top:auto}
 
 /* project color */
 .eyebrow{color:#a3781a}
-@media not all{:root:not([data-theme="light"]) .eyebrow{color:#d9b45f}}
-:root[data-theme="dark"] .eyebrow{color:#d9b45f}
 
-/* Apple-style two-column sections (draft) */
+/* Apple-style two-column sections */
 header.top{text-align:left;padding:40px 0 48px}
 header.top .lede{margin:0;max-width:none}
 .ap{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;border-top:1px solid var(--hair);padding:40px 0 72px;margin:0}
@@ -167,14 +147,6 @@ header.top .lede{margin:0;max-width:none}
 @media(max-width:720px){.hero{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-right:-16px;padding-right:16px}.hero img{min-width:720px}.hero::after{content:"Swipe to see the full diagram \2192";display:block;font-size:13px;color:var(--muted);margin-top:8px;position:sticky;left:0}}
 .why.six{row-gap:28px}
 .apb>.apl a{color:var(--accent)}
-@media not all{:root:not([data-theme="light"]) .scribble{background:
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='rgb%28230%2C180%2C60%29' stop-opacity='0.31'/%3E%3Cstop offset='1' stop-color='rgb%28230%2C180%2C60%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%28230%2C180%2C60%29' fill-opacity='.28' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3Cpath fill='url%28%23g%29' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3C/svg%3E") left center/13px 100% no-repeat,
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='1' y1='0' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='rgb%28230%2C180%2C60%29' stop-opacity='0.31'/%3E%3Cstop offset='1' stop-color='rgb%28230%2C180%2C60%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%28230%2C180%2C60%29' fill-opacity='.28' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3Cpath fill='url%28%23g%29' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3C/svg%3E") right center/13px 100% no-repeat,
-  linear-gradient(rgba(230,180,60,.28),rgba(230,180,60,.28)) center/calc(100% - 26px) 96% no-repeat}}
-:root[data-theme="dark"] .scribble{background:
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='rgb%28230%2C180%2C60%29' stop-opacity='0.31'/%3E%3Cstop offset='1' stop-color='rgb%28230%2C180%2C60%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%28230%2C180%2C60%29' fill-opacity='.28' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3Cpath fill='url%28%23g%29' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3C/svg%3E") left center/13px 100% no-repeat,
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='1' y1='0' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='rgb%28230%2C180%2C60%29' stop-opacity='0.31'/%3E%3Cstop offset='1' stop-color='rgb%28230%2C180%2C60%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%28230%2C180%2C60%29' fill-opacity='.28' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3Cpath fill='url%28%23g%29' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3C/svg%3E") right center/13px 100% no-repeat,
-  linear-gradient(rgba(230,180,60,.28),rgba(230,180,60,.28)) center/calc(100% - 26px) 96% no-repeat}
 .moves.four{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(min-width:1000px){.moves.four{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .gal{display:grid;gap:24px}
@@ -248,7 +220,7 @@ footer .sig span{font-family:'Over the Rainbow',cursive;font-size:14px;color:#3a
     <div class="lmain">
   <section class="ap" id="overview"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">Researchers across 4 business units used AI in different ways, so <span class="scribble">analysis quality depended on who ran the study</span>. I built a shared practice where AI drafts and researchers decide.</p>
-    <figure class="hero" id="aiux-fig"><picture><source id="aiux-src" srcset="../images/fig-aiux-still-dark.svg?v=5" media="not all"><img id="aiux-img" src="../images/fig-aiux-still.svg?v=10" alt="AI tool use varied by researcher. Researchers converge on shared prompts and skills. AI drafts transcripts, tags, and summaries; researchers verify, interpret, prioritize and synthesize, and tell the story as an actionable insight. Prompts and skills are reviewed each quarter."></picture></figure>
+    <figure class="hero" id="aiux-fig"><picture><img id="aiux-img" src="../images/fig-aiux-still.svg?v=10" alt="AI tool use varied by researcher. Researchers converge on shared prompts and skills. AI drafts transcripts, tags, and summaries; researchers verify, interpret, prioritize and synthesize, and tell the story as an actionable insight. Prompts and skills are reviewed each quarter."></picture></figure>
     <button type="button" class="motion" id="aiux-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
     <dl class="meta">
       <div><dt>Role</dt><dd>Lead UX Researcher, Research Practice</dd></div>
@@ -308,13 +280,13 @@ footer .sig span{font-family:'Over the Rainbow',cursive;font-size:14px;color:#3a
 </footer>
 
 <script>
-(()=>{const img=document.getElementById('aiux-img'),src=document.getElementById('aiux-src'),btn=document.getElementById('aiux-btn');
-if(!img||!btn)return;const RUN=23200,still=['../images/fig-aiux-still.svg?v=10','../images/fig-aiux-still-dark.svg?v=5'],anim=['../images/fig-aiux.svg?v=18','../images/fig-aiux-dark.svg?v=11'];
+(()=>{const img=document.getElementById('aiux-img'),btn=document.getElementById('aiux-btn');
+if(!img||!btn)return;const RUN=23200,still=['../images/fig-aiux-still.svg?v=10'],anim=['../images/fig-aiux.svg?v=18'];
 const ic={play:'<path d="M3 2v8l7-4z" fill="currentColor"/>',pause:'<path d="M3 2h2v8H3zM7 2h2v8H7z" fill="currentColor"/>',replay:'<path d="M9.5 6A3.5 3.5 0 1 1 6 2.5h1.5M6 1l1.6 1.5L6 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>'};
 let timer=null,playing=false;
 function set(k,label){btn.querySelector('svg').innerHTML=ic[k];btn.querySelector('span').textContent=label;btn.setAttribute('aria-label',label+' diagram animation')}
-function stop(done){clearTimeout(timer);playing=false;img.src=still[0];src.srcset=still[1];set(done?'replay':'play',done?'Replay':'Play')}
-function play(){const t='&t='+Date.now();img.src=anim[0]+t;src.srcset=anim[1]+t;playing=true;set('pause','Pause');clearTimeout(timer);timer=setTimeout(()=>stop(true),RUN)}
+function stop(done){clearTimeout(timer);playing=false;img.src=still[0];set(done?'replay':'play',done?'Replay':'Play')}
+function play(){const t='&t='+Date.now();img.src=anim[0]+t;playing=true;set('pause','Pause');clearTimeout(timer);timer=setTimeout(()=>stop(true),RUN)}
 btn.hidden=false;btn.addEventListener('click',()=>playing?stop(false):play());
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){set('play','Play');return}
 const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){io.disconnect();play()}},{threshold:.5});io.observe(img);})();

@@ -46,24 +46,6 @@
   --clay:#a8694a;--clay-t:#f0e1d8;--clay-ink:#ffffff;
   --navy:#6e4330;--navy-t:#e8ddd7;--navy-ink:#ffffff;
 }
-@media not all{
-  :root:not([data-theme="light"]){
-    --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
-    --accent:#d4a98c;
-    --sand:#c9ad98;--sand-t:#2e2620;--sand-ink:#1d1d1f;
-    --sage:#b98a6b;--sage-t:#2b211b;--sage-ink:#1d1d1f;
-    --clay:#b57756;--clay-t:#33241c;--clay-ink:#1d1d1f;
-    --navy:#8a5a43;--navy-t:#2a1d17;--navy-ink:#ffffff;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0f0f10;--inset:#1c1c1e;--ink:#f5f5f7;--muted:#a1a1a6;--hair:#333336;
-  --accent:#d4a98c;
-  --sand:#c9ad98;--sand-t:#2e2620;--sand-ink:#1d1d1f;
-  --sage:#b98a6b;--sage-t:#2b211b;--sage-ink:#1d1d1f;
-  --clay:#b57756;--clay-t:#33241c;--clay-ink:#1d1d1f;
-  --navy:#8a5a43;--navy-t:#2a1d17;--navy-ink:#ffffff;
-}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.45;font-size:15px;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;overflow-x:hidden}
@@ -201,10 +183,8 @@ body>footer{margin-top:auto}
 
 /* project color */
 .eyebrow{color:#a0684a}
-@media not all{:root:not([data-theme="light"]) .eyebrow{color:#c4a48c}}
-:root[data-theme="dark"] .eyebrow{color:#c4a48c}
 
-/* Apple-style two-column sections (draft) */
+/* Apple-style two-column sections */
 header.top{text-align:left;padding:40px 0 48px}
 header.top .lede{margin:0;max-width:none}
 .ap{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;border-top:1px solid var(--hair);padding:40px 0 72px;margin:0}
@@ -283,14 +263,10 @@ header.top .lede{margin:0;max-width:none}
 .pill{display:inline-flex;align-items:center;gap:0;padding:8px 16px;border-radius:8px;background:#f6e8e6;color:#8a4f4a;font-size:14px;font-weight:400;letter-spacing:-.01em;text-decoration:none;border:0;transition:background .2s}
 .pill:hover{background:#efd9d6}
 .pill:focus-visible{outline:2px solid #c48782;outline-offset:2px}
-@media not all{:root:not([data-theme="light"]) .pill{background:#3a2725;color:#e8b9b4}:root:not([data-theme="light"]) .pill:hover{background:#4a3230}}
-:root[data-theme="dark"] .pill{background:#3a2725;color:#e8b9b4}:root[data-theme="dark"] .pill:hover{background:#4a3230}
 .pill .dot{width:7px;height:7px;border-radius:50%;background:#c48782;flex:none;margin-right:8px}
 .pill.sm .dot{width:6px;height:6px;margin-right:6px}
 .event .pill{background:#fdf7f6}
 .event .pill:hover{background:#f8ecea}
-@media not all{:root:not([data-theme="light"]) .event .pill{background:#261d1c}:root:not([data-theme="light"]) .event .pill:hover{background:#3a2725}}
-:root[data-theme="dark"] .event .pill{background:#261d1c}:root[data-theme="dark"] .event .pill:hover{background:#3a2725}
 :root{color-scheme:light only}
 .lay{display:grid;grid-template-columns:190px minmax(0,1fr);gap:56px;border-top:1px solid var(--hair)}
 .toc{position:sticky;top:24px;align-self:start;padding-top:44px}
@@ -341,7 +317,7 @@ footer .sig span{font-family:'Over the Rainbow',cursive;font-size:14px;color:#3a
   <section class="ap" id="overview"><h2 class="aph">Overview</h2><div class="apb">
     <p class="apl">AI saves effort, learning needs effort, and context decides how much to keep.</p>
     <p class="event"><a class="pill" href="https://schedule.sxswedu.com/2027/events/PP1163387" target="_blank" rel="noopener"><span><b>SXSW EDU 2027</b> · Workshop · Austin, March 13–16 ↗</span></a></p>
-    <figure class="hero"><picture><source id="mo-src" srcset="../images/fig-friction-dark.svg?v=12" media="not all"><img id="mo-img" src="../images/fig-friction.svg?v=12" alt="A question gets a quick AI answer, which keeps understanding lower; a learner moves through the effort of learning to understanding, past a dial for context, to forms of AI beyond the chatbot: an object, a ritual, a companion, and an open question"></picture></figure>
+    <figure class="hero"><picture><img id="mo-img" src="../images/fig-friction.svg?v=12" alt="A question gets a quick AI answer, which keeps understanding lower; a learner moves through the effort of learning to understanding, past a dial for context, to forms of AI beyond the chatbot: an object, a ritual, a companion, and an open question"></picture></figure>
     <button type="button" class="motion" id="mo-btn" hidden><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8l7-4z" fill="currentColor"/></svg><span>Play</span></button>
     <dl class="meta">
       <div><dt>Role</dt><dd>Co-lead researcher and workshop designer</dd></div>
@@ -546,13 +522,13 @@ function mkPop(host){
 })();
 </script>
 <script>
-(()=>{const img=document.getElementById('mo-img'),src=document.getElementById('mo-src'),btn=document.getElementById('mo-btn');
-if(!img||!btn)return;const RUN=27400,still=['../images/fig-friction.svg?v=12','../images/fig-friction-dark.svg?v=12'],anim=['../images/fig-friction-anim.svg?v=8','../images/fig-friction-anim-dark.svg?v=8'];
+(()=>{const img=document.getElementById('mo-img'),btn=document.getElementById('mo-btn');
+if(!img||!btn)return;const RUN=27400,still=['../images/fig-friction.svg?v=12'],anim=['../images/fig-friction-anim.svg?v=8'];
 const ic={play:'<path d="M3 2v8l7-4z" fill="currentColor"/>',pause:'<path d="M3 2h2v8H3zM7 2h2v8H7z" fill="currentColor"/>',replay:'<path d="M9.5 6A3.5 3.5 0 1 1 6 2.5h1.5M6 1l1.6 1.5L6 4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>'};
 let timer=null,playing=false;
 function set(k,label){btn.querySelector('svg').innerHTML=ic[k];btn.querySelector('span').textContent=label;btn.setAttribute('aria-label',label+' diagram animation')}
-function stop(done){clearTimeout(timer);playing=false;img.src=still[0];src.srcset=still[1];set(done?'replay':'play',done?'Replay':'Play')}
-function play(){const t='&t='+Date.now();img.src=anim[0]+t;src.srcset=anim[1]+t;playing=true;set('pause','Pause');clearTimeout(timer);timer=setTimeout(()=>stop(true),RUN)}
+function stop(done){clearTimeout(timer);playing=false;img.src=still[0];set(done?'replay':'play',done?'Replay':'Play')}
+function play(){const t='&t='+Date.now();img.src=anim[0]+t;playing=true;set('pause','Pause');clearTimeout(timer);timer=setTimeout(()=>stop(true),RUN)}
 btn.hidden=false;btn.addEventListener('click',()=>playing?stop(false):play());
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){set('play','Play');return}
 const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){io.disconnect();play()}},{threshold:.5});io.observe(img);})();
