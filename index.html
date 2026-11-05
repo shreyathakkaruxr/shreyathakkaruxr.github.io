@@ -50,7 +50,7 @@ section h2{font-size:21px;font-weight:600;letter-spacing:-.02em;color:var(--ink)
 .work{display:grid;gap:24px}
 @media(min-width:720px){.work{grid-template-columns:1fr 1fr}}
 @media(min-width:1000px){.work{grid-template-columns:repeat(3,1fr)}}
-.card{display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:20px;text-decoration:none;overflow:hidden;transition:border-color .2s}
+.card{display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:8px;text-decoration:none;overflow:hidden;transition:border-color .2s}
 .card:hover{border-color:var(--muted)}
 .card .body{padding:32px 32px 28px;display:flex;flex-direction:column;flex:1}
 .card h3{margin:0 0 8px;font-size:17px;font-weight:600;letter-spacing:-.015em}
@@ -73,7 +73,7 @@ body>footer{margin-top:auto}
 
 .work{gap:24px}
 section#work{border-top:1px solid var(--hair);padding-top:40px}
-.card{border:1px solid #f2f2f5;border-radius:28px;background:#fff;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.card{border:1px solid #f2f2f5;border-radius:8px;background:#fff;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
 .card:hover{border-color:#e5e5ea;transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.07)}
 /* dark mode cards */
 @media not all{:root:not([data-theme="light"]) .card{background:var(--inset,#1c1c1e);border-color:var(--hair)}:root:not([data-theme="light"]) .card:hover{border-color:#48484a;box-shadow:0 12px 28px rgba(0,0,0,.4)}}
