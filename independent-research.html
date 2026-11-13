@@ -113,6 +113,20 @@ header>div{min-height:161px;display:flex;flex-direction:column;justify-content:c
 .card .status.pill{color:#8a4f4a;background:#fdf7f6}.card:hover .status.pill{background:#f8ecea}
 
 footer .sig span{font-family:'Over the Rainbow',cursive;font-size:14px;color:#3a3a3c;display:inline-block;transform:rotate(-1deg);filter:url(#pencil);margin-top:4px}
+/* Card hover: a light gradient from one accent colour in each card's image; no lift */
+.card{position:relative;isolation:isolate}
+.card:hover{transform:none;box-shadow:none;border-color:#f2f2f5}
+.card::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;
+  background:var(--hover-g,linear-gradient(180deg,#eef2f6 45%,#f6f8fa 75%,#fdfdfe 100%));
+  opacity:0;transition:opacity .6s ease-out}
+.card:hover::after,.card:focus-visible::after{opacity:1}
+@media(prefers-reduced-motion:reduce){.card::after{transition:none}}
+.card[href*="laundry-systems"]{--hover-g:linear-gradient(180deg,#e2e7ee 45%,#f2f4f7 75%,#fcfdfd 100%)}
+.card[href*="home-cleaning"]{--hover-g:linear-gradient(180deg,#efe3d8 45%,#f7f2ed 75%,#fdfcfb 100%)}
+.card[href*="ai-x-uxr"]{--hover-g:linear-gradient(180deg,#efd6d2 45%,#f7ecea 75%,#fdfbfb 100%)}
+.card[href*="research-impact"]{--hover-g:linear-gradient(180deg,#dfe8d6 45%,#eef3ea 75%,#fafbf9 100%)}
+.card[href*="productive-friction"]{--hover-g:linear-gradient(180deg,#e6e2d1 45%,#f2f0e7 75%,#fbfbf9 100%)}
+.card[href*="trust-lenses"]{--hover-g:linear-gradient(180deg,#f8e0d8 45%,#fcf0ed 75%,#fefcfb 100%)}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
