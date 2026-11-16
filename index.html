@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Caveat:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#ffffff;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;--accent:#041e42;
   --sand:#63768f;--sage:#6f7f62;--clay:#a0684a;--navy:#041e42}
@@ -150,12 +150,9 @@ header .hero{flex:1;min-width:0}header .intro{position:relative;padding-bottom:7
 @keyframes sweep{from{background-size:0% 42%}to{background-size:100% 42%}}
 @keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 @keyframes write{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-.hname{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.lede.l2{animation:rise .8s cubic-bezier(.2,.7,.2,1) .18s both}
-.hname .role{animation:sweep .7s ease-out .75s both}
-.note svg path,.marrow path{stroke-dasharray:1;animation:draw .6s ease-out 1.25s both}
-.marrow .mh{animation-delay:1.8s;animation-duration:.2s}
-.nt{animation:write 1.1s steps(28,end) 1.7s both}
+.hname .role{animation:sweep 1.4s cubic-bezier(.2,0,0,1) .5s both}
+.note svg path,.marrow path{stroke-dasharray:1;animation:draw 1.4s cubic-bezier(.2,0,0,1) 1.6s both}
+.note svg path:last-child,.marrow .mh{animation-duration:.7s;animation-delay:2.9s}
 }
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -255,7 +252,7 @@ draw();addEventListener('resize',draw);const l2=document.querySelector('.intro .
 </script>
 <script>
 (()=>{const r=document.querySelector('.hname .role');if(!r||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-let busy=false;r.addEventListener('mouseenter',()=>{if(busy)return;busy=true;r.style.animation='none';void r.offsetWidth;r.style.animation='sweep .6s ease-out both';setTimeout(()=>busy=false,600)})})();
+let busy=false;r.addEventListener('mouseenter',()=>{if(busy)return;busy=true;r.style.animation='none';void r.offsetWidth;r.style.animation='sweep 1.2s cubic-bezier(.2,0,0,1) both';setTimeout(()=>busy=false,1200)})})();
 </script>
 </body>
 </html>

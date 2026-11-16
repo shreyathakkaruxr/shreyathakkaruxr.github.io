@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Caveat:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 .hero{margin:40px 0 56px}
 .sep{border:0;border-top:1px solid var(--hair);margin:0 0 56px}
@@ -268,7 +268,7 @@ header.top .lede{margin:0;max-width:none}
 .dpair-co{margin-top:0}
 .dco{position:relative}
 .dco .callout{position:absolute;left:72%;top:33%;width:1px;height:1px;overflow:visible;z-index:2;pointer-events:none}
-.dco .callout text{font-family:Caveat,"Bradley Hand","Segoe Print",cursive;font-weight:500;font-size:26px;fill:var(--accent)}
+.dco .callout text{font-family:'Shadows Into Light',cursive;font-weight:400;font-size:28px;fill:var(--accent)}
 .dco .callout path{fill:none;stroke:var(--accent);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:720px){.dco .dbox.dphoto{aspect-ratio:758/533}}
 
@@ -329,6 +329,15 @@ header.top .lede{margin:0;max-width:none}
 @media(max-width:719px){.callout .cd{display:none}.callout .cm{display:inline}}
 
 footer .sig span{font-family:'Shadows Into Light',cursive;font-size:16px;color:#3a3a3c;display:inline-block;transform:rotate(-1deg);filter:url(#pencil);margin-top:4px}
+
+/* Arrow motion (Material 3 emphasized): label settles in, stem draws, head flicks in. Slow and calm; only the arrow moves. Plays once in view; ends fully visible. */
+@media(prefers-reduced-motion:no-preference){
+@keyframes m3draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes m3in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.arw-anim path{stroke-dasharray:1;stroke-dashoffset:1}
+.arw-anim.in path{animation:m3draw 1.4s cubic-bezier(.2,0,0,1) .2s both}
+.arw-anim.in path.hd{animation-duration:.7s;animation-delay:1.5s}
+}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -627,6 +636,14 @@ if(cur[0].classList.contains('tsub')&&parent)parent.classList.add('on')}
 addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 links.forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});history.replaceState(null,'',a.getAttribute('href'))}));})();
+</script>
+<script>
+(()=>{if(matchMedia('(prefers-reduced-motion:reduce)').matches||!('IntersectionObserver' in window))return;
+const els=[...document.querySelectorAll('svg.callout,.mlabel')];if(!els.length)return;
+const box=el=>el.closest('figure,li,div')||el,map=new Map();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){map.get(e.target).forEach(a=>a.classList.add('in'));io.unobserve(e.target)}}),{threshold:.35});
+els.forEach(el=>{el.querySelectorAll('path').forEach(p=>{let L=0;try{L=p.getTotalLength()}catch(_){}if(L&&L<25)p.classList.add('hd');p.setAttribute('pathLength','1')});
+el.classList.add('arw-anim');const t=box(el);if(!map.has(t)){map.set(t,[]);io.observe(t)}map.get(t).push(el)});})();
 </script>
 </body>
 </html>
