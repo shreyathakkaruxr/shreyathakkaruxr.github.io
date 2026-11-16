@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Over+the+Rainbow&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Over+the+Rainbow&family=Caveat:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#ffffff;--ink:#1d1d1f;--muted:#6e6e73;--hair:#e5e5ea;--accent:#041e42;
   --sand:#63768f;--sage:#6f7f62;--clay:#a0684a;--navy:#041e42}
@@ -49,7 +49,8 @@ header{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;padding:96px
 .photo{width:200px;height:200px;border-radius:8px;flex:none;box-shadow:0 0 0 1px rgba(0,0,0,.07)}header{gap:24px 32px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .lede{color:var(--muted);font-size:17px;margin:0;max-width:62ch;line-height:1.4;letter-spacing:-.01em}
-.hname{margin:0 0 6px;font-size:28px;line-height:1.1;font-weight:600;letter-spacing:-.025em;color:var(--ink)}
+.hname{margin:0 0 14px;font-size:34px;line-height:1.1;font-weight:600;letter-spacing:-.025em;color:var(--ink)}
+.hname .role{color:var(--ink);background-image:linear-gradient(#e6f5b0,#e6f5b0);background-repeat:no-repeat;background-position:0 88%;background-size:100% 42%;padding:0 3px;margin:0 -3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .lede strong{display:block;color:var(--ink);font-size:21px;line-height:1.25;font-weight:500;letter-spacing:-.02em;margin-bottom:10px}
 
 section h2{font-size:21px;font-weight:600;letter-spacing:-.02em;color:var(--ink);margin:0 0 16px}
@@ -85,7 +86,7 @@ section#work{border-top:1px solid var(--hair);padding-top:40px}
 .eb{font-size:11px;font-weight:400;letter-spacing:.03em;text-transform:uppercase;color:#6e6e73;margin:0 0 8px!important}
 .card h3{font-size:21px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
 .card:nth-child(1) .thumb{background:#edf0f4}.card:nth-child(2) .thumb{background:#f6eee9}.card:nth-child(3) .thumb{background:#eef1ea}.thumb.thumb-photo{padding:0}.thumb.thumb-photo img{object-fit:cover}
-.contact{margin:14px 0 0;font-size:15px;display:flex;gap:10px;color:var(--muted)}
+.contact{margin:0;font-size:15px;display:flex;gap:10px;color:var(--muted)}
 .contact a{color:var(--accent);text-decoration:none}
 .contact a:hover{text-decoration:underline}
 .card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
@@ -131,6 +132,16 @@ footer .sig span{font-family:'Over the Rainbow',cursive;font-size:14px;color:#3a
 .card h3 .t{background-image:linear-gradient(#e6f5b0,#e6f5b0);background-repeat:no-repeat;background-position:0 100%;background-size:0% 42%;transition:background-size .5s ease-out;padding:0 2px;margin:0 -2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .card:hover h3 .t,.card:focus-visible h3 .t{background-size:100% 42%}
 @media(prefers-reduced-motion:reduce){.card h3 .t{transition:none}}
+
+/* intro sentence with hand-drawn note (same as About page) */
+header .hero{flex:1;min-width:0}header .intro{position:relative;padding-bottom:48px}
+.lede.l2{font-size:21px;line-height:1.45;letter-spacing:-.015em;color:var(--ink);max-width:880px;margin:0}
+.l2 .em{position:relative;display:inline-block;font-weight:600;color:var(--ink)}
+.note{position:absolute;left:44px;top:calc(100% + 28px);width:max-content;font-family:Caveat,"Bradley Hand","Segoe Print",cursive;font-weight:500;font-size:19px;line-height:1.1;color:#5f9a4a;letter-spacing:0;white-space:nowrap;text-align:left;pointer-events:none}
+.note svg{position:absolute;left:-21px;top:-21px;width:22px;height:30px;overflow:visible;transform:scaleY(-1)}
+.marrow{display:none}
+@media(min-width:721px){.note{left:190px;top:calc(100% + 44px)}.note svg{top:-44px;height:50px}}
+@media(max-width:720px){header .intro{padding-bottom:96px}.lede.l2{position:relative}.l2 .em{position:static;display:inline}.note{font-size:18px;left:auto;right:0;text-align:right}.note svg{display:none}.marrow{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;stroke:#5f9a4a;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -140,14 +151,12 @@ footer .sig span{font-family:'Over the Rainbow',cursive;font-size:14px;color:#3a
 <div class="wrap">
   <nav>
     <a href="./" aria-current="page">Shreya Thakkar</a>
-    <div class="links"><a href="./#work">Work</a><a href="independent-research.html">Independent research</a><a href="about.html">About</a></div>
+    <div class="links"><a href="./#work">Work</a><a href="./#indep">Independent research</a><a href="about.html">About</a></div>
   </nav>
 
   <header>
-    <img class="photo" src="images/image.jpg" width="160" height="160" alt="Shreya Thakkar">
-    <div><h1 class="hname">Shreya Thakkar</h1>
-    <p class="lede"><strong>Senior UX Researcher &amp; Strategist</strong>Mixed-methods and human factors research<br>for hardware, software, and AI experiences.</p>
-    <p class="contact"><a href="https://www.linkedin.com/in/shreya-thakkar-756ba6142/" target="_blank" rel="noopener">LinkedIn ↗</a><span aria-hidden="true">·</span><a href="mailto:shreyathakkar.uxr@gmail.com">Email ↗</a><a class="pill spk" href="https://schedule.sxswedu.com/2027/events/PP1163387" target="_blank" rel="noopener"><svg class="cal" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Speaking at SXSW EDU · Austin, March&nbsp;2027&nbsp;↗</a></p></div>
+    <div class="hero"><div class="intro"><svg class="marrow" aria-hidden="true"><path class="ms" fill="none"/><path class="mh" fill="none"/></svg><h1 class="hname">Hi, I’m Shreya, a design <span class="role">researcher</span>.</h1>
+    <p class="lede l2">I lead research that helps teams turn <b class="em">complex human <span class="anc">behavior</span><span class="note" aria-hidden="true">habits, workarounds,<br>and the meaning behind them<svg viewBox="0 0 34 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4C12 6 6 16 8 32"/><path d="M3 27l5 6 5-6"/></svg></span></b> into confident product decisions across physical and digital experiences.</p></div></div>
   </header>
 
   <section id="work" aria-label="Electrolux Group">
@@ -212,8 +221,22 @@ footer .sig span{font-family:'Over the Rainbow',cursive;font-size:14px;color:#3a
 </div>
 
 <footer>
-  <p><a href="./#work">Work</a> · <a href="independent-research.html">Independent research</a> · <a href="about.html">About</a> · <a href="https://github.com/shreyathakkaruxr" target="_blank" rel="noopener">GitHub</a></p>
+  <p><a href="./#work">Work</a> · <a href="./#indep">Independent research</a> · <a href="about.html">About</a> · <a href="https://github.com/shreyathakkaruxr" target="_blank" rel="noopener">GitHub</a></p>
   <p class="sig"><span>Powered by caffeine and curiosity</span></p><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="pencil" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.1" result="d"/><feTurbulence type="fractalNoise" baseFrequency="2.2" numOctaves="1" seed="7" result="g"/><feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.9 1.35" result="ga"/><feComposite in="d" in2="ga" operator="in"/></filter></svg>
 </footer>
+<script>
+(()=>{const i=document.querySelector('.intro'),a=document.querySelector('.anc'),n=document.querySelector('.note'),m=document.querySelector('.marrow');
+if(!i||!a||!n||!m)return;const mq=matchMedia('(max-width:720px)');
+function rightBelow(p,y){let mr=0;const w=document.createTreeWalker(p,NodeFilter.SHOW_TEXT,{acceptNode:t=>t.parentElement.closest('.note')?2:1});let t;while(t=w.nextNode()){const rg=document.createRange();rg.selectNodeContents(t);for(const q of rg.getClientRects()){if(q.top>y&&q.width>1)mr=Math.max(mr,q.right)}}return mr}
+function place(){const p=document.querySelector('.intro .l2'),em=document.querySelector('.l2 .em');if(mq.matches){n.style.left='';return}const er=em.getClientRects()[0],mr=rightBelow(p,er.bottom-2);n.style.left=Math.max(60,mr-er.left+40)+'px'}
+function draw(){place();if(!mq.matches)return;const r=i.getBoundingClientRect(),ar=a.getBoundingClientRect(),nr=n.getBoundingClientRect();
+const p=document.querySelector('.intro .l2'),lr=rightBelow(p,ar.bottom-2)-r.left;
+const sx=nr.right-r.left-34,sy=nr.top-r.top-4,ex=ar.right-r.left-4,ey=ar.bottom-r.top+1;
+const gx=Math.min(r.width+10,Math.max(lr+12,sx+16));
+m.querySelector('.ms').setAttribute('d',`M${sx} ${sy} C${sx+6} ${sy-16},${gx} ${sy-12},${gx} ${sy-36} L${gx} ${ey+14} Q${gx} ${ey},${gx-14} ${ey} L${ex} ${ey}`);
+const h=7,c=Math.cos(.5),s=Math.sin(.5);
+m.querySelector('.mh').setAttribute('d',`M${ex+h*c} ${ey-h*s} L${ex} ${ey} L${ex+h*c} ${ey+h*s}`)}
+draw();addEventListener('resize',draw);if(document.fonts)document.fonts.ready.then(draw);})();
+</script>
 </body>
 </html>
