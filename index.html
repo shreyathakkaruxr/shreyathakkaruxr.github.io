@@ -254,5 +254,6 @@ draw();addEventListener('resize',draw);const l2=document.querySelector('.intro .
 (()=>{const r=document.querySelector('.hname .role');if(!r||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
 let busy=false;r.addEventListener('mouseenter',()=>{if(busy)return;busy=true;r.style.animation='none';void r.offsetWidth;r.style.animation='sweep 1.2s cubic-bezier(.2,0,0,1) both';setTimeout(()=>busy=false,1200)})})();
 </script>
+<script src="hscroll.js" defer></script>
 </body>
 </html>

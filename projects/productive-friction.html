@@ -552,5 +552,6 @@ addEventListener('scroll',update,{passive:true});addEventListener('resize',updat
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 links.forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});history.replaceState(null,'',a.getAttribute('href'))}));})();
 </script>
+<script src="../hscroll.js" defer></script>
 </body>
 </html>

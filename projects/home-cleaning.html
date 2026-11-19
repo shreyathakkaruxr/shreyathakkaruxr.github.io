@@ -806,5 +806,6 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){map.ge
 els.forEach(el=>{el.querySelectorAll('path').forEach(p=>{let L=0;try{L=p.getTotalLength()}catch(_){}if(L&&L<25)p.classList.add('hd');p.setAttribute('pathLength','1')});
 el.classList.add('arw-anim');const t=box(el);if(!map.has(t)){map.set(t,[]);io.observe(t)}map.get(t).push(el)});})();
 </script>
+<script src="../hscroll.js" defer></script>
 </body>
 </html>
