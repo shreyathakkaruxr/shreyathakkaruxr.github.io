@@ -118,7 +118,7 @@ header{padding-bottom:65px}
 footer .sig span{font-family:'Shadows Into Light',cursive;font-size:16px;color:#3a3a3c;display:inline-block;transform:rotate(-1deg);filter:url(#pencil);margin-top:4px}
 
 .pill .cal{flex:none;margin-right:7px}
-.gallery{display:flex;align-items:flex-start;gap:8px;margin:0;padding:0;list-style:none}.gallery li{min-width:0}.gallery img{display:block;width:100%;height:auto;border-radius:8px}.moments{padding:32px 0 24px}.gallery figure{margin:0}.gallery figcaption{margin-top:8px;font-size:13px;line-height:1.4;color:var(--ink)}.gallery .credit{display:block;color:var(--muted)}@media(max-width:760px){.gallery{flex-direction:column}.gallery li{flex:none!important;width:100%}}
+.carousel{display:flex;align-items:flex-start;gap:8px;margin:0;padding:0;list-style:none}.carousel li{flex:1 1 0;min-width:56px;cursor:pointer;transition:flex-grow .5s cubic-bezier(.2,0,0,1)}.carousel li.on{flex-grow:4;cursor:default}.carousel li:focus-visible{outline:2px solid var(--ink);outline-offset:2px}.carousel figure{margin:0}.carousel img{display:block;width:100%;height:clamp(240px,30vw,360px);object-fit:cover;border-radius:8px}.carousel figcaption{margin-top:8px;font-size:13px;line-height:1.4;color:var(--ink)}.carousel .credit{display:block;color:var(--muted)}@media(max-width:760px){.carousel img{height:260px}.carousel{overflow-x:auto;scroll-snap-type:x mandatory}.carousel li,.carousel li.on{flex:0 0 78%;scroll-snap-align:start}}@media(prefers-reduced-motion:reduce){.carousel li{transition:none}}.moments{padding:32px 0 24px}@media(max-width:760px){}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -216,11 +216,12 @@ footer .sig span{font-family:'Shadows Into Light',cursive;font-size:16px;color:#
   </div>
   <section class="moments" aria-labelledby="h-moments">
     <h2 class="display" id="h-moments">Talks and workshops</h2>
-    <ul class="gallery">
-      <li style="flex:1.500"><figure><img src="images/about-wuc-talk.jpg?v=2" width="2000" height="1333" loading="lazy" alt="Shreya speaking at the World Usability Congress"><figcaption>World Usability Congress, Austria</figcaption></figure></li>
-      <li style="flex:0.780"><figure><img src="images/about-wuc.jpg?v=2" width="1561" height="2000" loading="lazy" alt="Shreya at the World Usability Congress in Graz, Austria"><figcaption>World Usability Congress, Austria</figcaption></figure></li>
-      <li style="flex:1.5"><figure><img src="images/about-panel.jpg?v=2" width="2000" height="1333" loading="lazy" alt="Shreya on a panel with three other speakers at Be Unconventional"><figcaption>IDSA Women in Design, Denver<span class="credit">Photo credit: Andrew Shafer</span></figcaption></figure></li>
-      <li style="flex:1.333"><figure><img src="images/about-workshop.jpg?v=2" width="1693" height="1270" loading="lazy" alt="Shreya facilitating a co-design workshop while a participant presents a sketch"><figcaption>DTDC, Washington DC</figcaption></figure></li>
+    <ul class="carousel" id="carousel">
+      <li tabindex="0" class="on"><figure><img src="images/about-wuc-talk.jpg?v=2" width="2000" height="1333" loading="lazy" alt="Shreya speaking at the World Usability Congress"><figcaption>World Usability Congress, Austria</figcaption></figure></li>
+      <li tabindex="0"><figure><img src="images/about-wuc.jpg?v=2" style="object-position:50% 35%" width="1561" height="2000" loading="lazy" alt="Shreya at the World Usability Congress in Graz, Austria"><figcaption>World Usability Congress, Austria</figcaption></figure></li>
+      <li tabindex="0"><figure><img src="images/about-panel.jpg?v=2" width="2000" height="1333" loading="lazy" style="object-position:38% 50%" alt="Shreya on a panel with three other speakers at Be Unconventional"><figcaption>IDSA Women in Design, Denver<span class="credit">Photo credit: Andrew Shafer</span></figcaption></figure></li>
+      <li tabindex="0"><figure><img src="images/about-workshop.jpg?v=2" width="1693" height="1270" loading="lazy" style="object-position:96% 50%" alt="Shreya facilitating a co-design workshop while a participant presents a sketch"><figcaption>DTDC, Washington DC</figcaption></figure></li>
+      <li tabindex="0"><figure><img src="images/about-aiga.jpg" width="1843" height="2000" loading="lazy" style="object-position:92% 50%" alt="Shreya presenting at AIGA Weave"><figcaption>AIGA Weave, Illinois</figcaption></figure></li>
     </ul>
   </section>
 </div>
@@ -229,5 +230,11 @@ footer .sig span{font-family:'Shadows Into Light',cursive;font-size:16px;color:#
   <p><a href="./#work">Work</a> · <a href="./#indep">Independent research</a> · <a href="about.html">About</a> · <a href="https://github.com/shreyathakkaruxr" target="_blank" rel="noopener">GitHub</a></p>
   <p class="sig"><span>Powered by caffeine and curiosity</span></p><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="pencil" x="-5%" y="-20%" width="110%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.1" result="d"/><feTurbulence type="fractalNoise" baseFrequency="2.2" numOctaves="1" seed="7" result="g"/><feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.9 1.35" result="ga"/><feComposite in="d" in2="ga" operator="in"/></filter></svg>
 </footer>
+<script>
+(function(){var c=document.getElementById('carousel');if(!c)return;var items=[].slice.call(c.children);
+function show(li){items.forEach(function(x){x.classList.toggle('on',x===li)});}
+items.forEach(function(li){li.addEventListener('click',function(){show(li)});li.addEventListener('mouseenter',function(){if(matchMedia('(hover:hover)').matches)show(li)});li.addEventListener('focus',function(){show(li)});});
+show(items[0]);})();
+</script>
 </body>
 </html>
