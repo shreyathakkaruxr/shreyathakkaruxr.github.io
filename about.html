@@ -118,7 +118,7 @@ header{padding-bottom:65px}
 footer .sig span{font-family:'Shadows Into Light',cursive;font-size:16px;color:#3a3a3c;display:inline-block;transform:rotate(-1deg);filter:url(#pencil);margin-top:4px}
 
 .pill .cal{flex:none;margin-right:7px}
-.carousel{display:flex;align-items:flex-start;gap:8px;margin:0;padding:0;list-style:none}.carousel li{flex:1 1 0;min-width:56px;cursor:pointer;transition:flex-grow .5s cubic-bezier(.2,0,0,1)}.carousel li.on{flex-grow:4;cursor:default}.carousel li:focus-visible{outline:2px solid var(--ink);outline-offset:2px}.carousel figure{margin:0}.carousel img{display:block;width:100%;height:clamp(240px,30vw,360px);object-fit:cover;border-radius:8px}.carousel figcaption{margin-top:8px;font-size:13px;line-height:1.4;color:var(--ink)}.carousel .credit{display:block;color:var(--muted)}@media(max-width:760px){.carousel img{height:260px}.carousel{overflow-x:auto;scroll-snap-type:x mandatory}.carousel li,.carousel li.on{flex:0 0 78%;scroll-snap-align:start}}@media(prefers-reduced-motion:reduce){.carousel li{transition:none}}.moments{padding:32px 0 24px}@media(max-width:760px){}
+.carousel{display:flex;align-items:flex-start;gap:8px;margin:0;padding:0;list-style:none}.carousel li{flex:0 0 auto;min-width:56px;cursor:pointer;transition:flex-basis .5s cubic-bezier(.2,0,0,1)}.carousel li.on{cursor:default}.carousel li:focus-visible{outline:2px solid var(--ink);outline-offset:2px}.carousel figure{margin:0}.carousel .slot{display:block;position:relative;overflow:hidden;border-radius:8px;height:clamp(240px,30vw,360px)}.carousel .slot img{position:absolute;top:0;left:0;height:100%;max-width:none;object-fit:cover;transition:left .5s cubic-bezier(.2,0,0,1)}.carousel figcaption{margin-top:8px;font-size:13px;line-height:1.4;color:var(--ink)}.carousel .credit{display:block;color:var(--muted)}@media(max-width:760px){.carousel .slot{height:260px}.carousel{overflow-x:auto;scroll-snap-type:x mandatory}.carousel li,.carousel li.on{flex:0 0 78%;scroll-snap-align:start}}@media(prefers-reduced-motion:reduce){.carousel li{transition:none}}.moments{padding:32px 0 24px}@media(max-width:760px){}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -217,11 +217,11 @@ footer .sig span{font-family:'Shadows Into Light',cursive;font-size:16px;color:#
   <section class="moments" aria-labelledby="h-moments">
     <h2 class="display" id="h-moments">Talks and workshops</h2>
     <ul class="carousel" id="carousel">
-      <li tabindex="0" class="on"><figure><img src="images/about-wuc-talk.jpg?v=2" width="2000" height="1333" loading="lazy" alt="Shreya speaking at the World Usability Congress"><figcaption>World Usability Congress, Austria</figcaption></figure></li>
-      <li tabindex="0"><figure><img src="images/about-wuc.jpg?v=2" style="object-position:50% 35%" width="1561" height="2000" loading="lazy" alt="Shreya at the World Usability Congress in Graz, Austria"><figcaption>World Usability Congress, Austria</figcaption></figure></li>
-      <li tabindex="0"><figure><img src="images/about-panel.jpg?v=2" width="2000" height="1333" loading="lazy" style="object-position:38% 50%" alt="Shreya on a panel with three other speakers at Be Unconventional"><figcaption>IDSA Women in Design, Denver<span class="credit">Photo credit: Andrew Shafer</span></figcaption></figure></li>
-      <li tabindex="0"><figure><img src="images/about-workshop.jpg?v=2" width="1693" height="1270" loading="lazy" style="object-position:96% 50%" alt="Shreya facilitating a co-design workshop while a participant presents a sketch"><figcaption>DTDC, Washington DC</figcaption></figure></li>
-      <li tabindex="0"><figure><img src="images/about-aiga.jpg" width="1843" height="2000" loading="lazy" style="object-position:92% 50%" alt="Shreya presenting at AIGA Weave"><figcaption>AIGA Weave, Illinois</figcaption></figure></li>
+      <li tabindex="0" class="on"><figure><span class="slot"><img data-fx="50" style="object-position:50% 50%" src="images/about-wuc-talk.jpg?v=2" width="2000" height="1333" loading="lazy" alt="Shreya speaking at the World Usability Congress"></span><figcaption>World Usability Congress, Austria</figcaption></figure></li>
+      <li tabindex="0"><figure><span class="slot"><img data-fx="50" style="object-position:50% 35%" src="images/about-wuc.jpg?v=2" width="1561" height="2000" loading="lazy" alt="Shreya at the World Usability Congress in Graz, Austria"></span><figcaption>World Usability Congress, Austria</figcaption></figure></li>
+      <li tabindex="0"><figure><span class="slot"><img data-fx="38" style="object-position:50% 50%" src="images/about-panel.jpg?v=2" width="2000" height="1333" loading="lazy" alt="Shreya on a panel with three other speakers at Be Unconventional"></span><figcaption>IDSA Women in Design, Denver<span class="credit">Photo credit: Andrew Shafer</span></figcaption></figure></li>
+      <li tabindex="0"><figure><span class="slot"><img data-fx="96" style="object-position:50% 50%" src="images/about-workshop.jpg?v=2" width="1693" height="1270" loading="lazy" alt="Shreya facilitating a co-design workshop while a participant presents a sketch"></span><figcaption>DTDC, Washington DC</figcaption></figure></li>
+      <li tabindex="0"><figure><span class="slot"><img data-fx="92" style="object-position:50% 50%" src="images/about-aiga.jpg" width="1843" height="2000" loading="lazy" alt="Shreya presenting at AIGA Weave"></span><figcaption>AIGA Weave, Illinois</figcaption></figure></li>
     </ul>
   </section>
 </div>
@@ -233,8 +233,21 @@ footer .sig span{font-family:'Shadows Into Light',cursive;font-size:16px;color:#
 <script>
 (function(){var c=document.getElementById('carousel');if(!c)return;var items=[].slice.call(c.children);
 function show(li){items.forEach(function(x){x.classList.toggle('on',x===li)});}
-items.forEach(function(li){li.addEventListener('click',function(){show(li)});li.addEventListener('mouseenter',function(){if(matchMedia('(hover:hover)').matches)show(li)});li.addEventListener('focus',function(){show(li)});});
-show(items[0]);})();
+items.forEach(function(li){li.addEventListener('click',function(){show(li)});li.addEventListener('mousemove',function(e){if((e.movementX||e.movementY)&&!li.classList.contains('on')&&matchMedia('(hover:hover)').matches)show(li)});li.addEventListener('focus',function(){show(li)});});
+show(items[0]);
+var slots=items.map(function(li){return li.querySelector('.slot')});
+var mob=function(){return matchMedia('(max-width:760px)').matches};
+function nat(k){var im=slots[k].firstElementChild,h=slots[k].clientHeight||360;return h*(+im.getAttribute('width'))/(+im.getAttribute('height'));}
+function layout(){if(mob()){items.forEach(function(li){li.style.flexBasis=''});}
+var cw=c.clientWidth,n=items.length,on=items.findIndex(function(li){return li.classList.contains('on')});if(on<0)on=0;
+var open=Math.min(nat(on),cw*.6),nw=(cw-8*(n-1)-open)/(n-1);
+items.forEach(function(li,k){var bw=mob()?slots[k].clientWidth:(k===on?open:nw);if(!mob())li.style.flexBasis=bw+'px';
+var im=slots[k].firstElementChild,w=Math.max(nat(k),nw),fx=(parseFloat(im.getAttribute('data-fx'))||50)/100;
+if(k===on&&!mob())w=Math.max(nat(k),open);im.style.width=w+'px';im.style.left=Math.min(0,Math.max(bw-w,bw/2-fx*w))+'px';});}
+var _show=show;show=function(li){_show(li);layout();};
+items.forEach(function(li){li.addEventListener('click',layout)});
+addEventListener('resize',layout);layout();
+})();
 </script>
 </body>
 </html>
