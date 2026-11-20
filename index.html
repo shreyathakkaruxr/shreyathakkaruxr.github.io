@@ -116,7 +116,7 @@ section#work{border-top:1px solid var(--hair);padding-top:40px}
 
 .pill.sm{padding:4px 10px;font-size:12px;background:#fdf7f6}
 .card:hover .pill.sm{background:#f8ecea}
-section#indep{margin-top:72px}
+section#indep{margin-top:56px}
 section#indep .card:nth-child(1) .thumb{background:#f6eee9}
 .thumb.thumb-robot{position:relative;overflow:hidden}.thumb.thumb-robot img{position:absolute;left:0;top:-74%;width:129%;height:auto;max-width:none}
 .thumb.thumb-blur{position:relative;overflow:hidden;padding:0;background:#a08a76}
@@ -133,6 +133,20 @@ footer .sig span{font-family:'Shadows Into Light',cursive;font-size:16px;color:#
 .card:hover{transform:none;box-shadow:none;border-color:#f2f2f5}
 .card h3 .t{background-image:linear-gradient(#e6f5b0,#e6f5b0);background-repeat:no-repeat;background-position:0 100%;background-size:0% 42%;transition:background-size .5s ease-out;padding:0 2px;margin:0 -2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .card:hover h3 .t,.card:focus-visible h3 .t{background-size:100% 42%}
+/* Open cards: no box, image on top, text below */
+.card,.card:hover{border:0;background:transparent;overflow:visible}
+.card .thumb{border-radius:8px;overflow:hidden}
+.card .body{padding:18px 0 0}
+.card .body>p:not(.eb){margin-bottom:14px}
+@media(min-width:720px){.card h3,.card .body>p:not(.eb){min-height:0}}
+/* 8pt spacing scale: 8 inside a card, 16-24 between card parts, 64 between rows, 96 between groups */
+@media(min-width:720px){.work{grid-template-columns:1fr 1fr;gap:48px 24px}}
+.work{row-gap:40px}
+.card .body{padding-top:16px}
+.card .body>p:not(.eb){margin-bottom:16px}
+section#indep{margin-top:80px}
+.selw{margin-bottom:24px}
+.org{margin-bottom:16px}
 @media(prefers-reduced-motion:reduce){.card h3 .t{transition:none}}
 
 /* intro sentence with hand-drawn note (same as About page) */
@@ -209,7 +223,7 @@ header .hero{flex:1;min-width:0}header .intro{position:relative;padding-bottom:7
     </div>
   </section>
   <section id="indep" aria-label="Independent research">
-    <h2 class="org">Independent research</h2>
+    <h3 class="org">Independent research</h3>
     <div class="work">
       <a class="card" href="projects/productive-friction.html">
         <span class="thumb thumb-photo"><img src="images/card-learning-2045.jpg?v=6" alt="Learners working around a shared table in a bright, plant-filled studio" loading="lazy"></span>
