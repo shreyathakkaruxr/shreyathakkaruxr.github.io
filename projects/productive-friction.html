@@ -131,6 +131,7 @@ h2{font-size:21px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin
 .beyond{position:relative}
 .bv text{font-family:-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif}
 .facts4{display:grid;gap:24px 32px;margin:4px 0 0}
+.apb>.facts4:first-child{margin-top:0}
 @media(min-width:720px){.facts4{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1000px){.facts4{grid-template-columns:repeat(4,1fr)}}
 .facts4 div{padding-top:0}
@@ -224,8 +225,9 @@ header.top .lede{margin:0;max-width:none}
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='rgb%28235%2C160%2C110%29' stop-opacity='0.33'/%3E%3Cstop offset='1' stop-color='rgb%28235%2C160%2C110%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%28235%2C160%2C110%29' fill-opacity='.30' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3Cpath fill='url%28%23g%29' d='M10 0.6 L7.4 0.8 Q4.6 1 4.1 3.4 L0.6 17 Q0.1 19.6 2.8 19.5 L10 19.8 Z'/%3E%3C/svg%3E") left center/13px 100% no-repeat,
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 20' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='1' y1='0' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='rgb%28235%2C160%2C110%29' stop-opacity='0.33'/%3E%3Cstop offset='1' stop-color='rgb%28235%2C160%2C110%29' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='rgb%28235%2C160%2C110%29' fill-opacity='.30' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3Cpath fill='url%28%23g%29' d='M0 0.3 L5.2 0.5 Q9.8 0.7 9.8 2.9 Q9.5 8 8 13 L6.6 17.6 Q6.1 19.4 3.8 19.4 L0 19.7 Z'/%3E%3C/svg%3E") right center/13px 100% no-repeat,
   linear-gradient(rgba(235,160,110,.30),rgba(235,160,110,.30)) center/calc(100% - 26px) 96% no-repeat;border-radius:0;padding:2px 9px;margin:0 -8px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.whyf{margin-top:40px}
+.whyf{margin-top:40px;scroll-margin-top:24px}
 .whyc{margin:28px 0 0}
+.apb>.scn4:first-child{margin-top:12px}
 .scn.scn4 li{display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start;border-top:0;padding-top:0}
 .scn4 li svg{color:var(--ink);opacity:.7;margin-top:1px}
 @media(min-width:720px){.scn.scn4{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}}
@@ -318,6 +320,7 @@ footer .sig span{font-family:'Shadows Into Light',cursive;font-size:16px;color:#
       <a href="#context">Context</a>
       <a href="#literature-review">Literature review</a>
       <a href="#how-we-approached-it">How we approached it</a>
+      <a class="tsub" href="#why-futures">Why futures?</a>
       <a class="tsub" href="#beyond-the-chatbot">Beyond the chatbot</a>
       <a class="tsub" href="#workshop">Workshop</a>
       <a class="tsub" href="#artifacts">Artifacts</a>
@@ -396,7 +399,8 @@ footer .sig span{font-family:'Shadows Into Light',cursive;font-size:16px;color:#
       <li><div><b>Map where AI removes effort</b><span>Compare common AI UX principles with how learning happens.</span></div></li>
       <li><div><b>Prototype the future</b><span>A speculative workshop set in 2045 explores new forms of AI.</span></div></li>
     </ol>
-    <p class="sub whyf">Why futures?</p>
+  </div></section>
+  <section class="ap" id="why-futures"><h2 class="aph">Why futures?</h2><div class="apb">
     <ul class="scn scn4">
       <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><div><b>Widen the solution space</b><span>Imagining 2045 opens forms of AI beyond today's incremental changes.</span></div></li>
       <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="9.5" rx="5.5" ry="6.5"/><path d="M12 16v5M9 21h6M10 7l2.5-1.5"/></svg><div><b>Use futures as a mirror</b><span>Imagined futures reveal our hopes, fears, and assumptions about today's learning.</span></div></li>
