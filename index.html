@@ -171,6 +171,17 @@ header .hero{flex:1;min-width:0}header .intro{position:relative;padding-bottom:7
 .note svg path,.marrow path{stroke-dasharray:1;animation:draw 1.4s cubic-bezier(.2,0,0,1) 1.6s both}
 .note svg path:last-child,.marrow .mh{animation-duration:.7s;animation-delay:2.9s}
 }
+/* hero card: lead case study spans full row on wide screens */
+@media(min-width:1000px){
+.work .card.hero{grid-column:1/-1;flex-direction:row;align-items:center;gap:24px}
+.work .card.hero .thumb{flex:0 0 calc((200% - 96px)/3 + 24px);aspect-ratio:5/2}
+.work .card.hero .body{padding:0 0 0 4px;flex:1}
+.work .card.hero h3,.work .card.hero .body>p:not(.eb){min-height:0}
+.work .card.hero.flip{flex-direction:row-reverse}
+.work .card.hero.flip .body{padding:0 4px 0 0}
+.work .card.hero .thumb-learn img{object-position:50% 75%}
+}
+}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -192,7 +203,7 @@ header .hero{flex:1;min-width:0}header .intro{position:relative;padding-bottom:7
     <h2 class="selw">Selected work</h2>
     <h3 class="org">Electrolux Group <span>· 2023–2026</span></h3>
     <div class="work">
-      <a class="card" href="projects/laundry-systems.html">
+      <a class="card hero" href="projects/laundry-systems.html">
         <span class="thumb thumb-photo"><img src="images/laundry-room-wide.jpg?v=1" alt="Laundry room with a stacked washer and dryer beside dark gray cabinets" loading="lazy"></span>
         <div class="body">
           <p class="eb">Connected appliances</p><h3><span class="t">Shaping next-gen connected laundry</span></h3>
@@ -226,8 +237,8 @@ header .hero{flex:1;min-width:0}header .intro{position:relative;padding-bottom:7
   <section id="indep" aria-label="Independent research">
     <h3 class="org">Independent research</h3>
     <div class="work">
-      <a class="card" href="projects/productive-friction.html">
-        <span class="thumb thumb-photo"><img src="images/card-learning-2045.jpg?v=6" alt="Learners working around a shared table in a bright, plant-filled studio" loading="lazy"></span>
+      <a class="card hero" href="projects/productive-friction.html">
+        <span class="thumb thumb-photo thumb-learn"><img src="images/card-learning-2045.jpg?v=6" alt="Learners working around a shared table in a bright, plant-filled studio" loading="lazy"></span>
         <div class="body">
           <p class="eb">Education</p><h3><span class="t">Learning with AI in 2045</span></h3>
           <p>Imagining embodied AI beyond chatbots.</p>
