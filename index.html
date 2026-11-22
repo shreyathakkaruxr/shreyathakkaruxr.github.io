@@ -189,6 +189,8 @@ header .hero{flex:1;min-width:0}header .intro{position:relative;padding-bottom:7
 .thumb .blob{position:absolute;left:0;top:0;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;background:rgba(220,242,106,.55);mix-blend-mode:multiply;pointer-events:none;transform:translate(var(--x,50%),var(--y,50%)) scale(0);transition:transform .45s cubic-bezier(.2,0,0,1);z-index:2}
 .card:hover .thumb .blob{transform:translate(var(--x,50%),var(--y,50%)) scale(1)}
 @media(hover:none),(prefers-reduced-motion:reduce){.thumb .blob{display:none}}
+/* the circle replaces the hand cursor over images */
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.card .thumb,.card .thumb *{cursor:none}}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
