@@ -184,13 +184,6 @@ header .hero{flex:1;min-width:0}header .intro{position:relative;padding-bottom:7
 }
 }
 
-/* hover: translucent lime circle follows the pointer over the card image */
-.thumb{position:relative;overflow:hidden}
-.thumb .blob{position:absolute;left:0;top:0;width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;background:rgba(220,242,106,.55);mix-blend-mode:multiply;pointer-events:none;transform:translate(var(--x,50%),var(--y,50%)) scale(0);transition:transform .45s cubic-bezier(.2,0,0,1);z-index:2}
-.card:hover .thumb .blob{transform:translate(var(--x,50%),var(--y,50%)) scale(1)}
-@media(hover:none),(prefers-reduced-motion:reduce){.thumb .blob{display:none}}
-/* the circle replaces the hand cursor over images */
-@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.card .thumb,.card .thumb *{cursor:none}}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -289,11 +282,5 @@ draw();addEventListener('resize',draw);const l2=document.querySelector('.intro .
 let busy=false;r.addEventListener('mouseenter',()=>{if(busy)return;busy=true;r.style.animation='none';void r.offsetWidth;r.style.animation='sweep 1.2s cubic-bezier(.2,0,0,1) both';setTimeout(()=>busy=false,1200)})})();
 </script>
 <script src="hscroll.js" defer></script>
-<script>
-(()=>{if(!matchMedia('(hover:hover) and (pointer:fine)').matches||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-document.querySelectorAll('.card .thumb').forEach(t=>{const b=document.createElement('span');b.className='blob';b.setAttribute('aria-hidden','true');t.appendChild(b);
-const set=e=>{const r=t.getBoundingClientRect();b.style.setProperty('--x',(e.clientX-r.left)+'px');b.style.setProperty('--y',(e.clientY-r.top)+'px')};
-t.closest('.card').addEventListener('pointerenter',set);t.closest('.card').addEventListener('pointermove',set)})})();
-</script>
 </body>
 </html>
